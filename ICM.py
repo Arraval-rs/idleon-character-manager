@@ -22,9 +22,11 @@ character_class = dictionary['characters'][0]['class']
 if character_class == 'Wizard' or character_class == 'Shaman':
     character_base_class = 'Mage'
 elif character_class == 'Bowman' or character_class == 'Hunter':
-    chracter_base_class = 'Archer'
+    character_base_class = 'Archer'
 elif character_class == 'Barbarian' or character_class == 'Squire':
-    chracter_base_class = 'Warrior'
+    character_base_class = 'Warrior'
+elif character_class == 'Journeyman':
+    character_base_class = character_class
 character_list = []
 i = 0
 while i < len(dictionary['characters']):
@@ -68,7 +70,7 @@ talents_1 =         [[
                             [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['0']), key = 'talent0', size = (7,1), justification = 'center')],
                             [sg.Image(data = talent_5_img.getvalue())],
                             [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['5']), key = 'talent5', size = (7,1), justification = 'center')],
-                            [sg.Image(data = talent_10_img.getvalue(), key = 'talent10_img')],
+                            [sg.Image(data = talent_10_img.getvalue(), key = 'talent_img10')],
                             [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['10']), key = 'talent10', size = (7,1), justification = 'center')]
                         ], element_justification = 'center'),
                         sg.Column(
@@ -77,7 +79,7 @@ talents_1 =         [[
                             [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['1']), key = 'talent1', size = (7,1), justification = 'center')],
                             [sg.Image(data = talent_6_img.getvalue())],
                             [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['6']), key = 'talent6', size = (7,1), justification = 'center')],
-                            [sg.Image(data = talent_11_img.getvalue())],
+                            [sg.Image(data = talent_11_img.getvalue(), key = 'talent_img11')],
                             [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['11']), key = 'talent11', size = (7,1), justification = 'center')]
                         ], element_justification = 'center'),
                         sg.Column(
@@ -86,7 +88,7 @@ talents_1 =         [[
                             [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['2']), key = 'talent2', size = (7,1), justification = 'center')],
                             [sg.Image(data = talent_7_img.getvalue())],
                             [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['7']), key = 'talent7', size = (7,1), justification = 'center')],
-                            [sg.Image(data = talent_12_img.getvalue(), key = 'talent12_img')],
+                            [sg.Image(data = talent_12_img.getvalue(), key = 'talent_img12')],
                             [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['12']), key = 'talent12', size = (7,1), justification = 'center')]
                         ], element_justification = 'center'),
                         sg.Column(
@@ -95,7 +97,7 @@ talents_1 =         [[
                             [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['3']), key = 'talent3', size = (7,1), justification = 'center')],
                             [sg.Image(data = talent_8_img.getvalue())],
                             [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['8']), key = 'talent8', size = (7,1), justification = 'center')],
-                            [sg.Image(data = talent_13_img.getvalue(), key = 'talent13_img')],
+                            [sg.Image(data = talent_13_img.getvalue(), key = 'talent_img13')],
                             [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['13']), key = 'talent13', size = (7,1), justification = 'center')]
                         ], element_justification = 'center'),
                         sg.Column(
@@ -239,6 +241,8 @@ while True:
             character_base_class = 'Archer'
         elif character_class == 'Barbarian' or character_class == 'Squire':
             character_base_class = 'Warrior'
+        elif character_class == 'Journeyman':
+            character_base_class = character_class
         # Generate new images
         helmet_img = generate_img('images/Helmets/{}.png'.format(dictionary['characters'][index]['equipment'][0]['name']))
         weapon_img = generate_img('images/Weapons/{}.png'.format(dictionary['characters'][index]['equipment'][1]['name']))
@@ -265,10 +269,10 @@ while True:
         window['shoe'].update(data = shoe_img.getvalue())
         window['ring2'].update(data = ring2_img.getvalue())
 
-        window['talent_img14'].update(data = talent_10_img.getvalue())
-        window['talent_img14'].update(data = talent_11_img.getvalue())
-        window['talent_img14'].update(data = talent_12_img.getvalue())
-        window['talent_img14'].update(data = talent_13_img.getvalue())
+        window['talent_img10'].update(data = talent_10_img.getvalue())
+        window['talent_img11'].update(data = talent_11_img.getvalue())
+        window['talent_img12'].update(data = talent_12_img.getvalue())
+        window['talent_img13'].update(data = talent_13_img.getvalue())
         window['talent_img14'].update(data = talent_14_img.getvalue())
         i = 0
         while i <= 14:
