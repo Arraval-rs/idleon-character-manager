@@ -4,6 +4,18 @@ import json
 import PySimpleGUI as sg
 from PIL import Image
 
+# Dictionary
+json_file = open("idleon_data.json", "rt")
+json_text = json_file.read()
+dictionary = json.loads(json_text)
+
+# Variables
+character_list = []
+i = 0
+while i < len(dictionary['characters']):
+    character_list.append(dictionary['characters'][i]['name'])
+    i = i + 1
+
 # Functions
 def generate_img(f):
     img = Image.open(f)
@@ -11,11 +23,6 @@ def generate_img(f):
     bio = io.BytesIO()
     img.save(bio, format = "PNG")
     return bio
-
-# Dictionary
-json_file = open("idleon_data.json", "rt")
-json_text = json_file.read()
-dictionary = json.loads(json_text)
 
 # tabs
 skills_tab =        [
@@ -106,10 +113,10 @@ storage_tab =       [
 root_tabs = [
                 [
                     sg.Combo(
-                    [
-                        dictionary['characters'][i]['name'] for i in range(0, len(dictionary['characters']))],
+                        character_list,
                         default_value = dictionary['characters'][0]['name'],
-                        key = 'active_character'
+                        key = 'active_character',
+                        enable_events = True
                     )
                 ],
                 [
@@ -130,5 +137,24 @@ while True:
     event, values = window.read()
     if event == "Exit" or event == sg.WIN_CLOSED:
         break
+    if event == 'active_character':
+        # Update character tab
+        index = character_list.index(values['active_character'])
+        helmet_img = generate_img('images/Helmets/{}.png'.format(dictionary['characters'][index]['equipment'][0]['name']))
+        weapon_img = generate_img('images/Weapons/{}.png'.format(dictionary['characters'][index]['equipment'][1]['name']))
+        shirt_img = generate_img('images/Shirts/{}.png'.format(dictionary['characters'][index]['equipment'][2]['name']))
+        pendant_img = generate_img('images/Pendants/{}.png'.format(dictionary['characters'][index]['equipment'][3]['name']))
+        pant_img = generate_img('images/Pants/{}.png'.format(dictionary['characters'][index]['equipment'][4]['name']))
+        ring1_img = generate_img('images/Rings/{}.png'.format(dictionary['characters'][index]['equipment'][5]['name']))
+        shoe_img = generate_img('images/Shoes/{}.png'.format(dictionary['characters'][index]['equipment'][6]['name']))
+        ring2_img = generate_img('images/Rings/{}.png'.format(dictionary['characters'][index]['equipment'][7]['name']))
+        window['helmet'].update(data = helmet_img.getvalue())
+        window['weapon'].update(data = weapon_img.getvalue())
+        window['shirt'].update(data = shirt_img.getvalue())
+        window['pendant'].update(data = pendant_img.getvalue())
+        window['pant'].update(data = pant_img.getvalue())
+        window['ring1'].update(data = ring1_img.getvalue())
+        window['shoe'].update(data = shoe_img.getvalue())
+        window['ring2'].update(data = ring2_img.getvalue())
 
 window.close()       
