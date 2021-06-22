@@ -266,7 +266,7 @@ while True:
             else:
                 window['talent{}'.format(i)].update('?/100')
         for i in range(10, 15):
-            window['talent_img{}'.format(i)].update(data = talents[character_base_class][str(i)].getvalue())
+            window['talent_img{}'.format(i)].update(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class][str(i)].getvalue())
             if str(i) in dictionary['characters'][index]['talentLevels'].keys(): # some talents aren't in JSON
                 window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
             else:
