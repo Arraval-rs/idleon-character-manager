@@ -5,14 +5,14 @@ import PySimpleGUI as sg
 from PIL import Image
 
 # Functions
-def generate_img(f):
+def generate_img(f): # returns the bytes object for a given image file
     img = Image.open(f)
     img.thumbnail((72, 72))
     bio = io.BytesIO()
     img.save(bio, format = "PNG")
     return bio
 
-def get_base_class(c):
+def get_base_class(c): # returns the base class of a given class
     if c == 'Wizard' or c == 'Shaman':
         return 'Mage'
     elif c == 'Bowman' or c == 'Hunter':
@@ -48,12 +48,10 @@ talents =   {
 talents['Filler'] = generate_img('images/Filler.png')
 for i in range(0, 10):
     talents[str(i)] = generate_img('images/Talents/{}.png'.format(i))
-for i in range(10, 15):
+for i in range(10, 30):
     talents['Mage'][str(i)] = generate_img('images/Talents/Mage/{}.png'.format(i))
     talents['Warrior'][str(i)] = generate_img('images/Talents/Warrior/{}.png'.format(i))
     talents['Archer'][str(i)] = generate_img('images/Talents/Archer/{}.png'.format(i))
-    talents['Journeyman'][str(i)] = generate_img('images/Talents/Journeyman/{}.png'.format(i))
-for i in range(15, 30):
     talents['Journeyman'][str(i)] = generate_img('images/Talents/Journeyman/{}.png'.format(i))
 
 # Default Images
@@ -115,21 +113,70 @@ talents_1 =         [[
                         ], element_justification = 'center'),
                     ]]
 
-talents_2 =         [
-                        [sg.Text('Class Talents')]
-                    ]
+
+talents_2 =         [[
+                        sg.Column(
+                        [
+                            [sg.Image(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class]['15'].getvalue(), key = 'talent_img15')],
+                            [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['15']), key = 'talent15', size = (7,1), justification = 'center')],
+                            [sg.Image(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class]['20'].getvalue(), key = 'talent_img20')],
+                            [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['20']), key = 'talent20', size = (7,1), justification = 'center')],
+                            [sg.Image(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class]['25'].getvalue(), key = 'talent_img25')],
+                            [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['25']), key = 'talent25', size = (7,1), justification = 'center')]
+                        ], element_justification = 'center'),
+                        sg.Column(
+                        [
+                            [sg.Image(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class]['16'].getvalue(), key = 'talent_img16')],
+                            [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['16']), key = 'talent16', size = (7,1), justification = 'center')],
+                            [sg.Image(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class]['21'].getvalue(), key = 'talent_img21')],
+                            [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['21']), key = 'talent21', size = (7,1), justification = 'center')],
+                            [sg.Image(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class]['26'].getvalue(), key = 'talent_img26')],
+                            [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['26']), key = 'talent26', size = (7,1), justification = 'center')]
+                        ], element_justification = 'center'),
+                        sg.Column(
+                        [
+                            [sg.Image(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class]['17'].getvalue(), key = 'talent_img17')],
+                            [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['17']), key = 'talent17', size = (7,1), justification = 'center')],
+                            [sg.Image(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class]['22'].getvalue(), key = 'talent_img22')],
+                            [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['22']), key = 'talent22', size = (7,1), justification = 'center')],
+                            [sg.Image(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class]['27'].getvalue(), key = 'talent_img27')],
+                            [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['27']), key = 'talent27', size = (7,1), justification = 'center')]
+                        ], element_justification = 'center'),
+                        sg.Column(
+                        [
+                            [sg.Image(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class]['18'].getvalue(), key = 'talent_img18')],
+                            [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['18']), key = 'talent18', size = (7,1), justification = 'center')],
+                            [sg.Image(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class]['23'].getvalue(), key = 'talent_img23')],
+                            [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['0']), key = 'talent23', size = (7,1), justification = 'center')], # MISSING FROM JSON
+                            [sg.Image(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class]['28'].getvalue(), key = 'talent_img28')],
+                            [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['28']), key = 'talent28', size = (7,1), justification = 'center')]
+                        ], element_justification = 'center'),
+                        sg.Column(
+                        [
+                            [sg.Image(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class]['19'].getvalue(), key = 'talent_img19')],
+                            [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['19']), key = 'talent19', size = (7,1), justification = 'center')],
+                            [sg.Image(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class]['24'].getvalue(), key = 'talent_img24')],
+                            [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['24']), key = 'talent24', size = (7,1), justification = 'center')],
+                            [sg.Image(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class]['29'].getvalue(), key = 'talent_img29')],
+                            [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels']['29']), key = 'talent29', size = (7,1), justification = 'center')]
+                        ], element_justification = 'center'),
+                    ]]
+
 
 talents_3 =         [
                         [sg.Text('Subclass Talents')]
                     ]
 
+
 star_talents =      [
                         [sg.Text('Star Talents')]
                     ]
 
+
 skills_tab =        [
                         [sg.Text('Skills!')]
                     ]
+
 
 talents_tab =       [
                         [sg.TabGroup(
@@ -141,13 +188,16 @@ talents_tab =       [
                         ]])]
                     ]
 
+
 bags_tab =          [
                         [sg.Text('Paper not plastic')]
                     ]
 
+
 pouches_tab =       [
                         [sg.Text('Pouches!')]
                     ]
+
 
 equips_tab =        [
                         [sg.Image(data = helmet_img.getvalue(), key = 'helmet'), sg.Image(data = weapon_img.getvalue(), key = 'weapon')],
@@ -156,13 +206,16 @@ equips_tab =        [
                         [sg.Image(data = shoe_img.getvalue(), key = 'shoe'), sg.Image(data = ring2_img.getvalue(), key = 'ring2')]
                     ]
 
+
 tools_tab =         [
                         [sg.Text("You're a tool")]
                     ]
 
+
 foods_tab =         [
                         [sg.Text('Food!')]
                     ]
+
 
 characters_tab =    [
                         [
@@ -194,21 +247,27 @@ characters_tab =    [
                         ]
                     ]
 
+
 inventory_tab =     [
                         []
                     ]
+
 
 monsters_tab =      [
                         []
                     ]
 
+
 crafting_tab =      [
                         []
                     ]
 
+
 storage_tab =       [
                         []
                     ]
+
+
 root_tabs = [
                 [
                     sg.Combo(
@@ -265,7 +324,7 @@ while True:
                 window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
             else:
                 window['talent{}'.format(i)].update('?/100')
-        for i in range(10, 15):
+        for i in range(10, 30):
             window['talent_img{}'.format(i)].update(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class][str(i)].getvalue())
             if str(i) in dictionary['characters'][index]['talentLevels'].keys(): # some talents aren't in JSON
                 window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
