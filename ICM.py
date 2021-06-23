@@ -67,14 +67,14 @@ for i in range(30, 45):
     #talents['Archer']['Hunter'][str(i)] = generate_img('images/Talents/Archer/Hunter/{}.png'.format(i))
 
 # Default Images
-helmet_img = generate_img('images/Helmets/{}.png'.format(dictionary['characters'][0]['equipment'][0]['name']))
-weapon_img = generate_img('images/Weapons/{}.png'.format(dictionary['characters'][0]['equipment'][1]['name']))
-shirt_img = generate_img('images/Shirts/{}.png'.format(dictionary['characters'][0]['equipment'][2]['name']))
-pendant_img = generate_img('images/Pendants/{}.png'.format(dictionary['characters'][0]['equipment'][3]['name']))
-pant_img = generate_img('images/Pants/{}.png'.format(dictionary['characters'][0]['equipment'][4]['name']))
-ring1_img = generate_img('images/Rings/{}.png'.format(dictionary['characters'][0]['equipment'][5]['name']))
-shoe_img = generate_img('images/Shoes/{}.png'.format(dictionary['characters'][0]['equipment'][6]['name']))
-ring2_img = generate_img('images/Rings/{}.png'.format(dictionary['characters'][0]['equipment'][7]['name']))
+helmet_img = generate_img('images/Equipment/Helmets/{}.png'.format(dictionary['characters'][0]['equipment'][0]['name']))
+weapon_img = generate_img('images/Equipment/Weapons/{}.png'.format(dictionary['characters'][0]['equipment'][1]['name']))
+shirt_img = generate_img('images/Equipment/Shirts/{}.png'.format(dictionary['characters'][0]['equipment'][2]['name']))
+pendant_img = generate_img('images/Equipment/Pendants/{}.png'.format(dictionary['characters'][0]['equipment'][3]['name']))
+pant_img = generate_img('images/Equipment/Pants/{}.png'.format(dictionary['characters'][0]['equipment'][4]['name']))
+ring1_img = generate_img('images/Equipment/Rings/{}.png'.format(dictionary['characters'][0]['equipment'][5]['name']))
+shoe_img = generate_img('images/Equipment/Shoes/{}.png'.format(dictionary['characters'][0]['equipment'][6]['name']))
+ring2_img = generate_img('images/Equipment/Rings/{}.png'.format(dictionary['characters'][0]['equipment'][7]['name']))
 
 # tabs
 talents_1 =         [[
@@ -357,14 +357,14 @@ while True:
         character_base_class = get_base_class(character_class)
 
         # Update equipment
-        helmet_img = generate_img('images/Helmets/{}.png'.format(dictionary['characters'][index]['equipment'][0]['name']))
-        weapon_img = generate_img('images/Weapons/{}.png'.format(dictionary['characters'][index]['equipment'][1]['name']))
-        shirt_img = generate_img('images/Shirts/{}.png'.format(dictionary['characters'][index]['equipment'][2]['name']))
-        pendant_img = generate_img('images/Pendants/{}.png'.format(dictionary['characters'][index]['equipment'][3]['name']))
-        pant_img = generate_img('images/Pants/{}.png'.format(dictionary['characters'][index]['equipment'][4]['name']))
-        ring1_img = generate_img('images/Rings/{}.png'.format(dictionary['characters'][index]['equipment'][5]['name']))
-        shoe_img = generate_img('images/Shoes/{}.png'.format(dictionary['characters'][index]['equipment'][6]['name']))
-        ring2_img = generate_img('images/Rings/{}.png'.format(dictionary['characters'][index]['equipment'][7]['name']))
+        helmet_img = generate_img('images/Equipment/Helmets/{}.png'.format(dictionary['characters'][index]['equipment'][0]['name']))
+        weapon_img = generate_img('images/Equipment/Weapons/{}.png'.format(dictionary['characters'][index]['equipment'][1]['name']))
+        shirt_img = generate_img('images/Equipment/Shirts/{}.png'.format(dictionary['characters'][index]['equipment'][2]['name']))
+        pendant_img = generate_img('images/Equipment/Pendants/{}.png'.format(dictionary['characters'][index]['equipment'][3]['name']))
+        pant_img = generate_img('images/Equipment/Pants/{}.png'.format(dictionary['characters'][index]['equipment'][4]['name']))
+        ring1_img = generate_img('images/Equipment/Rings/{}.png'.format(dictionary['characters'][index]['equipment'][5]['name']))
+        shoe_img = generate_img('images/Equipment/Shoes/{}.png'.format(dictionary['characters'][index]['equipment'][6]['name']))
+        ring2_img = generate_img('images/Equipment/Rings/{}.png'.format(dictionary['characters'][index]['equipment'][7]['name']))
         window['helmet'].update(data = helmet_img.getvalue())
         window['weapon'].update(data = weapon_img.getvalue())
         window['shirt'].update(data = shirt_img.getvalue())
