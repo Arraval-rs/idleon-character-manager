@@ -68,16 +68,6 @@ for i in range(30, 45):
     talents['Archer']['Bowman'][str(i)] = generate_img('images/Talents/Archer/Bowman/{}.png'.format(i))
     talents['Archer']['Hunter'][str(i)] = generate_img('images/Talents/Archer/Hunter/{}.png'.format(i))
 
-# Default Images
-helmet_img = generate_img('images/Equipment/Helmets/{}.png'.format(dictionary['characters'][0]['equipment'][0]['name']))
-weapon_img = generate_img('images/Equipment/Weapons/{}.png'.format(dictionary['characters'][0]['equipment'][1]['name']))
-shirt_img = generate_img('images/Equipment/Shirts/{}.png'.format(dictionary['characters'][0]['equipment'][2]['name']))
-pendant_img = generate_img('images/Equipment/Pendants/{}.png'.format(dictionary['characters'][0]['equipment'][3]['name']))
-pant_img = generate_img('images/Equipment/Pants/{}.png'.format(dictionary['characters'][0]['equipment'][4]['name']))
-ring1_img = generate_img('images/Equipment/Rings/{}.png'.format(dictionary['characters'][0]['equipment'][5]['name']))
-shoe_img = generate_img('images/Equipment/Shoes/{}.png'.format(dictionary['characters'][0]['equipment'][6]['name']))
-ring2_img = generate_img('images/Equipment/Rings/{}.png'.format(dictionary['characters'][0]['equipment'][7]['name']))
-
 # tabs
 talents_1 =         [[
                         sg.Column(
@@ -256,12 +246,9 @@ pouches_tab =       [
                         [sg.Text('Pouches!')]
                     ]
 
-
 equips_tab =        [
-                        [sg.Image(data = helmet_img.getvalue(), key = 'helmet'), sg.Image(data = weapon_img.getvalue(), key = 'weapon')],
-                        [sg.Image(data = shirt_img.getvalue(), key = 'shirt'), sg.Image(data = pendant_img.getvalue(), key = 'pendant')],
-                        [sg.Image(data = pant_img.getvalue(), key = 'pant'), sg.Image(data = ring1_img.getvalue(), key = 'ring1')],
-                        [sg.Image(data = shoe_img.getvalue(), key = 'shoe'), sg.Image(data = ring2_img.getvalue(), key = 'ring2')]
+                        [sg.Image(data = generate_img('images/Equipment/{}.png'.format(dictionary['characters'][0]['equipment'][2*i+j]['name'])).getvalue(), \
+                            key = 'equipment{}'.format(2*i+j)) for j in range(0, 2)] for i in range(0, 4)
                     ]
 
 
@@ -358,41 +345,27 @@ while True:
         character_class = dictionary['characters'][index]['class']
         character_base_class = get_base_class(character_class)
 
-        # Update equipment
-        helmet_img = generate_img('images/Equipment/Helmets/{}.png'.format(dictionary['characters'][index]['equipment'][0]['name']))
-        weapon_img = generate_img('images/Equipment/Weapons/{}.png'.format(dictionary['characters'][index]['equipment'][1]['name']))
-        shirt_img = generate_img('images/Equipment/Shirts/{}.png'.format(dictionary['characters'][index]['equipment'][2]['name']))
-        pendant_img = generate_img('images/Equipment/Pendants/{}.png'.format(dictionary['characters'][index]['equipment'][3]['name']))
-        pant_img = generate_img('images/Equipment/Pants/{}.png'.format(dictionary['characters'][index]['equipment'][4]['name']))
-        ring1_img = generate_img('images/Equipment/Rings/{}.png'.format(dictionary['characters'][index]['equipment'][5]['name']))
-        shoe_img = generate_img('images/Equipment/Shoes/{}.png'.format(dictionary['characters'][index]['equipment'][6]['name']))
-        ring2_img = generate_img('images/Equipment/Rings/{}.png'.format(dictionary['characters'][index]['equipment'][7]['name']))
-        window['helmet'].update(data = helmet_img.getvalue())
-        window['weapon'].update(data = weapon_img.getvalue())
-        window['shirt'].update(data = shirt_img.getvalue())
-        window['pendant'].update(data = pendant_img.getvalue())
-        window['pant'].update(data = pant_img.getvalue())
-        window['ring1'].update(data = ring1_img.getvalue())
-        window['shoe'].update(data = shoe_img.getvalue())
-        window['ring2'].update(data = ring2_img.getvalue())
+    # Update equipment
+    for i in range(0, 8):
+        window['equipment{}'.format(i)].update(data = generate_img('images/Equipment/{}.png'.format(dictionary['characters'][index]['equipment'][i]['name'])).getvalue())
 
-        # Update talents
-        for i in range(0, 10):
-            if str(i) in dictionary['characters'][index]['talentLevels'].keys(): # some talents aren't in JSON
-                window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
-            else:
-                window['talent{}'.format(i)].update('0/100')
-        for i in range(10, 30):
-            window['talent_img{}'.format(i)].update(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class][str(i)].getvalue())
-            if str(i) in dictionary['characters'][index]['talentLevels'].keys(): # some talents aren't in JSON
-                window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
-            else:
-                window['talent{}'.format(i)].update('0/100')
-        for i in range(30, 45):
-            window['talent_img{}'.format(i)].update(data = talents['Filler'].getvalue() if is_base_class(character_class) else talents[character_base_class][character_class][str(i)].getvalue())
-            if str(i) in dictionary['characters'][index]['talentLevels'].keys(): # some talents aren't in JSON
-                window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
-            else:
-                window['talent{}'.format(i)].update('0/100')
+    # Update talents
+    for i in range(0, 10):
+        if str(i) in dictionary['characters'][index]['talentLevels'].keys(): # some talents aren't in JSON
+            window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
+        else:
+            window['talent{}'.format(i)].update('0/100')
+    for i in range(10, 30):
+        window['talent_img{}'.format(i)].update(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class][str(i)].getvalue())
+        if str(i) in dictionary['characters'][index]['talentLevels'].keys(): # some talents aren't in JSON
+            window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
+        else:
+            window['talent{}'.format(i)].update('0/100')
+    for i in range(30, 45):
+        window['talent_img{}'.format(i)].update(data = talents['Filler'].getvalue() if is_base_class(character_class) else talents[character_base_class][character_class][str(i)].getvalue())
+        if str(i) in dictionary['characters'][index]['talentLevels'].keys(): # some talents aren't in JSON
+            window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
+        else:
+            window['talent{}'.format(i)].update('0/100')
 
 window.close()       
