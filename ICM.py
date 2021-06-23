@@ -60,11 +60,11 @@ for i in range(10, 30):
     talents['Journeyman'][str(i)] = generate_img('images/Talents/Journeyman/{}.png'.format(i))
 for i in range(30, 45):
     talents['Mage']['Shaman'][str(i)] = generate_img('images/Talents/Mage/Shaman/{}.png'.format(i))
-    #talents['Mage']['Wizard'][str(i)] = generate_img('images/Talents/Mage/Wizard/{}.png'.format(i))
+    talents['Mage']['Wizard'][str(i)] = generate_img('images/Talents/Mage/Wizard/{}.png'.format(i))
     talents['Warrior']['Barbarian'][str(i)] = generate_img('images/Talents/Warrior/Barbarian/{}.png'.format(i))
-    #talents['Warrior']['Squire'][str(i)] = generate_img('images/Talents/Warrior/Squire/{}.png'.format(i))
-    #talents['Archer']['Bowman'][str(i)] = generate_img('images/Talents/Archer/Bowman/{}.png'.format(i))
-    #talents['Archer']['Hunter'][str(i)] = generate_img('images/Talents/Archer/Hunter/{}.png'.format(i))
+    talents['Warrior']['Squire'][str(i)] = generate_img('images/Talents/Warrior/Squire/{}.png'.format(i))
+    talents['Archer']['Bowman'][str(i)] = generate_img('images/Talents/Archer/Bowman/{}.png'.format(i))
+    talents['Archer']['Hunter'][str(i)] = generate_img('images/Talents/Archer/Hunter/{}.png'.format(i))
 
 # Default Images
 helmet_img = generate_img('images/Equipment/Helmets/{}.png'.format(dictionary['characters'][0]['equipment'][0]['name']))
@@ -387,7 +387,7 @@ while True:
             else:
                 window['talent{}'.format(i)].update('?/100')
         for i in range(30, 45):
-            window['talent_img{}'.format(i)].update(data = talents['Filler'].getvalue() if is_base_class(character_class) == 'Beginner' else talents[character_base_class][character_class][str(i)].getvalue())
+            window['talent_img{}'.format(i)].update(data = talents['Filler'].getvalue() if is_base_class(character_class) else talents[character_base_class][character_class][str(i)].getvalue())
             if str(i) in dictionary['characters'][index]['talentLevels'].keys(): # some talents aren't in JSON
                 window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
             else:
