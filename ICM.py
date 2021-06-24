@@ -9,7 +9,6 @@ def generate_img(f, s, bg): # Generates image using PIL
     if "None" in f:
         f = 'images/Empty Slot.png'
     if not os.path.exists(f):
-        print(f)
         f = 'images/Missing.png'
     img = Image.open(f).resize(s)
     if bg:
@@ -107,7 +106,9 @@ def update_selected_equipment(equip_type, character, item):
     return
 
 def get_inventory_item(i, paths, character):
-    if 'name' not in dictionary['characters'][character]['inventory'][i] or dictionary['characters'][character]['inventory'][i]['name'] == 'None':
+    if 'name' not in dictionary['characters'][character]['inventory'][i]:
+        return generate_img('images/Locked.png', (72, 72), False)
+    elif dictionary['characters'][character]['inventory'][i]['name'] == 'None':
         return generate_img('None', (72, 72), False)
     for p in paths:
         path = 'images/{}/{}.png'.format(p, dictionary['characters'][character]['inventory'][i]['name'])
@@ -383,10 +384,10 @@ while True:
             else:
                 window['talent{}'.format(i)].update('0/100')
         # Update inventory for new character
+        window['current_inv'].update('1')
         for i in range(0, 4):
             for j in range(0, 4):
-                window['inventory{}'.format(j + 4 * i)].update(data = generate_img('images/Materials/{}'.format(dictionary['characters'][index]['inventory'][j + 4 * i]), (72, 72), True))
-        window['current_inv'].update('1')
+                window['inventory{}'.format(j + 4 * i)].update(data = get_inventory_item(j + 4 * i + 16 * (int(window['current_inv'].get()) - 1), image_paths, index))
 
     # Update selected equipment
     if 'equipment' in event or 'tools' in event or 'food' in event:
