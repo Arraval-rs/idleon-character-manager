@@ -86,14 +86,17 @@ def get_character_stats(character):
     return stat_str
 
 def get_item_stats(equip_type, character, index):
-    stat_str = 'STR: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['STR'])
-    stat_str += '\t\tReach: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Reach'] if index == 1 else 'N/A')
-    stat_str += '\nAGI: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['AGI'])
-    stat_str += '\t\tDefence: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Defence'])
-    stat_str += '\nWIS: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['WIS'])
-    stat_str += '\t\tMisc: {}'.format('N/A')
-    stat_str += '\nLUK: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['LUK'])
-    stat_str += '\t\tUpgrade Slots Left: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Upgrade_Slots_Left'])
+    if equip_type in {'equipment', 'tools'}:
+        stat_str = 'STR: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['STR'])
+        stat_str += '\t\tReach: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Reach'] if index == 1 else 'N/A')
+        stat_str += '\nAGI: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['AGI'])
+        stat_str += '\t\tDefence: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Defence'])
+        stat_str += '\nWIS: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['WIS'])
+        stat_str += '\t\tWeapon Power: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Weapon_Power'])
+        stat_str += '\nLUK: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['LUK'])
+        stat_str += '\t\tUpgrade Slots Left: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Upgrade_Slots_Left'] if equip_type == 'equipment' else 0)
+    else:
+        stat_str = 'Count: {}'.format(dictionary['characters'][character][equip_type][index]['count'])
     return stat_str
 
 def update_selected_equipment(equip_type, character, item):
@@ -251,7 +254,7 @@ character_tab =    [
                                 sg.Frame(layout = 
                                 [[
                                     sg.Image(data = generate_img('images/Empty Slot.png', (72, 72), False), key = 'selected_equipment'),
-                                    sg.Text('STR: 0\t\tReach: 0\nAGI: 0\t\tDefence: 0\nWIS: 0\t\tMisc: N/A\nLUK: 0\t\tUpgrade Slots Left: 0', key = 'item_stats')
+                                    sg.Text('STR: 0\t\tReach: 0\nAGI: 0\t\tDefence: 0\nWIS: 0\t\tWeapon Power: 0\nLUK: 0\t\tUpgrade Slots Left: 0', key = 'item_stats')
                                 ]], title = 'None', key = 'item_frame')
                             ]])
                         ]
@@ -308,7 +311,7 @@ for i in range(0, 4):
     for j in range(0, 2):
         equips_tab[i][j].draw_image(data = generate_img('images/Equipment/{}.png'.format(dictionary['characters'][0]['equipment'][2*i+j]['name']), (72, 72), True), location = (0, 72))
         tools_tab[i][j].draw_image(data = generate_img('images/Tools/{}.png'.format(dictionary['characters'][0]['tools'][2*i+j]['name']), (72, 72), True), location = (0, 72))
-        foods_tab[i][j].draw_image(data = generate_img('images/Materials/{}.png'.format(dictionary['characters'][0]['food'][2*i+j]['name']), (72, 72), True), location = (0, 72))
+        foods_tab[i][j].draw_image(data = generate_img('images/Food/{}.png'.format(dictionary['characters'][0]['food'][2*i+j]['name']), (72, 72), True), location = (0, 72))
 
 
 # Event loop
@@ -327,14 +330,14 @@ while True:
         window['class_image'].update(data = generate_img('images/Classes/{}.png'.format(dictionary['characters'][index]['class']), (129, 110), False))
         window['character_stats'].update(get_character_stats(index))
         window['selected_equipment'].update(data = generate_img('images/Empty Slot.png', (72, 72), False))
-        window['item_stats'].update('STR: 0\t\tReach: 0\nAGI: 0\t\tDefence: 0\nWIS: 0\t\tMisc: N/A\nLUK: 0\t\tUpgrade Slots Left: 0')
+        window['item_stats'].update('STR: 0\t\tReach: 0\nAGI: 0\t\tDefence: 0\nWIS: 0\t\tWeapon Power: 0\nLUK: 0\t\tUpgrade Slots Left: 0')
         window['item_frame'].update(value = 'None')
         # Update equipment
         for i in range(0, 4):
             for j in range(0, 2):
                 equips_tab[i][j].draw_image(data = generate_img('images/Equipment/{}.png'.format(dictionary['characters'][index]['equipment'][2*i+j]['name']), (72, 72), True), location = (0, 72))
                 tools_tab[i][j].draw_image(data = generate_img('images/Tools/{}.png'.format(dictionary['characters'][index]['tools'][2*i+j]['name']), (72, 72), True), location = (0, 72))
-                foods_tab[i][j].draw_image(data = generate_img('images/Materials/{}.png'.format(dictionary['characters'][index]['food'][2*i+j]['name']), (72, 72), True), location = (0, 72))
+                foods_tab[i][j].draw_image(data = generate_img('images/Food/{}.png'.format(dictionary['characters'][index]['food'][2*i+j]['name']), (72, 72), True), location = (0, 72))
     
         # Update skills
         for i in range(0, 9):
