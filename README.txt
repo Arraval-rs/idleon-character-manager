@@ -6,4 +6,4 @@ To use the app make sure you have have the JSON file in the same directory as th
 
 Not really sure what features this is going to have yet beyond a character sheet where you can view the stats of your characters and possibly estimates of next level, when they'll need food, or when their inventories will be full. I may also include some crafting calculators at some point.
 
-If you have any suggestions feel free to write an email to Coombsboy11@gmail.com. Please include "Idleon Character Manager" in the subject line.
+If you have any suggestions feel free to message me on discord: Arraval#5726.
