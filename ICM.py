@@ -88,15 +88,15 @@ def get_character_stats(character):
 def get_item_stats(equip_type, character, index):
     if equip_type in {'equipment', 'tools'}:
         stat_str = 'STR: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['STR'])
-        stat_str += '\t\tReach: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Reach'] if index == 1 else 'N/A')
+        stat_str += '\t\tReach: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Reach'] if 'Reach' in dictionary['characters'][character][equip_type][index]['stoneData'] else 'N/A')
         stat_str += '\nAGI: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['AGI'])
-        stat_str += '\t\tDefence: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Defence'])
+        stat_str += '\t\tDefence: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Defence'] if 'Defence' in dictionary['characters'][character][equip_type][index]['stoneData'] else 'N/A')
         stat_str += '\nWIS: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['WIS'])
-        stat_str += '\t\tWeapon Power: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Weapon_Power'])
+        stat_str += '\t\tWeapon Power: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Weapon_Power'] if 'Weapon Power' in dictionary['characters'][character][equip_type][index]['stoneData'] else 'N/A')
         stat_str += '\nLUK: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['LUK'])
         stat_str += '\t\tUpgrade Slots Left: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Upgrade_Slots_Left'] if equip_type == 'equipment' else 0)
     else:
-        stat_str = 'Count: {}'.format(dictionary['characters'][character][equip_type][index]['count'])
+        stat_str = 'Stack Size: {}'.format(dictionary['characters'][character][equip_type][index]['count'])
     return stat_str
 
 def update_selected_equipment(equip_type, character, item):
