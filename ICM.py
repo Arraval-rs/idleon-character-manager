@@ -9,6 +9,7 @@ def generate_img(f, s, bg): # Generates image using PIL
     if "None" in f:
         f = 'images/Empty Slot.png'
     if not os.path.exists(f):
+        print(f)
         f = 'images/Missing.png'
     img = Image.open(f).resize(s)
     if bg:
@@ -88,11 +89,11 @@ def get_character_stats(character):
 def get_item_stats(equip_type, character, index):
     if equip_type in {'equipment', 'tools'}:
         stat_str = 'STR: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['STR'])
-        stat_str += '\t\tReach: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Reach'] if 'Reach' in dictionary['characters'][character][equip_type][index]['stoneData'] else 'N/A')
+        stat_str += '\t\tReach: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Reach'] if 'Reach' in dictionary['characters'][character][equip_type][index]['stoneData'] else '0')
         stat_str += '\nAGI: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['AGI'])
-        stat_str += '\t\tDefence: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Defence'] if 'Defence' in dictionary['characters'][character][equip_type][index]['stoneData'] else 'N/A')
+        stat_str += '\t\tDefence: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Defence'] if 'Defence' in dictionary['characters'][character][equip_type][index]['stoneData'] else '0')
         stat_str += '\nWIS: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['WIS'])
-        stat_str += '\t\tWeapon Power: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Weapon_Power'] if 'Weapon Power' in dictionary['characters'][character][equip_type][index]['stoneData'] else 'N/A')
+        stat_str += '\t\tWeapon Power: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Weapon_Power'] if 'Weapon Power' in dictionary['characters'][character][equip_type][index]['stoneData'] else '0')
         stat_str += '\nLUK: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['LUK'])
         stat_str += '\t\tUpgrade Slots Left: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Upgrade_Slots_Left'] if equip_type == 'equipment' else 0)
     else:
@@ -105,6 +106,14 @@ def update_selected_equipment(equip_type, character, item):
     window['item_frame'].update(value = dictionary['characters'][character][equip_type][item]['name'])
     return
 
+def get_inventory_item(i, paths, character):
+    if 'name' not in dictionary['characters'][character]['inventory'][i] or dictionary['characters'][character]['inventory'][i]['name'] == 'None':
+        return generate_img('None', (72, 72), False)
+    for p in paths:
+        path = 'images/{}/{}.png'.format(p, dictionary['characters'][character]['inventory'][i]['name'])
+        if os.path.exists(path):
+            return generate_img(path, (72, 72), True)
+    return generate_img('images/Missing.png', (72, 72), True)
 
 # Dictionary for JSON from Idleon API Downloader
 json_file = open("idleon_data.json", "rt")
@@ -122,6 +131,9 @@ while i < len(dictionary['characters']):
         level = dictionary['characters'][i]['level'], \
         class_name = dictionary['characters'][i]['class']))
     i = i + 1
+
+# All image paths
+image_paths = ['Materials', 'Statues', 'Food', 'Tools', 'Equipment', 'Pouches', 'Inventory', 'Stamps', 'Storage']
 
 # Dictionary for talent images
 talents =   {
@@ -261,9 +273,13 @@ character_tab =    [
                     ]
 
 
-inventory_tab =     [
-                        []
-                    ]
+inventory_tab =     [[
+                        sg.Frame(layout = 
+                        [
+                            [sg.Column([[sg.Image(data = generate_img('images/Materials/{}.png'.format(dictionary['characters'][0]['inventory'][i + 4 * j]['name']), (72, 72), True), key = 'inventory{}'.format(i + 4 * j)) for i in range(0, 4)] for j in range(0, 4)])],
+                            [sg.Button('Prev', key = 'prev_inv'), sg.Text('1', key = 'current_inv', relief = 'sunken', size = (3, 1), justification = 'center'), sg.Button('Next', key = 'next_inv')]
+                        ], title = 'Inventory', element_justification = 'center')
+                    ]]
 
 
 monsters_tab =      [
@@ -325,13 +341,14 @@ while True:
         character_class = dictionary['characters'][index]['class']
         character_base_class = get_base_class(character_class)
 
-        # Update standalone elements
+        # Update standalone character elements
         window['class_icon'].update(data = generate_img('images/Classes/{}Icon.png'.format(dictionary['characters'][index]['class']), (38, 36), False))
         window['class_image'].update(data = generate_img('images/Classes/{}.png'.format(dictionary['characters'][index]['class']), (129, 110), False))
         window['character_stats'].update(get_character_stats(index))
         window['selected_equipment'].update(data = generate_img('images/Empty Slot.png', (72, 72), False))
         window['item_stats'].update('STR: 0\t\tReach: 0\nAGI: 0\t\tDefence: 0\nWIS: 0\t\tWeapon Power: 0\nLUK: 0\t\tUpgrade Slots Left: 0')
         window['item_frame'].update(value = 'None')
+
         # Update equipment
         for i in range(0, 4):
             for j in range(0, 2):
@@ -365,6 +382,24 @@ while True:
                 window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
             else:
                 window['talent{}'.format(i)].update('0/100')
+        # Update inventory for new character
+        for i in range(0, 4):
+            for j in range(0, 4):
+                window['inventory{}'.format(j + 4 * i)].update(data = generate_img('images/Materials/{}'.format(dictionary['characters'][index]['inventory'][j + 4 * i]), (72, 72), True))
+        window['current_inv'].update('1')
+
+    # Update selected equipment
     if 'equipment' in event or 'tools' in event or 'food' in event:
         update_selected_equipment(event[:len(event)-1], index, int(event[len(event)-1]))
+
+    # Update inventory for Prev/Next tab
+    if event in ('next_inv', 'prev_inv'):
+        if event == 'next_inv' and window['current_inv'].get() != '4':
+            window['current_inv'].update('{}'.format(int(window['current_inv'].get()) + 1))
+        if event == 'prev_inv' and window['current_inv'].get() != '1':
+            window['current_inv'].update('{}'.format(int(window['current_inv'].get()) - 1))
+        for i in range(0, 4):
+            for j in range(0, 4):
+                window['inventory{}'.format(j + 4 * i)].update(data = get_inventory_item(j + 4 * i + 16 * (int(window['current_inv'].get()) - 1), image_paths, index))
+
 window.close()       
