@@ -5,7 +5,7 @@ import PySimpleGUI as sg
 from PIL import Image, ImageDraw
 
 # Functions
-def generate_img(f, s, bg): # returns the bytes object for a given image file
+def generate_img(f, s, bg): # Generates image using PIL
     if "None" in f:
         f = 'images/Empty Slot.png'
     if not os.path.exists(f):
@@ -18,7 +18,7 @@ def generate_img(f, s, bg): # returns the bytes object for a given image file
     img.thumbnail(s)
     bio = io.BytesIO()
     img.save(bio, format = "PNG")
-    return bio
+    return bio.getvalue()
 
 def get_base_class(c): # returns the base class of a given class
     if c == 'Wizard' or c == 'Shaman':
@@ -85,6 +85,24 @@ def get_character_stats(character):
     stat_str += 'Class EXP: {}\n'.format(class_exp(character))
     return stat_str
 
+def get_item_stats(equip_type, character, index):
+    stat_str = 'STR: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['STR'])
+    stat_str += '\t\tReach: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Reach'] if index == 1 else 'N/A')
+    stat_str += '\nAGI: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['AGI'])
+    stat_str += '\t\tDefence: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Defence'])
+    stat_str += '\nWIS: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['WIS'])
+    stat_str += '\t\tMisc: {}'.format('N/A')
+    stat_str += '\nLUK: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['LUK'])
+    stat_str += '\t\tUpgrade Slots Left: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Upgrade_Slots_Left'])
+    return stat_str
+
+def update_selected_equipment(equip_type, character, item):
+    window['selected_equipment'].update(data = generate_img('images/{}/{}.png'.format(equip_type, dictionary['characters'][index][equip_type][item]['name']), (72, 72), True))
+    window['item_stats'].update(get_item_stats(equip_type, character, item))
+    window['item_frame'].update(value = dictionary['characters'][character][equip_type][item]['name'])
+    return
+
+
 # Dictionary for JSON from Idleon API Downloader
 json_file = open("idleon_data.json", "rt")
 json_text = json_file.read()
@@ -128,25 +146,25 @@ for i in range(30, 45):
 # tabs
 talents_1 =         [[sg.Column(
                     [
-                        [sg.Image(data = talents[str(5 * i + j)].getvalue(), key = 'talent_img{}'.format(str(5 * i + j))) for j in range(0, 5)],
-                        [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels'][str(5 * i + j)] if str(5 * i + j) in dictionary['characters'][0]['talentLevels'] else '0'), key = 'talent{}'.format(str(5 * i + j)), size = (7,1), justification = 'center') for j in range(0, 5)],
+                        [sg.Image(data = talents[str(5 * i + j)], key = 'talent_img{}'.format(str(5 * i + j))) for j in range(0, 5)],
+                        [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels'][str(5 * i + j)] if str(5 * i + j) in dictionary['characters'][0]['talentLevels'] else '0'), key = 'talent{}'.format(str(5 * i + j)), size = (7,1), justification = 'center', relief = 'sunken') for j in range(0, 5)],
                     ], element_justification = 'center')]for i in range(0, 2)]
 (talents_1.append([sg.Column(
                     [
-                        [sg.Image(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class][str(10 + i)].getvalue(), key = 'talent_img{}'.format(str(10 + i))) for i in range(0, 5)],
-                        [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels'][str(10 + i)] if str(10 + i) in dictionary['characters'][0]['talentLevels'] and character_base_class != 'Beginner' else '0'), key = 'talent{}'.format(str(10 + i)), size = (7,1), justification = 'center') for i in range(0, 5)]
+                        [sg.Image(data = talents['Filler'] if character_base_class == 'Beginner' else talents[character_base_class][str(10 + i)], key = 'talent_img{}'.format(str(10 + i))) for i in range(0, 5)],
+                        [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels'][str(10 + i)] if str(10 + i) in dictionary['characters'][0]['talentLevels'] and character_base_class != 'Beginner' else '0'), key = 'talent{}'.format(str(10 + i)), size = (7,1), justification = 'center', relief = 'sunken') for i in range(0, 5)]
                     ], element_justification = 'center')]))
 
 talents_2 =         [[sg.Column(
                     [
-                        [sg.Image(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class][str(15 + 5 * i + j)].getvalue(), key = 'talent_img{}'.format(str(15 + 5 * i + j))) for j in range(0, 5)],
-                        [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels'][str(15 + 5 * i + j)] if str(15 + 5 * i + j) in dictionary['characters'][0]['talentLevels'] and character_base_class != 'Beginner' else '0'), key = 'talent{}'.format(str(15 + 5 * i + j)), size = (7,1), justification = 'center') for j in range(0, 5)]
+                        [sg.Image(data = talents['Filler'] if character_base_class == 'Beginner' else talents[character_base_class][str(15 + 5 * i + j)], key = 'talent_img{}'.format(str(15 + 5 * i + j))) for j in range(0, 5)],
+                        [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels'][str(15 + 5 * i + j)] if str(15 + 5 * i + j) in dictionary['characters'][0]['talentLevels'] and character_base_class != 'Beginner' else '0'), key = 'talent{}'.format(str(15 + 5 * i + j)), size = (7,1), justification = 'center', relief = 'sunken') for j in range(0, 5)]
                     ], element_justification = 'center')]for i in range(0, 3)]
 
 talents_3 =         [[sg.Column(
                     [
-                        [sg.Image(data = talents['Filler'].getvalue() if is_base_class(character_class) else talents[character_base_class][character_class][str(30 + 5 * i + j)].getvalue(), key = 'talent_img{}'.format(str(30 + 5 * i + j))) for j in range(0, 5)],
-                        [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels'][str(30 + 5 * i + j)] if str(30 + 5 * i + j) in dictionary['characters'][0]['talentLevels'] and character_base_class != 'Beginner' else '0'), key = 'talent{}'.format(str(30 + 5 * i + j)), size = (7,1), justification = 'center') for j in range(0, 5)]
+                        [sg.Image(data = talents['Filler'] if is_base_class(character_class) else talents[character_base_class][character_class][str(30 + 5 * i + j)], key = 'talent_img{}'.format(str(30 + 5 * i + j))) for j in range(0, 5)],
+                        [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels'][str(30 + 5 * i + j)] if str(30 + 5 * i + j) in dictionary['characters'][0]['talentLevels'] and character_base_class != 'Beginner' else '0'), key = 'talent{}'.format(str(30 + 5 * i + j)), size = (7,1), justification = 'center', relief = 'sunken') for j in range(0, 5)]
                     ], element_justification = 'center')]for i in range(0, 3)]
 
 
@@ -161,7 +179,7 @@ skill_names =   [
                     'Trapping', 'Construction', 'Worship'
                 ]
 skills_tab =        [
-                        [sg.Column([[sg.Image(data = generate_img('images/Skills/{}.png'.format(skill_names[3*j+i]), (38, 36), False).getvalue()), sg.Text('{}\nLv. {}'.format(skill_names[3*j+i], dictionary['characters'][0]['skillLevels'][skill_names[3*j+i].lower()]), key = '{}level'.format(skill_names[3*j+i]))] for i in range(0, 3)])for j in range(0, 3)]
+                        [sg.Column([[sg.Image(data = generate_img('images/Skills/{}.png'.format(skill_names[3*j+i]), (38, 36), False)), sg.Text('{}\nLv. {}'.format(skill_names[3*j+i], dictionary['characters'][0]['skillLevels'][skill_names[3*j+i].lower()]), key = '{}level'.format(skill_names[3*j+i]), size = (9, 2), relief = 'sunken')] for i in range(0, 3)])for j in range(0, 3)]
                     ]
 
 
@@ -186,19 +204,17 @@ pouches_tab =       [
                     ]
 
 equips_tab =        [
-                        [sg.Image(data = generate_img('images/Equipment/{}.png'.format(dictionary['characters'][0]['equipment'][2*i+j]['name']), (72, 72), True).getvalue(), \
-                            key = 'equipment{}'.format(2*i+j)) for j in range(0, 2)] for i in range(0, 4)
+                        [sg.Graph((72, 72), (0, 0), (72, 72), change_submits = True, key = 'equipment{}'.format(2*i+j)) for j in range(0, 2)] for i in range(0, 4)
                     ]
 
+
 tools_tab =         [
-                        [sg.Image(data = generate_img('images/Tools/{}.png'.format(dictionary['characters'][0]['tools'][2*i+j]['name']), (72, 72), False).getvalue(), \
-                            key = 'tool{}'.format(2*i+j)) for j in range(0, 2)] for i in range(0, 4)
+                        [sg.Graph((72, 72), (0, 0), (72, 72), change_submits = True, key = 'tools{}'.format(2*i+j)) for j in range(0, 2)] for i in range(0, 4)
                     ]
 
 
 foods_tab =         [
-                        [sg.Image(data = generate_img('images/Materials/{}.png'.format(dictionary['characters'][0]['food'][2*i+j]['name']), (72, 72), False).getvalue(), \
-                            key = 'food{}'.format(2*i+j)) for j in range(0, 2)] for i in range(0, 4)
+                        [sg.Graph((72, 72), (0, 0), (72, 72), change_submits = True, key = 'food{}'.format(2*i+j)) for j in range(0, 2)] for i in range(0, 4)
                     ]
 
 
@@ -207,26 +223,36 @@ character_tab =    [
                             sg.Column(
                             [[
                                 sg.Column(
-                                [
-                                    [sg.Column([[sg.Image(data = generate_img('images/Classes/{}.png'.format(dictionary['characters'][0]['class']), (129, 110), False).getvalue(), key = 'class_image')]], element_justification = 'center')],
-                                    [sg.Text(get_character_stats(0), key = 'character_stats')]
-                                ]),
+                                [[
+                                    sg.Column(
+                                    [
+                                        [sg.Column([[sg.Image(data = generate_img('images/Classes/{}.png'.format(dictionary['characters'][0]['class']), (129, 110), False), key = 'class_image')]], element_justification = 'center')],
+                                        [sg.Text(get_character_stats(0), key = 'character_stats')]
+                                    ]),sg
+                                        .TabGroup(
+                                        [[
+                                            sg.Tab('Skills', skills_tab),
+                                            sg.Tab('Talents', talents_tab),
+                                            sg.Tab('Bags', bags_tab),
+                                            sg.Tab('Pouches', pouches_tab)
+                                        ]])
+                                ]]),
+                                sg.Column(
+                                [[
                                     sg.TabGroup(
                                     [[
-                                        sg.Tab('Skills', skills_tab),
-                                        sg.Tab('Talents', talents_tab),
-                                        sg.Tab('Bags', bags_tab),
-                                        sg.Tab('Pouches', pouches_tab)
+                                        sg.Tab('Equips', equips_tab),
+                                        sg.Tab('Tools', tools_tab),
+                                        sg.Tab('Food', foods_tab)
                                     ]])
-                            ]]),
-                            sg.Column(
-                            [[
-                                sg.TabGroup(
-                                [[
-                                    sg.Tab('Equips', equips_tab),
-                                    sg.Tab('Tools', tools_tab),
-                                    sg.Tab('Food', foods_tab)
                                 ]])
+                            ],
+                            [
+                                sg.Frame(layout = 
+                                [[
+                                    sg.Image(data = generate_img('images/Empty Slot.png', (72, 72), False), key = 'selected_equipment'),
+                                    sg.Text('STR: 0\t\tReach: 0\nAGI: 0\t\tDefence: 0\nWIS: 0\t\tMisc: N/A\nLUK: 0\t\tUpgrade Slots Left: 0', key = 'item_stats')
+                                ]], title = 'None', key = 'item_frame')
                             ]])
                         ]
                     ]
@@ -260,7 +286,7 @@ root_tabs = [
                         key = 'active_character',
                         enable_events = True
                     ),
-                    sg.Image(data = generate_img('images/Classes/{}Icon.png'.format(dictionary['characters'][0]['class']), (38, 36), False).getvalue(), key = 'class_icon')
+                    sg.Image(data = generate_img('images/Classes/{}Icon.png'.format(dictionary['characters'][0]['class']), (38, 36), False), key = 'class_icon')
                 ],
                 [
                 sg.TabGroup(
@@ -275,54 +301,67 @@ root_tabs = [
             ]
 
 window = sg.Window("Idleon Character Manager", root_tabs)
+window.Finalize()
+
+# Draw graphs for equipment tabs
+for i in range(0, 4):
+    for j in range(0, 2):
+        equips_tab[i][j].draw_image(data = generate_img('images/Equipment/{}.png'.format(dictionary['characters'][0]['equipment'][2*i+j]['name']), (72, 72), True), location = (0, 72))
+        tools_tab[i][j].draw_image(data = generate_img('images/Tools/{}.png'.format(dictionary['characters'][0]['tools'][2*i+j]['name']), (72, 72), True), location = (0, 72))
+        foods_tab[i][j].draw_image(data = generate_img('images/Materials/{}.png'.format(dictionary['characters'][0]['food'][2*i+j]['name']), (72, 72), True), location = (0, 72))
 
 
 # Event loop
 while True:
     event, values = window.read()
-    if event == "Exit" or event == sg.WIN_CLOSED:
+    if event != "Exit" and event != sg.WIN_CLOSED:
+        index = character_list.index(values['active_character'])
+    else:
         break
     if event == 'active_character':
-        index = character_list.index(values['active_character'])
         character_class = dictionary['characters'][index]['class']
         character_base_class = get_base_class(character_class)
 
-    # Update standalone elements
-    window['class_icon'].update(data = generate_img('images/Classes/{}Icon.png'.format(dictionary['characters'][index]['class']), (38, 36), False).getvalue())
-    window['class_image'].update(data = generate_img('images/Classes/{}.png'.format(dictionary['characters'][index]['class']), (129, 110), False).getvalue())
-    window['character_stats'].update(get_character_stats(index))
-
-    # Update equipment
-    for i in range(0, 8):
-        window['equipment{}'.format(i)].update(data = generate_img('images/Equipment/{}.png'.format(dictionary['characters'][index]['equipment'][i]['name']), (72, 72), True).getvalue())
-        window['tool{}'.format(i)].update(data = generate_img('images/Tools/{}.png'.format(dictionary['characters'][index]['tools'][i]['name']), (72, 72), True).getvalue())
-        window['food{}'.format(i)].update(data = generate_img('images/Materials/{}.png'.format(dictionary['characters'][index]['food'][i]['name']), (72, 72), True).getvalue())
-
-    # Update skills
-    for i in range(0, 9):
-        window['{}level'.format(skill_names[i])].update('{}\nLv. {}'.format(skill_names[i], dictionary['characters'][index]['skillLevels'][skill_names[i].lower()]))
-
-    # Update talents tab 1
-    for i in range(0, 10):
-        if str(i) in dictionary['characters'][index]['talentLevels'].keys() and character_base_class != 'Beginner': # some talents aren't in JSON
-            window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
-        else:
-            window['talent{}'.format(i)].update('0/100')
+        # Update standalone elements
+        window['class_icon'].update(data = generate_img('images/Classes/{}Icon.png'.format(dictionary['characters'][index]['class']), (38, 36), False))
+        window['class_image'].update(data = generate_img('images/Classes/{}.png'.format(dictionary['characters'][index]['class']), (129, 110), False))
+        window['character_stats'].update(get_character_stats(index))
+        window['selected_equipment'].update(data = generate_img('images/Empty Slot.png', (72, 72), False))
+        window['item_stats'].update('STR: 0\t\tReach: 0\nAGI: 0\t\tDefence: 0\nWIS: 0\t\tMisc: N/A\nLUK: 0\t\tUpgrade Slots Left: 0')
+        window['item_frame'].update(value = 'None')
+        # Update equipment
+        for i in range(0, 4):
+            for j in range(0, 2):
+                equips_tab[i][j].draw_image(data = generate_img('images/Equipment/{}.png'.format(dictionary['characters'][index]['equipment'][2*i+j]['name']), (72, 72), True), location = (0, 72))
+                tools_tab[i][j].draw_image(data = generate_img('images/Tools/{}.png'.format(dictionary['characters'][index]['tools'][2*i+j]['name']), (72, 72), True), location = (0, 72))
+                foods_tab[i][j].draw_image(data = generate_img('images/Materials/{}.png'.format(dictionary['characters'][index]['food'][2*i+j]['name']), (72, 72), True), location = (0, 72))
     
-    # Update talents tab 2
-    for i in range(10, 30):
-        window['talent_img{}'.format(i)].update(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class][str(i)].getvalue())
-        if str(i) in dictionary['characters'][index]['talentLevels'].keys()  and character_base_class != 'Beginner': # some talents aren't in JSON
-            window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
-        else:
-            window['talent{}'.format(i)].update('0/100')
-    
-    # Update talents tab 3
-    for i in range(30, 45):
-        window['talent_img{}'.format(i)].update(data = talents['Filler'].getvalue() if is_base_class(character_class) else talents[character_base_class][character_class][str(i)].getvalue())
-        if str(i) in dictionary['characters'][index]['talentLevels'].keys() and not is_base_class(character_class): # some talents aren't in JSON
-            window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
-        else:
-            window['talent{}'.format(i)].update('0/100')
+        # Update skills
+        for i in range(0, 9):
+            window['{}level'.format(skill_names[i])].update('{}\nLv. {}'.format(skill_names[i], dictionary['characters'][index]['skillLevels'][skill_names[i].lower()]))
 
+        # Update talents tab 1
+        for i in range(0, 10):
+            if str(i) in dictionary['characters'][index]['talentLevels'].keys() and character_base_class != 'Beginner': # some talents aren't in JSON
+                window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
+            else:
+                window['talent{}'.format(i)].update('0/100')
+        
+        # Update talents tab 2
+        for i in range(10, 30):
+            window['talent_img{}'.format(i)].update(data = talents['Filler'] if character_base_class == 'Beginner' else talents[character_base_class][str(i)])
+            if str(i) in dictionary['characters'][index]['talentLevels'].keys()  and character_base_class != 'Beginner': # some talents aren't in JSON
+                window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
+            else:
+                window['talent{}'.format(i)].update('0/100')
+        
+        # Update talents tab 3
+        for i in range(30, 45):
+            window['talent_img{}'.format(i)].update(data = talents['Filler'] if is_base_class(character_class) else talents[character_base_class][character_class][str(i)])
+            if str(i) in dictionary['characters'][index]['talentLevels'].keys() and not is_base_class(character_class): # some talents aren't in JSON
+                window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
+            else:
+                window['talent{}'.format(i)].update('0/100')
+    if 'equipment' in event or 'tools' in event or 'food' in event:
+        update_selected_equipment(event[:len(event)-1], index, int(event[len(event)-1]))
 window.close()       
