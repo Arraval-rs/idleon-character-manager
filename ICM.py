@@ -23,6 +23,8 @@ def get_base_class(c): # returns the base class of a given class
         return 'Archer'
     elif c == 'Barbarian' or c == 'Squire':
         return 'Warrior'
+    elif c == 'Maestro':
+        return 'Journeyman'
     return c
 
 def is_base_class(c): # returns true if the given class is a base class (Beginner, Warrior, Mage, Archer, Journeyman)
@@ -128,19 +130,19 @@ talents_1 =         [[sg.Column(
 (talents_1.append([sg.Column(
                         [
                             [sg.Image(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class][str(10 + i)].getvalue(), key = 'talent_img{}'.format(str(10 + i))) for i in range(0, 5)],
-                            [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels'][str(10 + i)] if str(10 + i) in dictionary['characters'][0]['talentLevels'] else '0'), key = 'talent{}'.format(str(10 + i)), size = (7,1), justification = 'center') for i in range(0, 5)]
+                            [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels'][str(10 + i)] if str(10 + i) in dictionary['characters'][0]['talentLevels'] and character_base_class != 'Beginner' else '0'), key = 'talent{}'.format(str(10 + i)), size = (7,1), justification = 'center') for i in range(0, 5)]
                         ], element_justification = 'center')]))
 
 talents_2 =         [[sg.Column(
                     [
                         [sg.Image(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class][str(15 + 5 * i + j)].getvalue(), key = 'talent_img{}'.format(str(15 + 5 * i + j))) for j in range(0, 5)],
-                        [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels'][str(15 + 5 * i + j)] if str(15 + 5 * i + j) in dictionary['characters'][0]['talentLevels'] else '0'), key = 'talent{}'.format(str(15 + 5 * i + j)), size = (7,1), justification = 'center') for j in range(0, 5)]
+                        [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels'][str(15 + 5 * i + j)] if str(15 + 5 * i + j) in dictionary['characters'][0]['talentLevels'] and character_base_class != 'Beginner' else '0'), key = 'talent{}'.format(str(15 + 5 * i + j)), size = (7,1), justification = 'center') for j in range(0, 5)]
                     ], element_justification = 'center')]for i in range(0, 3)]
 
 talents_3 =         [[sg.Column(
                     [
                         [sg.Image(data = talents['Filler'].getvalue() if is_base_class(character_class) else talents[character_base_class][character_class][str(30 + 5 * i + j)].getvalue(), key = 'talent_img{}'.format(str(30 + 5 * i + j))) for j in range(0, 5)],
-                        [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels'][str(30 + 5 * i + j)] if str(30 + 5 * i + j) in dictionary['characters'][0]['talentLevels'] else '0'), key = 'talent{}'.format(str(30 + 5 * i + j)), size = (7,1), justification = 'center') for j in range(0, 5)]
+                        [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels'][str(30 + 5 * i + j)] if str(30 + 5 * i + j) in dictionary['characters'][0]['talentLevels'] and character_base_class != 'Beginner' else '0'), key = 'talent{}'.format(str(30 + 5 * i + j)), size = (7,1), justification = 'center') for j in range(0, 5)]
                     ], element_justification = 'center')]for i in range(0, 3)]
 
 
@@ -299,7 +301,7 @@ while True:
 
     # Update talents tab 1
     for i in range(0, 10):
-        if str(i) in dictionary['characters'][index]['talentLevels'].keys(): # some talents aren't in JSON
+        if str(i) in dictionary['characters'][index]['talentLevels'].keys() and character_base_class != 'Beginner': # some talents aren't in JSON
             window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
         else:
             window['talent{}'.format(i)].update('0/100')
@@ -307,7 +309,7 @@ while True:
     # Update talents tab 2
     for i in range(10, 30):
         window['talent_img{}'.format(i)].update(data = talents['Filler'].getvalue() if character_base_class == 'Beginner' else talents[character_base_class][str(i)].getvalue())
-        if str(i) in dictionary['characters'][index]['talentLevels'].keys(): # some talents aren't in JSON
+        if str(i) in dictionary['characters'][index]['talentLevels'].keys()  and character_base_class != 'Beginner': # some talents aren't in JSON
             window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
         else:
             window['talent{}'.format(i)].update('0/100')
@@ -315,7 +317,7 @@ while True:
     # Update talents tab 3
     for i in range(30, 45):
         window['talent_img{}'.format(i)].update(data = talents['Filler'].getvalue() if is_base_class(character_class) else talents[character_base_class][character_class][str(i)].getvalue())
-        if str(i) in dictionary['characters'][index]['talentLevels'].keys(): # some talents aren't in JSON
+        if str(i) in dictionary['characters'][index]['talentLevels'].keys() and not is_base_class(character_class): # some talents aren't in JSON
             window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
         else:
             window['talent{}'.format(i)].update('0/100')
