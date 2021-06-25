@@ -5,222 +5,66 @@ import PySimpleGUI as sg
 
 # ICM files
 import ICM_functions as icm_f
+from ICM_characters import character_tab
+# from ICM_inventory import inventory_tab
+# from ICM_crafting import crafting_tab
+# from ICM_monsters import monsters_tab
+# from ICM_storage import storage_tab
 
 # Functions
 def get_item_stats(equip_type, character, index):
     if equip_type in {'equipment', 'tools'}:
-        stat_str = 'STR: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['STR'])
-        stat_str += '\t\tReach: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Reach'] if 'Reach' in dictionary['characters'][character][equip_type][index]['stoneData'] else '0')
-        stat_str += '\nAGI: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['AGI'])
-        stat_str += '\t\tDefence: {}'.format(icm_f.dictionary_read(dictionary, ['characters', character, equip_type, index, 'stoneData', 'Defence']))
-        stat_str += '\nWIS: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['WIS'])
-        stat_str += '\t\tWeapon Power: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Weapon_Power'] if 'Weapon Power' in dictionary['characters'][character][equip_type][index]['stoneData'] else '0')
-        stat_str += '\nLUK: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['LUK'])
-        stat_str += '\t\tUpgrade Slots Left: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Upgrade_Slots_Left'] if equip_type == 'equipment' else 0)
+        stat_str = 'STR: {}'.format(icm_f.dictionary['characters'][character][equip_type][index]['stoneData']['STR'])
+        stat_str += '\t\tReach: {}'.format(icm_f.dictionary['characters'][character][equip_type][index]['stoneData']['Reach'] if 'Reach' in icm_f.dictionary['characters'][character][equip_type][index]['stoneData'] else '0')
+        stat_str += '\nAGI: {}'.format(icm_f.dictionary['characters'][character][equip_type][index]['stoneData']['AGI'])
+        stat_str += '\t\tDefence: {}'.format(icm_f.dictionary_read(icm_f.dictionary, ['characters', character, equip_type, index, 'stoneData', 'Defence']))
+        stat_str += '\nWIS: {}'.format(icm_f.dictionary['characters'][character][equip_type][index]['stoneData']['WIS'])
+        stat_str += '\t\tWeapon Power: {}'.format(icm_f.dictionary['characters'][character][equip_type][index]['stoneData']['Weapon_Power'] if 'Weapon Power' in icm_f.dictionary['characters'][character][equip_type][index]['stoneData'] else '0')
+        stat_str += '\nLUK: {}'.format(icm_f.dictionary['characters'][character][equip_type][index]['stoneData']['LUK'])
+        stat_str += '\t\tUpgrade Slots Left: {}'.format(icm_f.dictionary['characters'][character][equip_type][index]['stoneData']['Upgrade_Slots_Left'] if equip_type == 'equipment' else 0)
     else:
-        stat_str = 'Stack Size: {}'.format(dictionary['characters'][character][equip_type][index]['count'])
+        stat_str = 'Stack Size: {}'.format(icm_f.dictionary['characters'][character][equip_type][index]['count'])
     return stat_str
 
 def update_selected_equipment(equip_type, character, item):
-    window['selected_equipment'].update(data = icm_f.generate_img('images/{}/{}.png'.format(equip_type, dictionary['characters'][index][equip_type][item]['name']), (72, 72), True))
+    window['selected_equipment'].update(data = icm_f.generate_img('images/{}/{}.png'.format(equip_type, icm_f.dictionary['characters'][index][equip_type][item]['name']), (72, 72), True))
     window['equipped_item_stats'].update(get_item_stats(equip_type, character, item))
-    window['equipped_item_frame'].update(value = dictionary['characters'][character][equip_type][item]['name'])
+    window['equipped_item_frame'].update(value = icm_f.dictionary['characters'][character][equip_type][item]['name'])
     return
 
 def update_selected_inventory_item(slot, paths, character):
     window['selected_inventory_item'].update(data = get_inventory_item(slot, paths, character))
-    window['inventory_item_stats'].update('Stack Size: {}'.format(dictionary['characters'][character]['inventory'][slot]['count']))
-    window['inventory_item_frame'].update(value = dictionary['characters'][character]['inventory'][slot]['name'])
+    window['inventory_item_stats'].update('Stack Size: {}'.format(icm_f.dictionary['characters'][character]['inventory'][slot]['count']))
+    window['inventory_item_frame'].update(value = icm_f.dictionary['characters'][character]['inventory'][slot]['name'])
     return
 
 def update_selected_storage_item(slot, paths):
     window['selected_storage_item'].update(data = get_storage_item(slot, paths))
-    window['storage_item_stats'].update('Stack Size: {}'.format(icm_f.dictionary_read(dictionary, ['account', 'chest', slot, 'count'])))
-    window['storage_item_frame'].update(value = icm_f.dictionary_read(dictionary, ['account', 'chest', slot, 'item']))
+    window['storage_item_stats'].update('Stack Size: {}'.format(icm_f.dictionary_read(icm_f.dictionary, ['account', 'chest', slot, 'count'])))
+    window['storage_item_frame'].update(value = icm_f.dictionary_read(icm_f.dictionary, ['account', 'chest', slot, 'item']))
     return
 
 def get_inventory_item(i, paths, character):
-    if 'name' not in dictionary['characters'][character]['inventory'][i]:
+    if 'name' not in icm_f.dictionary['characters'][character]['inventory'][i]:
         return icm_f.generate_img('images/Locked.png', (72, 72), False)
-    if dictionary['characters'][character]['inventory'][i]['name'] == 'None':
+    if icm_f.dictionary['characters'][character]['inventory'][i]['name'] == 'None':
         return icm_f.generate_img('None', (72, 72), False)
     for p in paths:
-        path = 'images/{}/{}.png'.format(p, dictionary['characters'][character]['inventory'][i]['name'])
+        path = 'images/{}/{}.png'.format(p, icm_f.dictionary['characters'][character]['inventory'][i]['name'])
         if os.path.exists(path):
             return icm_f.generate_img(path, (72, 72), True)
     return icm_f.generate_img('images/Missing.png', (72, 72), True)
 
 def get_storage_item(i, paths):
-    if 'item' not in dictionary['account']['chest'][i]:
+    if 'item' not in icm_f.dictionary['account']['chest'][i]:
         return icm_f.generate_img('images/Locked.png', (72, 72), False)
-    if dictionary['account']['chest'][i]['item'] == 'None':
+    if icm_f.dictionary['account']['chest'][i]['item'] == 'None':
         return icm_f.generate_img('None', (72, 72), False)
     for p in paths:
-        path = 'images/{}/{}.png'.format(p, dictionary['account']['chest'][i]['item'])
+        path = 'images/{}/{}.png'.format(p, icm_f.dictionary['account']['chest'][i]['item'])
         if os.path.exists(path):
             return icm_f.generate_img(path, (72, 72), True)
     return icm_f.generate_img('images/Missing.png', (72, 72), True)
-
-# Dictionary for JSON from Idleon API Downloader
-json_file = open("data/idleon_data.json", "rt")
-json_text = json_file.read()
-dictionary = json.loads(json_text)
-
-# Variables
-character_class = dictionary['characters'][0]['class']
-character_base_class = icm_f.get_base_class(character_class)
-character_list = []
-i = 0
-while i < len(dictionary['characters']):
-    character_list.append('{name} Lv. {level} {class_name}'.format(\
-        name = dictionary['characters'][i]['name'], \
-        level = dictionary['characters'][i]['level'], \
-        class_name = dictionary['characters'][i]['class']))
-    i = i + 1
-
-# All image paths
-image_paths = [ 'Materials', 'Statues', 'Food', 'Tools', \
-                'Equipment', 'Pouches', 'Inventory', 'Stamps', \
-                'Storage', 'Consumables', 'Upgrades', 'Misc Items',
-                'Quest Items', 'Event']
-
-# Dictionary for talent images
-talents =   {
-                'Mage':{'Shaman':{}, 'Wizard':{}}, 
-                'Warrior':{'Barbarian':{}, 'Squire':{}}, 
-                'Archer':{'Bowman':{}, 'Hunter':{}},
-                'Journeyman':{}
-            }
-talents['Filler'] = icm_f.generate_img('images/Filler.png', (56, 56), False)
-for i in range(0, 10):
-    talents[str(i)] = icm_f.generate_img('images/Talents/{}.png'.format(i), (56, 56), False)
-for i in range(10, 30):
-    talents['Mage'][str(i)] = icm_f.generate_img('images/Talents/Mage/{}.png'.format(i), (56, 56), False)
-    talents['Warrior'][str(i)] = icm_f.generate_img('images/Talents/Warrior/{}.png'.format(i), (56, 56), False)
-    talents['Archer'][str(i)] = icm_f.generate_img('images/Talents/Archer/{}.png'.format(i), (56, 56), False)
-    talents['Journeyman'][str(i)] = icm_f.generate_img('images/Talents/Journeyman/{}.png'.format(i), (56, 56), False)
-for i in range(30, 45):
-    talents['Mage']['Shaman'][str(i)] = icm_f.generate_img('images/Talents/Mage/Shaman/{}.png'.format(i), (56, 56), False)
-    talents['Mage']['Wizard'][str(i)] = icm_f.generate_img('images/Talents/Mage/Wizard/{}.png'.format(i), (56, 56), False)
-    talents['Warrior']['Barbarian'][str(i)] = icm_f.generate_img('images/Talents/Warrior/Barbarian/{}.png'.format(i), (56, 56), False)
-    talents['Warrior']['Squire'][str(i)] = icm_f.generate_img('images/Talents/Warrior/Squire/{}.png'.format(i), (56, 56), False)
-    talents['Archer']['Bowman'][str(i)] = icm_f.generate_img('images/Talents/Archer/Bowman/{}.png'.format(i), (56, 56), False)
-    talents['Archer']['Hunter'][str(i)] = icm_f.generate_img('images/Talents/Archer/Hunter/{}.png'.format(i), (56, 56), False)
-
-# tabs
-talents_1 =         [[sg.Column(
-                    [
-                        [sg.Image(data = talents[str(5 * i + j)], key = 'talent_img{}'.format(str(5 * i + j))) for j in range(0, 5)],
-                        [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels'][str(5 * i + j)] if str(5 * i + j) in dictionary['characters'][0]['talentLevels'] else '0'), key = 'talent{}'.format(str(5 * i + j)), size = (7,1), justification = 'center', relief = 'sunken') for j in range(0, 5)],
-                    ], element_justification = 'center')]for i in range(0, 2)]
-(talents_1.append([sg.Column(
-                    [
-                        [sg.Image(data = talents['Filler'] if character_base_class == 'Beginner' else talents[character_base_class][str(10 + i)], key = 'talent_img{}'.format(str(10 + i))) for i in range(0, 5)],
-                        [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels'][str(10 + i)] if str(10 + i) in dictionary['characters'][0]['talentLevels'] and character_base_class != 'Beginner' else '0'), key = 'talent{}'.format(str(10 + i)), size = (7,1), justification = 'center', relief = 'sunken') for i in range(0, 5)]
-                    ], element_justification = 'center')]))
-
-talents_2 =         [[sg.Column(
-                    [
-                        [sg.Image(data = talents['Filler'] if character_base_class == 'Beginner' else talents[character_base_class][str(15 + 5 * i + j)], key = 'talent_img{}'.format(str(15 + 5 * i + j))) for j in range(0, 5)],
-                        [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels'][str(15 + 5 * i + j)] if str(15 + 5 * i + j) in dictionary['characters'][0]['talentLevels'] and character_base_class != 'Beginner' else '0'), key = 'talent{}'.format(str(15 + 5 * i + j)), size = (7,1), justification = 'center', relief = 'sunken') for j in range(0, 5)]
-                    ], element_justification = 'center')]for i in range(0, 3)]
-
-talents_3 =         [[sg.Column(
-                    [
-                        [sg.Image(data = talents['Filler'] if icm_f.is_base_class(character_class) else talents[character_base_class][character_class][str(30 + 5 * i + j)], key = 'talent_img{}'.format(str(30 + 5 * i + j))) for j in range(0, 5)],
-                        [sg.Text('{}/100'.format(dictionary['characters'][0]['talentLevels'][str(30 + 5 * i + j)] if str(30 + 5 * i + j) in dictionary['characters'][0]['talentLevels'] and character_base_class != 'Beginner' else '0'), key = 'talent{}'.format(str(30 + 5 * i + j)), size = (7,1), justification = 'center', relief = 'sunken') for j in range(0, 5)]
-                    ], element_justification = 'center')]for i in range(0, 3)]
-
-
-star_talents =      [
-                        [sg.Image(data = icm_f.generate_img('images/Misc_WIP/Meel.gif', (124, 120), False), key = 'meel'), sg.Text('Get spooped lol')]
-                    ]
-
-
-skill_names =   [
-                    'Mining', 'Smithing', 'Chopping', 
-                    'Fishing', 'Alchemy', 'Catching', 
-                    'Trapping', 'Construction', 'Worship'
-                ]
-skills_tab =        [
-                        [sg.Column([[sg.Image(data = icm_f.generate_img('images/Skills/{}.png'.format(skill_names[3*j+i]), (38, 36), False)), sg.Text('{}\nLv. {}'.format(skill_names[3*j+i], dictionary['characters'][0]['skillLevels'][skill_names[3*j+i].lower()]), key = '{}level'.format(skill_names[3*j+i]), size = (9, 2), relief = 'sunken')] for i in range(0, 3)])for j in range(0, 3)]
-                    ]
-
-
-talents_tab =       [
-                        [sg.TabGroup(
-                        [[
-                            sg.Tab('Talents 1', talents_1),
-                            sg.Tab('Talents 2', talents_2),
-                            sg.Tab('Talents 3', talents_3),
-                            sg.Tab('Star Talents', star_talents),
-                        ]])]
-                    ]
-
-
-bags_tab =          [
-                        [sg.Text('Paper not plastic')]
-                    ]
-
-
-pouches_tab =       [
-                        [sg.Text('Pouches!')]
-                    ]
-
-equips_tab =        [
-                        [sg.Graph((72, 72), (0, 0), (72, 72), change_submits = True, key = 'equipment{}'.format(2*i+j)) for j in range(0, 2)] for i in range(0, 4)
-                    ]
-
-
-tools_tab =         [
-                        [sg.Graph((72, 72), (0, 0), (72, 72), change_submits = True, key = 'tools{}'.format(2*i+j)) for j in range(0, 2)] for i in range(0, 4)
-                    ]
-
-
-foods_tab =         [
-                        [sg.Graph((72, 72), (0, 0), (72, 72), change_submits = True, key = 'food{}'.format(2*i+j)) for j in range(0, 2)] for i in range(0, 4)
-                    ]
-
-
-character_tab =    [
-                        [
-                            sg.Column(
-                            [[
-                                sg.Column(
-                                [[
-                                    sg.Column(
-                                    [
-                                        [sg.Column([[sg.Image(data = icm_f.generate_img('images/Classes/{}.png'.format(dictionary['characters'][0]['class']), (129, 110), False), key = 'class_image')]], element_justification = 'center')],
-                                        [sg.Text(icm_f.get_character_stats(0, dictionary), key = 'character_stats')]
-                                    ]),sg
-                                        .TabGroup(
-                                        [[
-                                            sg.Tab('Skills', skills_tab),
-                                            sg.Tab('Talents', talents_tab),
-                                            sg.Tab('Bags', bags_tab),
-                                            sg.Tab('Pouches', pouches_tab)
-                                        ]])
-                                ]]),
-                                sg.Column(
-                                [[
-                                    sg.TabGroup(
-                                    [[
-                                        sg.Tab('Equips', equips_tab),
-                                        sg.Tab('Tools', tools_tab),
-                                        sg.Tab('Food', foods_tab)
-                                    ]])
-                                ]])
-                            ],
-                            [
-                                sg.Frame(layout = 
-                                [[
-                                    sg.Image(data = icm_f.generate_img('images/Empty Slot.png', (72, 72), False), key = 'selected_equipment'),
-                                    sg.Text('STR: 0\t\tReach: 0\nAGI: 0\t\tDefence: 0\nWIS: 0\t\tWeapon Power: 0\nLUK: 0\t\tUpgrade Slots Left: 0', key = 'equipped_item_stats')
-                                ]], title = 'None', key = 'equipped_item_frame')
-                            ]])
-                        ]
-                    ]
-
 
 inventory_tab =     [[
                         sg.Frame(layout = 
@@ -257,12 +101,12 @@ storage_tab =       [[
 root_tabs = [
                 [
                     sg.Combo(
-                        character_list,
-                        default_value = character_list[0],
+                        icm_f.character_list,
+                        default_value = icm_f.character_list[0],
                         key = 'active_character',
                         enable_events = True
                     ),
-                    sg.Image(data = icm_f.generate_img('images/Classes/{}Icon.png'.format(dictionary['characters'][0]['class']), (38, 36), False), key = 'class_icon')
+                    sg.Image(data = icm_f.generate_img('images/Classes/{}Icon.png'.format(icm_f.dictionary['characters'][0]['class']), (38, 36), False), key = 'class_icon')
                 ],
                 [
                 sg.TabGroup(
@@ -282,26 +126,26 @@ window.Finalize()
 # Draw images for equipment tabs
 for i in range(0, 4):
     for j in range(0, 2):
-        equips_tab[i][j].draw_image(data = icm_f.generate_img('images/Equipment/{}.png'.format(dictionary['characters'][0]['equipment'][2*i+j]['name']), (72, 72), True), location = (0, 72))
-        tools_tab[i][j].draw_image(data = icm_f.generate_img('images/Tools/{}.png'.format(dictionary['characters'][0]['tools'][2*i+j]['name']), (72, 72), True), location = (0, 72))
-        foods_tab[i][j].draw_image(data = icm_f.generate_img('images/Food/{}.png'.format(dictionary['characters'][0]['food'][2*i+j]['name']), (72, 72), True), location = (0, 72))
+        window['equipment{}'.format(2 * i + j)].draw_image(data = icm_f.generate_img('images/Equipment/{}.png'.format(icm_f.dictionary['characters'][0]['equipment'][2*i+j]['name']), (72, 72), True), location = (0, 72))
+        window['tools{}'.format(2 * i + j)].draw_image(data = icm_f.generate_img('images/Tools/{}.png'.format(icm_f.dictionary['characters'][0]['tools'][2*i+j]['name']), (72, 72), True), location = (0, 72))
+        window['food{}'.format(2 * i + j)].draw_image(data = icm_f.generate_img('images/Food/{}.png'.format(icm_f.dictionary['characters'][0]['food'][2*i+j]['name']), (72, 72), True), location = (0, 72))
 
 # Draw images for inventory
 for i in range(0, 4):
     for j in range(0, 4):
-        window['inventory{}'.format(4 * i + j)].draw_image(data = get_inventory_item(4 * i + j, image_paths, 0), location = (0, 72))
+        window['inventory{}'.format(4 * i + j)].draw_image(data = get_inventory_item(4 * i + j, icm_f.image_paths, 0), location = (0, 72))
 
 # Draw images for storage
 for i in range(0, 4):
     for j in range(0, 6):
-        window['storage{}'.format(6 * i + j)].draw_image(data = get_storage_item(6 * i + j, image_paths), location = (0, 72))
+        window['storage{}'.format(6 * i + j)].draw_image(data = get_storage_item(6 * i + j, icm_f.image_paths), location = (0, 72))
 
 # Event loop
 while True:
     event, values = window.read(timeout = 100)
 
     if event != "Exit" and event != sg.WIN_CLOSED:
-        index = character_list.index(values['active_character'])
+        index = icm_f.character_list.index(values['active_character'])
         # Update WIP gifs
         window['meel'].UpdateAnimation('images/Misc_WIP/Meel.gif', time_between_frames = 100)
         window['builder_bird'].UpdateAnimation('images/Misc_WIP/Builder Bird.gif', time_between_frames = 100)
@@ -311,13 +155,13 @@ while True:
     else:
         break
     if event == 'active_character':
-        character_class = dictionary['characters'][index]['class']
+        character_class = icm_f.dictionary['characters'][index]['class']
         character_base_class = icm_f.get_base_class(character_class)
 
         # Update standalone character elements
-        window['class_icon'].update(data = icm_f.generate_img('images/Classes/{}Icon.png'.format(dictionary['characters'][index]['class']), (38, 36), False))
-        window['class_image'].update(data = icm_f.generate_img('images/Classes/{}.png'.format(dictionary['characters'][index]['class']), (129, 110), False))
-        window['character_stats'].update(icm_f.get_character_stats(index, dictionary))
+        window['class_icon'].update(data = icm_f.generate_img('images/Classes/{}Icon.png'.format(icm_f.dictionary['characters'][index]['class']), (38, 36), False))
+        window['class_image'].update(data = icm_f.generate_img('images/Classes/{}.png'.format(icm_f.dictionary['characters'][index]['class']), (129, 110), False))
+        window['character_stats'].update(icm_f.get_character_stats(index, icm_f.dictionary))
         window['selected_equipment'].update(data = icm_f.generate_img('images/Empty Slot.png', (72, 72), False))
         window['equipped_item_stats'].update('STR: 0\t\tReach: 0\nAGI: 0\t\tDefence: 0\nWIS: 0\t\tWeapon Power: 0\nLUK: 0\t\tUpgrade Slots Left: 0')
         window['equipped_item_frame'].update(value = 'None')
@@ -328,34 +172,34 @@ while True:
         # Update equipment
         for i in range(0, 4):
             for j in range(0, 2):
-                equips_tab[i][j].draw_image(data = icm_f.generate_img('images/Equipment/{}.png'.format(dictionary['characters'][index]['equipment'][2*i+j]['name']), (72, 72), True), location = (0, 72))
-                tools_tab[i][j].draw_image(data = icm_f.generate_img('images/Tools/{}.png'.format(dictionary['characters'][index]['tools'][2*i+j]['name']), (72, 72), True), location = (0, 72))
-                foods_tab[i][j].draw_image(data = icm_f.generate_img('images/Food/{}.png'.format(dictionary['characters'][index]['food'][2*i+j]['name']), (72, 72), True), location = (0, 72))
+                window['equipment{}'.format(2 * i + j)].draw_image(data = icm_f.generate_img('images/Equipment/{}.png'.format(icm_f.dictionary['characters'][index]['equipment'][2*i+j]['name']), (72, 72), True), location = (0, 72))
+                window['tools{}'.format(2 * i + j)].draw_image(data = icm_f.generate_img('images/Tools/{}.png'.format(icm_f.dictionary['characters'][index]['tools'][2*i+j]['name']), (72, 72), True), location = (0, 72))
+                window['food{}'.format(2 * i + j)].draw_image(data = icm_f.generate_img('images/Food/{}.png'.format(icm_f.dictionary['characters'][index]['food'][2*i+j]['name']), (72, 72), True), location = (0, 72))
     
         # Update skills
         for i in range(0, 9):
-            window['{}level'.format(skill_names[i])].update('{}\nLv. {}'.format(skill_names[i], dictionary['characters'][index]['skillLevels'][skill_names[i].lower()]))
+            window['{}level'.format(icm_f.skill_names[i])].update('{}\nLv. {}'.format(icm_f.skill_names[i], icm_f.dictionary['characters'][index]['skillLevels'][icm_f.skill_names[i].lower()]))
 
-        # Update talents tab 1
+        # Update icm_f.talents tab 1
         for i in range(0, 10):
-            if str(i) in dictionary['characters'][index]['talentLevels'].keys() and character_base_class != 'Beginner': # some talents aren't in JSON
-                window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
+            if str(i) in icm_f.dictionary['characters'][index]['talentLevels'].keys() and character_base_class != 'Beginner': # some icm_f.talents aren't in JSON
+                window['talent{}'.format(i)].update('{}/100'.format(icm_f.dictionary['characters'][index]['talentLevels'][str(i)]))
             else:
                 window['talent{}'.format(i)].update('0/100')
         
-        # Update talents tab 2
+        # Update icm_f.talents tab 2
         for i in range(10, 30):
-            window['talent_img{}'.format(i)].update(data = talents['Filler'] if character_base_class == 'Beginner' else talents[character_base_class][str(i)])
-            if str(i) in dictionary['characters'][index]['talentLevels'].keys()  and character_base_class != 'Beginner': # some talents aren't in JSON
-                window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
+            window['talent_img{}'.format(i)].update(data = icm_f.talents['Filler'] if character_base_class == 'Beginner' else icm_f.talents[character_base_class][str(i)])
+            if str(i) in icm_f.dictionary['characters'][index]['talentLevels'].keys()  and character_base_class != 'Beginner': # some icm_f.talents aren't in JSON
+                window['talent{}'.format(i)].update('{}/100'.format(icm_f.dictionary['characters'][index]['talentLevels'][str(i)]))
             else:
                 window['talent{}'.format(i)].update('0/100')
         
-        # Update talents tab 3
+        # Update icm_f.talents tab 3
         for i in range(30, 45):
-            window['talent_img{}'.format(i)].update(data = talents['Filler'] if icm_f.is_base_class(character_class) else talents[character_base_class][character_class][str(i)])
-            if str(i) in dictionary['characters'][index]['talentLevels'].keys() and not icm_f.is_base_class(character_class): # some talents aren't in JSON
-                window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
+            window['talent_img{}'.format(i)].update(data = icm_f.talents['Filler'] if icm_f.is_base_class(character_class) else icm_f.talents[character_base_class][character_class][str(i)])
+            if str(i) in icm_f.dictionary['characters'][index]['talentLevels'].keys() and not icm_f.is_base_class(character_class): # some icm_f.talents aren't in JSON
+                window['talent{}'.format(i)].update('{}/100'.format(icm_f.dictionary['characters'][index]['talentLevels'][str(i)]))
             else:
                 window['talent{}'.format(i)].update('0/100')
 
@@ -363,7 +207,7 @@ while True:
         window['current_inv'].update('1')
         for i in range(0, 4):
             for j in range(0, 4):
-                window['inventory{}'.format(j + 4 * i)].draw_image(data = get_inventory_item(j + 4 * i + 16 * (int(window['current_inv'].get()) - 1), image_paths, index), location = (0, 72))
+                window['inventory{}'.format(j + 4 * i)].draw_image(data = get_inventory_item(j + 4 * i + 16 * (int(window['current_inv'].get()) - 1), icm_f.image_paths, index), location = (0, 72))
 
     # Update selected equipment
     if 'equipment' in event or 'tools' in event or 'food' in event:
@@ -371,11 +215,11 @@ while True:
 
     # Update selected inventory item
     if 'inventory' in event:
-        update_selected_inventory_item(int(event.replace('inventory', '')) + 16 * (int(window['current_inv'].get()) - 1), image_paths, index)
+        update_selected_inventory_item(int(event.replace('inventory', '')) + 16 * (int(window['current_inv'].get()) - 1), icm_f.image_paths, index)
 
     # Update selected storage item
     if 'storage' in event:
-        update_selected_storage_item(int(event.replace('storage', '')) + 24 * (int(window['current_stor'].get()) - 1), image_paths)
+        update_selected_storage_item(int(event.replace('storage', '')) + 24 * (int(window['current_stor'].get()) - 1), icm_f.image_paths)
 
 
     # Update inventory for Prev/Next tab
@@ -386,7 +230,7 @@ while True:
             window['current_inv'].update('{}'.format(int(window['current_inv'].get()) - 1))
         for i in range(0, 4):
             for j in range(0, 4):
-                window['inventory{}'.format(j + 4 * i)].draw_image(data = get_inventory_item(4 * i + j + 16 * (int(window['current_inv'].get()) - 1), image_paths, index), location = (0, 72))
+                window['inventory{}'.format(j + 4 * i)].draw_image(data = get_inventory_item(4 * i + j + 16 * (int(window['current_inv'].get()) - 1), icm_f.image_paths, index), location = (0, 72))
 
     # Update storage for Prev/Next tab
     if event in ('next_stor', 'prev_stor'):
@@ -396,6 +240,6 @@ while True:
             window['current_stor'].update('{}'.format(int(window['current_stor'].get()) - 1))
         for i in range(0, 4):
             for j in range(0, 6):
-                window['storage{}'.format(6 * i + j)].draw_image(data = get_storage_item(6 * i + j + 24 * (int(window['current_stor'].get()) - 1), image_paths), location = (0, 72))
+                window['storage{}'.format(6 * i + j)].draw_image(data = get_storage_item(6 * i + j + 24 * (int(window['current_stor'].get()) - 1), icm_f.image_paths), location = (0, 72))
 
 window.close()       

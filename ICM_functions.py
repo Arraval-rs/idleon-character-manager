@@ -1,7 +1,9 @@
 import os
 import io
+import json
 from PIL import Image, ImageDraw
 
+# General Functions
 def dictionary_contains(dict, dict_path):
     try:
         if int(dict_path[0]) > len(dict):
@@ -22,6 +24,8 @@ def dictionary_read(dict, dict_path):
             val = val[p]
         return val
     return '()'
+
+
 
 def generate_img(f, s, bg): # Generates image using PIL
     if "None" in f:
@@ -102,3 +106,40 @@ def get_character_stats(character, dict):
     stat_str += 'Drop Rarity: {}\n'.format(drop_rarity(character))
     stat_str += 'Class EXP: {}\n'.format(class_exp(character))
     return stat_str
+
+# Dictionary for JSON from Idleon API Downloader
+json_file = open("data/idleon_data.json", "rt")
+json_text = json_file.read()
+dictionary = json.loads(json_text)
+
+# All image paths
+image_paths = [ 'Materials', 'Statues', 'Food', 'Tools', \
+                'Equipment', 'Pouches', 'Inventory', 'Stamps', \
+                'Storage', 'Consumables', 'Upgrades', 'Misc Items',
+                'Quest Items', 'Event']
+
+# Dictionary for talent images
+talents =   {
+                'Mage':{'Shaman':{}, 'Wizard':{}}, 
+                'Warrior':{'Barbarian':{}, 'Squire':{}}, 
+                'Archer':{'Bowman':{}, 'Hunter':{}},
+                'Journeyman':{}
+            }
+
+# General Variables
+character_class = dictionary['characters'][0]['class']
+character_base_class = get_base_class(character_class)
+character_list = []
+i = 0
+while i < len(dictionary['characters']):
+    character_list.append('{name} Lv. {level} {class_name}'.format(\
+        name = dictionary['characters'][i]['name'], \
+        level = dictionary['characters'][i]['level'], \
+        class_name = dictionary['characters'][i]['class']))
+    i = i + 1
+
+skill_names =   [
+                    'Mining', 'Smithing', 'Chopping', 
+                    'Fishing', 'Alchemy', 'Catching', 
+                    'Trapping', 'Construction', 'Worship'
+                ]
