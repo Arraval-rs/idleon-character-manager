@@ -70,11 +70,6 @@ talents_tab =       [
                     ]
 
 
-bags_tab =          [
-                        [sg.Text('Paper not plastic')]
-                    ]
-
-
 pouches_tab =       [
                         [sg.Text('Pouches!')]
                     ]
@@ -109,7 +104,6 @@ character_tab =    [
                                         [[
                                             sg.Tab('Skills', skills_tab),
                                             sg.Tab('Talents', talents_tab),
-                                            sg.Tab('Bags', bags_tab),
                                             sg.Tab('Pouches', pouches_tab)
                                         ]])
                                 ]]),

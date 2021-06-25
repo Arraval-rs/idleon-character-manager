@@ -30,8 +30,6 @@ def dictionary_read(dict, dict_path):
         return val
     return '(_)'
 
-
-
 def generate_img(f, s, bg): # Generates image using PIL
     if "None" in f:
         f = 'images/Empty Slot.png'
@@ -136,7 +134,7 @@ def update_selected_inventory_item(window, slot, paths, character):
     window['selected_inventory_item'].update(data = get_inventory_item(slot, paths, character))
     window['inventory_item_stats'].update('Stack Size: {}'.format(dictionary['characters'][character]['inventory'][slot]['count']))
     item_name = dictionary_read(dictionary, ['characters', character, 'inventory', slot, 'name'])
-    if item_name == '()':
+    if item_name == '(_)':
         window['inventory_item_frame'].update(value = 'Locked')
     else:
         window['inventory_item_frame'].update(value = item_name)
@@ -146,7 +144,7 @@ def update_selected_storage_item(window, slot, paths):
     window['selected_storage_item'].update(data = get_storage_item(slot, paths))
     window['storage_item_stats'].update('Stack Size: {}'.format(dictionary_read(dictionary, ['account', 'chest', slot, 'count'])))
     item_name = dictionary_read(dictionary, ['account', 'chest', slot, 'item'])
-    if item_name == '()':
+    if item_name == '(_)':
         window['storage_item_frame'].update(value = 'Locked')
     else:
         window['storage_item_frame'].update(value = item_name)
