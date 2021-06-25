@@ -5,6 +5,19 @@ import PySimpleGUI as sg
 from PIL import Image, ImageDraw
 
 # Functions
+def dictionary_contains(dict, dict_path):
+    if dict_path[0] not in dict:
+        print('Missing {} from dictionary'.format(dict_path))
+        return False
+    if len(dict_path) == 1:
+        return True
+    return dictionary_contains(dict[dict_path[0]], dict_path[1:len(dict_path)-1])
+
+def dictionary_read(dict, dict_path):
+    if dictionary_contains(dict, dict_path):
+        return 
+    return '()'
+
 def generate_img(f, s, bg): # Generates image using PIL
     if "None" in f:
         f = 'images/Empty Slot.png'
@@ -90,7 +103,7 @@ def get_item_stats(equip_type, character, index):
         stat_str = 'STR: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['STR'])
         stat_str += '\t\tReach: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Reach'] if 'Reach' in dictionary['characters'][character][equip_type][index]['stoneData'] else '0')
         stat_str += '\nAGI: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['AGI'])
-        stat_str += '\t\tDefence: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Defence'] if 'Defence' in dictionary['characters'][character][equip_type][index]['stoneData'] else '0')
+        stat_str += '\t\tDefence: {}'.format(dictionary_read(dictionary, ['characters', character, equip_type, index, 'stoneData', 'Defence']))
         stat_str += '\nWIS: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['WIS'])
         stat_str += '\t\tWeapon Power: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Weapon_Power'] if 'Weapon Power' in dictionary['characters'][character][equip_type][index]['stoneData'] else '0')
         stat_str += '\nLUK: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['LUK'])
