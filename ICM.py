@@ -6,16 +6,24 @@ from PIL import Image, ImageDraw
 
 # Functions
 def dictionary_contains(dict, dict_path):
-    if dict_path[0] not in dict:
-        print('Missing {} from dictionary'.format(dict_path))
-        return False
+    try:
+        if int(dict_path[0]) > len(dict):
+            print('Index {} outside of dictionary'.format(dict_path))
+            return False
+    except ValueError:
+        if dict_path[0] not in dict:
+            print('Missing {} from dictionary'.format(dict_path))
+            return False
     if len(dict_path) == 1:
         return True
-    return dictionary_contains(dict[dict_path[0]], dict_path[1:len(dict_path)-1])
+    return dictionary_contains(dict[dict_path[0]], dict_path[1:len(dict_path)])
 
 def dictionary_read(dict, dict_path):
     if dictionary_contains(dict, dict_path):
-        return 
+        val = dict
+        for p in dict_path:
+            val = val[p]
+        return val
     return '()'
 
 def generate_img(f, s, bg): # Generates image using PIL
@@ -124,6 +132,12 @@ def update_selected_inventory_item(slot, paths, character):
     window['inventory_item_frame'].update(value = dictionary['characters'][character]['inventory'][slot]['name'])
     return
 
+def update_selected_storage_item(slot, paths):
+    window['selected_storage_item'].update(data = get_storage_item(slot, paths))
+    window['storage_item_stats'].update('Stack Size: {}'.format(dictionary_read(dictionary, ['account', 'chest', slot, 'count'])))
+    window['storage_item_frame'].update(value = dictionary_read(dictionary, ['account', 'chest', slot, 'item']))
+    return
+
 def get_inventory_item(i, paths, character):
     if 'name' not in dictionary['characters'][character]['inventory'][i]:
         return generate_img('images/Locked.png', (72, 72), False)
@@ -136,7 +150,15 @@ def get_inventory_item(i, paths, character):
     return generate_img('images/Missing.png', (72, 72), True)
 
 def get_storage_item(i, paths):
-    return
+    if 'item' not in dictionary['account']['chest'][i]:
+        return generate_img('images/Locked.png', (72, 72), False)
+    if dictionary['account']['chest'][i]['item'] == 'None':
+        return generate_img('None', (72, 72), False)
+    for p in paths:
+        path = 'images/{}/{}.png'.format(p, dictionary['account']['chest'][i]['item'])
+        if os.path.exists(path):
+            return generate_img(path, (72, 72), True)
+    return generate_img('images/Missing.png', (72, 72), True)
 
 # Dictionary for JSON from Idleon API Downloader
 json_file = open("idleon_data.json", "rt")
@@ -159,7 +181,7 @@ while i < len(dictionary['characters']):
 image_paths = [ 'Materials', 'Statues', 'Food', 'Tools', \
                 'Equipment', 'Pouches', 'Inventory', 'Stamps', \
                 'Storage', 'Consumables', 'Upgrades', 'Misc Items',
-                'Quest Items']
+                'Quest Items', 'Event']
 
 # Dictionary for talent images
 talents =   {
@@ -319,9 +341,14 @@ crafting_tab =      [
                     ]
 
 
-storage_tab =       [
-                        []
-                    ]
+storage_tab =       [[
+                        sg.Frame(layout = 
+                        [
+                            [sg.Column([[sg.Graph((72, 72), (0, 0), (72, 72), change_submits = True, key = 'storage{}'.format(6 * i + j)) for j in range(0, 6)] for i in range(0, 4)])],
+                            [sg.Button('Prev', key = 'prev_stor'), sg.Text('1', key = 'current_stor', relief = 'sunken', size = (3, 1), justification = 'center'), sg.Button('Next', key = 'next_stor')],
+                            [sg.Frame(layout = [[sg.Image(data = generate_img('images/Locked.png', (72, 72), False), key = 'selected_storage_item'), sg.Text('Stack Size: 0', size = (20, 1), key = 'storage_item_stats')]], title = 'None', key = 'storage_item_frame')]
+                        ], title = 'Inventory', element_justification = 'center')
+                    ]]
 
 
 root_tabs = [
@@ -360,6 +387,11 @@ for i in range(0, 4):
 for i in range(0, 4):
     for j in range(0, 4):
         window['inventory{}'.format(4 * i + j)].draw_image(data = get_inventory_item(4 * i + j, image_paths, 0), location = (0, 72))
+
+# Draw images for storage
+for i in range(0, 4):
+    for j in range(0, 6):
+        window['storage{}'.format(6 * i + j)].draw_image(data = get_storage_item(6 * i + j, image_paths), location = (0, 72))
 
 # Event loop
 while True:
@@ -431,6 +463,11 @@ while True:
     if 'inventory' in event:
         update_selected_inventory_item(int(event.replace('inventory', '')) + 16 * (int(window['current_inv'].get()) - 1), image_paths, index)
 
+    # Update selected storage item
+    if 'storage' in event:
+        update_selected_storage_item(int(event.replace('storage', '')) + 24 * (int(window['current_stor'].get()) - 1), image_paths)
+
+
     # Update inventory for Prev/Next tab
     if event in ('next_inv', 'prev_inv'):
         if event == 'next_inv' and window['current_inv'].get() != '4':
@@ -440,5 +477,15 @@ while True:
         for i in range(0, 4):
             for j in range(0, 4):
                 window['inventory{}'.format(j + 4 * i)].draw_image(data = get_inventory_item(4 * i + j + 16 * (int(window['current_inv'].get()) - 1), image_paths, index), location = (0, 72))
+
+    # Update storage for Prev/Next tab
+    if event in ('next_stor', 'prev_stor'):
+        if event == 'next_stor' and window['current_stor'].get() != '10':
+            window['current_stor'].update('{}'.format(int(window['current_stor'].get()) + 1))
+        if event == 'prev_stor' and window['current_stor'].get() != '1':
+            window['current_stor'].update('{}'.format(int(window['current_stor'].get()) - 1))
+        for i in range(0, 4):
+            for j in range(0, 6):
+                window['storage{}'.format(6 * i + j)].draw_image(data = get_storage_item(6 * i + j + 24 * (int(window['current_stor'].get()) - 1), image_paths), location = (0, 72))
 
 window.close()       
