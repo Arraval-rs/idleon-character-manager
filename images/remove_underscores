@@ -2,3 +2,7 @@ for file in *.png
 do
 mv -- "$file" "${file//_/ }"
 done
+for file in *.gif
+do
+mv -- "$file" "${file//_/ }"
+done
