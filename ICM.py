@@ -119,10 +119,8 @@ def update_selected_equipment(equip_type, character, item):
     return
 
 def update_selected_inventory_item(slot, paths, character):
-    print(dictionary['characters'][character]['inventory'][slot]['count'])
     window['selected_inventory_item'].update(data = get_inventory_item(slot, paths, character))
     window['inventory_item_stats'].update('Stack Size: {}'.format(dictionary['characters'][character]['inventory'][slot]['count']))
-    print(window['inventory_item_stats'].get())
     window['inventory_item_frame'].update(value = dictionary['characters'][character]['inventory'][slot]['name'])
     return
 
@@ -158,7 +156,9 @@ while i < len(dictionary['characters']):
     i = i + 1
 
 # All image paths
-image_paths = ['Materials', 'Statues', 'Food', 'Tools', 'Equipment', 'Pouches', 'Inventory', 'Stamps', 'Storage']
+image_paths = [ 'Materials', 'Statues', 'Food', 'Tools', \
+                'Equipment', 'Pouches', 'Inventory', 'Stamps', \
+                'Storage', 'Consumables', 'Upgrades', 'Misc Items']
 
 # Dictionary for talent images
 talents =   {
