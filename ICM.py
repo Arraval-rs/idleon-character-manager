@@ -232,7 +232,7 @@ talents_3 =         [[sg.Column(
 
 
 star_talents =      [
-                        [sg.Text('Star Talents')]
+                        [sg.Image(data = generate_img('images/Misc_WIP/Meel.gif', (124, 120), False), key = 'meel'), sg.Text('Get spooped lol')]
                     ]
 
 
@@ -326,18 +326,19 @@ inventory_tab =     [[
                         [
                             [sg.Column([[sg.Graph((72, 72), (0, 0), (72, 72), change_submits = True, key = 'inventory{}'.format(4 * i + j)) for j in range(0, 4)] for i in range(0, 4)])],
                             [sg.Button('Prev', key = 'prev_inv'), sg.Text('1', key = 'current_inv', relief = 'sunken', size = (3, 1), justification = 'center'), sg.Button('Next', key = 'next_inv')],
-                            [sg.Frame(layout = [[sg.Image(data = generate_img('images/Locked.png', (72, 72), False), key = 'selected_inventory_item'), sg.Text('Stack Size: 0', size = (20, 1), key = 'inventory_item_stats')]], title = 'None', key = 'inventory_item_frame')]
-                        ], title = 'Inventory', element_justification = 'center')
+                            [sg.Frame(layout = [[sg.Image(data = generate_img('images/Empty Slot.png', (72, 72), False), key = 'selected_inventory_item'), sg.Text('Stack Size: 0', size = (20, 1), key = 'inventory_item_stats')]], title = 'None', key = 'inventory_item_frame')]
+                        ], title = 'Inventory', element_justification = 'center'),
+                        sg.Image(data = generate_img('images/Misc_WIP/Carpenter Cardinal.gif', (38, 66), False), key = 'carpenter_cardinal'), sg.Text('More to come')
                     ]]
 
 
 monsters_tab =      [
-                        []
+                        [sg.Image(data = generate_img('images/Misc_WIP/Builder Bird.gif', (40, 58), False), key = 'builder_bird'), sg.Text('Under Construction')]
                     ]
 
 
 crafting_tab =      [
-                        []
+                        [sg.Image(data = generate_img('images/Misc_WIP/Constructor Crow.gif', (38, 62), False), key = 'constructor_crow'), sg.Text('Under Construction')]
                     ]
 
 
@@ -347,7 +348,8 @@ storage_tab =       [[
                             [sg.Column([[sg.Graph((72, 72), (0, 0), (72, 72), change_submits = True, key = 'storage{}'.format(6 * i + j)) for j in range(0, 6)] for i in range(0, 4)])],
                             [sg.Button('Prev', key = 'prev_stor'), sg.Text('1', key = 'current_stor', relief = 'sunken', size = (3, 1), justification = 'center'), sg.Button('Next', key = 'next_stor')],
                             [sg.Frame(layout = [[sg.Image(data = generate_img('images/Locked.png', (72, 72), False), key = 'selected_storage_item'), sg.Text('Stack Size: 0', size = (20, 1), key = 'storage_item_stats')]], title = 'None', key = 'storage_item_frame')]
-                        ], title = 'Inventory', element_justification = 'center')
+                        ], title = 'Inventory', element_justification = 'center'),
+                        sg.Image(data = generate_img('images/Misc_WIP/Carpenter Cardinal.gif', (38, 66), False), key = 'carpenter_cardinal1'), sg.Text('More to come')
                     ]]
 
 
@@ -395,7 +397,15 @@ for i in range(0, 4):
 
 # Event loop
 while True:
-    event, values = window.read()
+    event, values = window.read(timeout = 100)
+
+    # Update WIP gifs
+    window['meel'].UpdateAnimation('images/Misc_WIP/Meel.gif', time_between_frames = 100)
+    window['builder_bird'].UpdateAnimation('images/Misc_WIP/Builder Bird.gif', time_between_frames = 100)
+    window['constructor_crow'].UpdateAnimation('images/Misc_WIP/Constructor Crow.gif', time_between_frames = 100)
+    window['carpenter_cardinal'].UpdateAnimation('images/Misc_WIP/Carpenter Cardinal.gif', time_between_frames = 100)
+    window['carpenter_cardinal1'].UpdateAnimation('images/Misc_WIP/Carpenter Cardinal.gif', time_between_frames = 100)
+
     if event != "Exit" and event != sg.WIN_CLOSED:
         index = character_list.index(values['active_character'])
     else:
