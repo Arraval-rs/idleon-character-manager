@@ -1,3 +1,8 @@
+#####################################################
+# ICM_functions.py                                  #
+# All functions used by the app for easy searching  #
+# Also includes some variables used across the app  # 
+#####################################################
 import os
 import io
 import json
@@ -23,7 +28,7 @@ def dictionary_read(dict, dict_path):
         for p in dict_path:
             val = val[p]
         return val
-    return '()'
+    return '(_)'
 
 
 
@@ -107,6 +112,70 @@ def get_character_stats(character, dict):
     stat_str += 'Class EXP: {}\n'.format(class_exp(character))
     return stat_str
 
+def get_item_stats(equip_type, character, index):
+    if equip_type in {'equipment', 'tools'}:
+        stat_str = 'STR: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['STR'])
+        stat_str += '\t\tReach: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Reach'] if 'Reach' in dictionary['characters'][character][equip_type][index]['stoneData'] else '0')
+        stat_str += '\nAGI: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['AGI'])
+        stat_str += '\t\tDefence: {}'.format(dictionary_read(dictionary, ['characters', character, equip_type, index, 'stoneData', 'Defence']))
+        stat_str += '\nWIS: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['WIS'])
+        stat_str += '\t\tWeapon Power: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Weapon_Power'] if 'Weapon Power' in dictionary['characters'][character][equip_type][index]['stoneData'] else '0')
+        stat_str += '\nLUK: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['LUK'])
+        stat_str += '\t\tUpgrade Slots Left: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Upgrade_Slots_Left'] if equip_type == 'equipment' else 0)
+    else:
+        stat_str = 'Stack Size: {}'.format(dictionary['characters'][character][equip_type][index]['count'])
+    return stat_str
+
+def update_selected_equipment(window, equip_type, character, item):
+    window['selected_equipment'].update(data = generate_img('images/{}/{}.png'.format(equip_type, dictionary['characters'][character][equip_type][item]['name']), (72, 72), True))
+    window['equipped_item_stats'].update(get_item_stats(equip_type, character, item))
+    window['equipped_item_frame'].update(value = dictionary_read(dictionary, ['characters', character, equip_type, item, 'name']))
+    return
+
+def update_selected_inventory_item(window, slot, paths, character):
+    window['selected_inventory_item'].update(data = get_inventory_item(slot, paths, character))
+    window['inventory_item_stats'].update('Stack Size: {}'.format(dictionary['characters'][character]['inventory'][slot]['count']))
+    item_name = dictionary_read(dictionary, ['characters', character, 'inventory', slot, 'name'])
+    if item_name == '()':
+        window['inventory_item_frame'].update(value = 'Locked')
+    else:
+        window['inventory_item_frame'].update(value = item_name)
+    return
+
+def update_selected_storage_item(window, slot, paths):
+    window['selected_storage_item'].update(data = get_storage_item(slot, paths))
+    window['storage_item_stats'].update('Stack Size: {}'.format(dictionary_read(dictionary, ['account', 'chest', slot, 'count'])))
+    item_name = dictionary_read(dictionary, ['account', 'chest', slot, 'item'])
+    if item_name == '()':
+        window['storage_item_frame'].update(value = 'Locked')
+    else:
+        window['storage_item_frame'].update(value = item_name)
+    return
+
+def get_inventory_item(i, paths, character):
+    if 'name' not in dictionary['characters'][character]['inventory'][i]:
+        return generate_img('images/Locked.png', (72, 72), False)
+    if dictionary['characters'][character]['inventory'][i]['name'] == 'None':
+        return generate_img('None', (72, 72), False)
+    for p in paths:
+        path = 'images/{}/{}.png'.format(p, dictionary['characters'][character]['inventory'][i]['name'])
+        if os.path.exists(path):
+            return generate_img(path, (72, 72), True)
+    return generate_img('images/Missing.png', (72, 72), True)
+
+def get_storage_item(i, paths):
+    if 'item' not in dictionary['account']['chest'][i]:
+        return generate_img('images/Locked.png', (72, 72), False)
+    if dictionary['account']['chest'][i]['item'] == 'None':
+        return generate_img('None', (72, 72), False)
+    for p in paths:
+        path = 'images/{}/{}.png'.format(p, dictionary['account']['chest'][i]['item'])
+        if os.path.exists(path):
+            return generate_img(path, (72, 72), True)
+    return generate_img('images/Missing.png', (72, 72), True)
+
+# General Variables from here
+
 # Dictionary for JSON from Idleon API Downloader
 json_file = open("data/idleon_data.json", "rt")
 json_text = json_file.read()
@@ -126,18 +195,16 @@ talents =   {
                 'Journeyman':{}
             }
 
-# General Variables
-character_class = dictionary['characters'][0]['class']
-character_base_class = get_base_class(character_class)
+# List of characters for the combobox
 character_list = []
-i = 0
-while i < len(dictionary['characters']):
+for i in range(0, len(dictionary['characters'])):
     character_list.append('{name} Lv. {level} {class_name}'.format(\
         name = dictionary['characters'][i]['name'], \
         level = dictionary['characters'][i]['level'], \
         class_name = dictionary['characters'][i]['class']))
     i = i + 1
 
+# List of skill names in order
 skill_names =   [
                     'Mining', 'Smithing', 'Chopping', 
                     'Fishing', 'Alchemy', 'Catching', 

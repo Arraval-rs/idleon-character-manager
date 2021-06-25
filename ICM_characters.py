@@ -1,3 +1,7 @@
+#####################################################
+# ICM_characters.py                                 #
+# Code for implementing the characters tab          #
+#####################################################
 import PySimpleGUI as sg
 
 import ICM_functions as icm_f
@@ -27,20 +31,20 @@ talents_1 =         [[sg.Column(
                     ], element_justification = 'center')]for i in range(0, 2)]
 (talents_1.append([sg.Column(
                     [
-                        [sg.Image(data = icm_f.talents['Filler'] if icm_f.character_base_class == 'Beginner' else icm_f.talents[icm_f.character_base_class][str(10 + i)], key = 'talent_img{}'.format(str(10 + i))) for i in range(0, 5)],
-                        [sg.Text('{}/100'.format(icm_f.dictionary['characters'][0]['talentLevels'][str(10 + i)] if str(10 + i) in icm_f.dictionary['characters'][0]['talentLevels'] and icm_f.character_base_class != 'Beginner' else '0'), key = 'talent{}'.format(str(10 + i)), size = (7,1), justification = 'center', relief = 'sunken') for i in range(0, 5)]
+                        [sg.Image(data = icm_f.talents['Filler'] if icm_f.get_base_class(icm_f.dictionary['characters'][0]['class']) == 'Beginner' else icm_f.talents[icm_f.get_base_class(icm_f.dictionary['characters'][0]['class'])][str(10 + i)], key = 'talent_img{}'.format(str(10 + i))) for i in range(0, 5)],
+                        [sg.Text('{}/100'.format(icm_f.dictionary['characters'][0]['talentLevels'][str(10 + i)] if str(10 + i) in icm_f.dictionary['characters'][0]['talentLevels'] and icm_f.get_base_class(icm_f.dictionary['characters'][0]['class']) != 'Beginner' else '0'), key = 'talent{}'.format(str(10 + i)), size = (7,1), justification = 'center', relief = 'sunken') for i in range(0, 5)]
                     ], element_justification = 'center')]))
 
 talents_2 =         [[sg.Column(
                     [
-                        [sg.Image(data = icm_f.talents['Filler'] if icm_f.character_base_class == 'Beginner' else icm_f.talents[icm_f.character_base_class][str(15 + 5 * i + j)], key = 'talent_img{}'.format(str(15 + 5 * i + j))) for j in range(0, 5)],
-                        [sg.Text('{}/100'.format(icm_f.dictionary['characters'][0]['talentLevels'][str(15 + 5 * i + j)] if str(15 + 5 * i + j) in icm_f.dictionary['characters'][0]['talentLevels'] and icm_f.character_base_class != 'Beginner' else '0'), key = 'talent{}'.format(str(15 + 5 * i + j)), size = (7,1), justification = 'center', relief = 'sunken') for j in range(0, 5)]
+                        [sg.Image(data = icm_f.talents['Filler'] if icm_f.get_base_class(icm_f.dictionary['characters'][0]['class']) == 'Beginner' else icm_f.talents[icm_f.get_base_class(icm_f.dictionary['characters'][0]['class'])][str(15 + 5 * i + j)], key = 'talent_img{}'.format(str(15 + 5 * i + j))) for j in range(0, 5)],
+                        [sg.Text('{}/100'.format(icm_f.dictionary['characters'][0]['talentLevels'][str(15 + 5 * i + j)] if str(15 + 5 * i + j) in icm_f.dictionary['characters'][0]['talentLevels'] and icm_f.get_base_class(icm_f.dictionary['characters'][0]['class']) != 'Beginner' else '0'), key = 'talent{}'.format(str(15 + 5 * i + j)), size = (7,1), justification = 'center', relief = 'sunken') for j in range(0, 5)]
                     ], element_justification = 'center')]for i in range(0, 3)]
 
 talents_3 =         [[sg.Column(
                     [
-                        [sg.Image(data = icm_f.talents['Filler'] if icm_f.is_base_class(icm_f.character_class) else icm_f.talents[icm_f.character_base_class][icm_f.character_class][str(30 + 5 * i + j)], key = 'talent_img{}'.format(str(30 + 5 * i + j))) for j in range(0, 5)],
-                        [sg.Text('{}/100'.format(icm_f.dictionary['characters'][0]['talentLevels'][str(30 + 5 * i + j)] if str(30 + 5 * i + j) in icm_f.dictionary['characters'][0]['talentLevels'] and icm_f.character_base_class != 'Beginner' else '0'), key = 'talent{}'.format(str(30 + 5 * i + j)), size = (7,1), justification = 'center', relief = 'sunken') for j in range(0, 5)]
+                        [sg.Image(data = icm_f.talents['Filler'] if icm_f.is_base_class(icm_f.dictionary['characters'][0]['class']) else icm_f.talents[icm_f.get_base_class(icm_f.dictionary['characters'][0]['class'])][icm_f.dictionary['characters'][0]['class']][str(30 + 5 * i + j)], key = 'talent_img{}'.format(str(30 + 5 * i + j))) for j in range(0, 5)],
+                        [sg.Text('{}/100'.format(icm_f.dictionary['characters'][0]['talentLevels'][str(30 + 5 * i + j)] if str(30 + 5 * i + j) in icm_f.dictionary['characters'][0]['talentLevels'] and icm_f.get_base_class(icm_f.dictionary['characters'][0]['class']) != 'Beginner' else '0'), key = 'talent{}'.format(str(30 + 5 * i + j)), size = (7,1), justification = 'center', relief = 'sunken') for j in range(0, 5)]
                     ], element_justification = 'center')]for i in range(0, 3)]
 
 
