@@ -158,7 +158,8 @@ while i < len(dictionary['characters']):
 # All image paths
 image_paths = [ 'Materials', 'Statues', 'Food', 'Tools', \
                 'Equipment', 'Pouches', 'Inventory', 'Stamps', \
-                'Storage', 'Consumables', 'Upgrades', 'Misc Items']
+                'Storage', 'Consumables', 'Upgrades', 'Misc Items',
+                'Quest Items']
 
 # Dictionary for talent images
 talents =   {
