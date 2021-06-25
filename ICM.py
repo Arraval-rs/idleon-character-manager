@@ -101,20 +101,31 @@ def get_item_stats(equip_type, character, index):
 
 def update_selected_equipment(equip_type, character, item):
     window['selected_equipment'].update(data = generate_img('images/{}/{}.png'.format(equip_type, dictionary['characters'][index][equip_type][item]['name']), (72, 72), True))
-    window['item_stats'].update(get_item_stats(equip_type, character, item))
-    window['item_frame'].update(value = dictionary['characters'][character][equip_type][item]['name'])
+    window['equipped_item_stats'].update(get_item_stats(equip_type, character, item))
+    window['equipped_item_frame'].update(value = dictionary['characters'][character][equip_type][item]['name'])
+    return
+
+def update_selected_inventory_item(slot, paths, character):
+    print(dictionary['characters'][character]['inventory'][slot]['count'])
+    window['selected_inventory_item'].update(data = get_inventory_item(slot, paths, character))
+    window['inventory_item_stats'].update('Stack Size: {}'.format(dictionary['characters'][character]['inventory'][slot]['count']))
+    print(window['inventory_item_stats'].get())
+    window['inventory_item_frame'].update(value = dictionary['characters'][character]['inventory'][slot]['name'])
     return
 
 def get_inventory_item(i, paths, character):
     if 'name' not in dictionary['characters'][character]['inventory'][i]:
         return generate_img('images/Locked.png', (72, 72), False)
-    elif dictionary['characters'][character]['inventory'][i]['name'] == 'None':
+    if dictionary['characters'][character]['inventory'][i]['name'] == 'None':
         return generate_img('None', (72, 72), False)
     for p in paths:
         path = 'images/{}/{}.png'.format(p, dictionary['characters'][character]['inventory'][i]['name'])
         if os.path.exists(path):
             return generate_img(path, (72, 72), True)
     return generate_img('images/Missing.png', (72, 72), True)
+
+def get_storage_item(i, paths):
+    return
 
 # Dictionary for JSON from Idleon API Downloader
 json_file = open("idleon_data.json", "rt")
@@ -267,8 +278,8 @@ character_tab =    [
                                 sg.Frame(layout = 
                                 [[
                                     sg.Image(data = generate_img('images/Empty Slot.png', (72, 72), False), key = 'selected_equipment'),
-                                    sg.Text('STR: 0\t\tReach: 0\nAGI: 0\t\tDefence: 0\nWIS: 0\t\tWeapon Power: 0\nLUK: 0\t\tUpgrade Slots Left: 0', key = 'item_stats')
-                                ]], title = 'None', key = 'item_frame')
+                                    sg.Text('STR: 0\t\tReach: 0\nAGI: 0\t\tDefence: 0\nWIS: 0\t\tWeapon Power: 0\nLUK: 0\t\tUpgrade Slots Left: 0', key = 'equipped_item_stats')
+                                ]], title = 'None', key = 'equipped_item_frame')
                             ]])
                         ]
                     ]
@@ -277,8 +288,9 @@ character_tab =    [
 inventory_tab =     [[
                         sg.Frame(layout = 
                         [
-                            [sg.Column([[sg.Image(data = generate_img('images/Materials/{}.png'.format(dictionary['characters'][0]['inventory'][i + 4 * j]['name']), (72, 72), True), key = 'inventory{}'.format(i + 4 * j)) for i in range(0, 4)] for j in range(0, 4)])],
-                            [sg.Button('Prev', key = 'prev_inv'), sg.Text('1', key = 'current_inv', relief = 'sunken', size = (3, 1), justification = 'center'), sg.Button('Next', key = 'next_inv')]
+                            [sg.Column([[sg.Graph((72, 72), (0, 0), (72, 72), change_submits = True, key = 'inventory{}'.format(4 * i + j)) for j in range(0, 4)] for i in range(0, 4)])],
+                            [sg.Button('Prev', key = 'prev_inv'), sg.Text('1', key = 'current_inv', relief = 'sunken', size = (3, 1), justification = 'center'), sg.Button('Next', key = 'next_inv')],
+                            [sg.Frame(layout = [[sg.Image(data = generate_img('images/Locked.png', (72, 72), False), key = 'selected_inventory_item'), sg.Text('Stack Size: 0', size = (20, 1), key = 'inventory_item_stats')]], title = 'None', key = 'inventory_item_frame')]
                         ], title = 'Inventory', element_justification = 'center')
                     ]]
 
@@ -323,13 +335,17 @@ root_tabs = [
 window = sg.Window("Idleon Character Manager", root_tabs)
 window.Finalize()
 
-# Draw graphs for equipment tabs
+# Draw images for equipment tabs
 for i in range(0, 4):
     for j in range(0, 2):
         equips_tab[i][j].draw_image(data = generate_img('images/Equipment/{}.png'.format(dictionary['characters'][0]['equipment'][2*i+j]['name']), (72, 72), True), location = (0, 72))
         tools_tab[i][j].draw_image(data = generate_img('images/Tools/{}.png'.format(dictionary['characters'][0]['tools'][2*i+j]['name']), (72, 72), True), location = (0, 72))
         foods_tab[i][j].draw_image(data = generate_img('images/Food/{}.png'.format(dictionary['characters'][0]['food'][2*i+j]['name']), (72, 72), True), location = (0, 72))
 
+# Draw images for inventory
+for i in range(0, 4):
+    for j in range(0, 4):
+        window['inventory{}'.format(4 * i + j)].draw_image(data = get_inventory_item(4 * i + j, image_paths, 0), location = (0, 72))
 
 # Event loop
 while True:
@@ -347,8 +363,11 @@ while True:
         window['class_image'].update(data = generate_img('images/Classes/{}.png'.format(dictionary['characters'][index]['class']), (129, 110), False))
         window['character_stats'].update(get_character_stats(index))
         window['selected_equipment'].update(data = generate_img('images/Empty Slot.png', (72, 72), False))
-        window['item_stats'].update('STR: 0\t\tReach: 0\nAGI: 0\t\tDefence: 0\nWIS: 0\t\tWeapon Power: 0\nLUK: 0\t\tUpgrade Slots Left: 0')
-        window['item_frame'].update(value = 'None')
+        window['equipped_item_stats'].update('STR: 0\t\tReach: 0\nAGI: 0\t\tDefence: 0\nWIS: 0\t\tWeapon Power: 0\nLUK: 0\t\tUpgrade Slots Left: 0')
+        window['equipped_item_frame'].update(value = 'None')
+        window['selected_inventory_item'].update(data = generate_img('images/Empty Slot.png', (72, 72), False))
+        window['inventory_item_stats'].update('Stack Size: 0')
+        window['inventory_item_frame'].update('None')
 
         # Update equipment
         for i in range(0, 4):
@@ -383,15 +402,20 @@ while True:
                 window['talent{}'.format(i)].update('{}/100'.format(dictionary['characters'][index]['talentLevels'][str(i)]))
             else:
                 window['talent{}'.format(i)].update('0/100')
+
         # Update inventory for new character
         window['current_inv'].update('1')
         for i in range(0, 4):
             for j in range(0, 4):
-                window['inventory{}'.format(j + 4 * i)].update(data = get_inventory_item(j + 4 * i + 16 * (int(window['current_inv'].get()) - 1), image_paths, index))
+                window['inventory{}'.format(j + 4 * i)].draw_image(data = get_inventory_item(j + 4 * i + 16 * (int(window['current_inv'].get()) - 1), image_paths, index), location = (0, 72))
 
     # Update selected equipment
     if 'equipment' in event or 'tools' in event or 'food' in event:
         update_selected_equipment(event[:len(event)-1], index, int(event[len(event)-1]))
+
+    # Update selected inventory item
+    if 'inventory' in event:
+        update_selected_inventory_item(int(event.replace('inventory', '')) + 16 * (int(window['current_inv'].get()) - 1), image_paths, index)
 
     # Update inventory for Prev/Next tab
     if event in ('next_inv', 'prev_inv'):
@@ -401,6 +425,6 @@ while True:
             window['current_inv'].update('{}'.format(int(window['current_inv'].get()) - 1))
         for i in range(0, 4):
             for j in range(0, 4):
-                window['inventory{}'.format(j + 4 * i)].update(data = get_inventory_item(j + 4 * i + 16 * (int(window['current_inv'].get()) - 1), image_paths, index))
+                window['inventory{}'.format(j + 4 * i)].draw_image(data = get_inventory_item(4 * i + j + 16 * (int(window['current_inv'].get()) - 1), image_paths, index), location = (0, 72))
 
 window.close()       
