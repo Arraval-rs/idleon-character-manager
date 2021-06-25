@@ -1,8 +1,12 @@
+# Packages
 import io
 import os
 import json
 import PySimpleGUI as sg
 from PIL import Image, ImageDraw
+
+# ICM files
+import ICM_functions
 
 # Functions
 def dictionary_contains(dict, dict_path):
@@ -161,7 +165,7 @@ def get_storage_item(i, paths):
     return generate_img('images/Missing.png', (72, 72), True)
 
 # Dictionary for JSON from Idleon API Downloader
-json_file = open("idleon_data.json", "rt")
+json_file = open("data/idleon_data.json", "rt")
 json_text = json_file.read()
 dictionary = json.loads(json_text)
 
@@ -399,15 +403,14 @@ for i in range(0, 4):
 while True:
     event, values = window.read(timeout = 100)
 
-    # Update WIP gifs
-    window['meel'].UpdateAnimation('images/Misc_WIP/Meel.gif', time_between_frames = 100)
-    window['builder_bird'].UpdateAnimation('images/Misc_WIP/Builder Bird.gif', time_between_frames = 100)
-    window['constructor_crow'].UpdateAnimation('images/Misc_WIP/Constructor Crow.gif', time_between_frames = 100)
-    window['carpenter_cardinal'].UpdateAnimation('images/Misc_WIP/Carpenter Cardinal.gif', time_between_frames = 100)
-    window['carpenter_cardinal1'].UpdateAnimation('images/Misc_WIP/Carpenter Cardinal.gif', time_between_frames = 100)
-
     if event != "Exit" and event != sg.WIN_CLOSED:
         index = character_list.index(values['active_character'])
+        # Update WIP gifs
+        window['meel'].UpdateAnimation('images/Misc_WIP/Meel.gif', time_between_frames = 100)
+        window['builder_bird'].UpdateAnimation('images/Misc_WIP/Builder Bird.gif', time_between_frames = 100)
+        window['constructor_crow'].UpdateAnimation('images/Misc_WIP/Constructor Crow.gif', time_between_frames = 100)
+        window['carpenter_cardinal'].UpdateAnimation('images/Misc_WIP/Carpenter Cardinal.gif', time_between_frames = 100)
+        window['carpenter_cardinal1'].UpdateAnimation('images/Misc_WIP/Carpenter Cardinal.gif', time_between_frames = 100)
     else:
         break
     if event == 'active_character':
