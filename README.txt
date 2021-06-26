@@ -4,6 +4,8 @@ To use the app you will need Python and PYSimpleGUI installed. You can download 
 1) curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 2) run python3 get-pip.py
 
+After the above requirements have been met, you should be able to navigate to the app and execute it with python3 ICM_main.py.
+
 You can overwrite the data in data/idleon_data.json with your own data from the Idleon API Downloader. I may simply add a button for selecting any json file in the future.
 
 Not really sure what features this is going to have yet beyond a character sheet where you can view the stats of your characters and possibly estimates of next level, when they'll need food, or when their inventories will be full. I may also include some crafting calculators at some point.
