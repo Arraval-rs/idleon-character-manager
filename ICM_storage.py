@@ -13,5 +13,5 @@ storage_tab =       [[
                             [sg.Button('Prev', key = 'prev_stor'), sg.Text('1', key = 'current_stor', relief = 'sunken', size = (3, 1), justification = 'center'), sg.Button('Next', key = 'next_stor')],
                             [sg.Frame(layout = [[sg.Image(data = icm_f.generate_img('images/Locked.png', (72, 72), False), key = 'selected_storage_item'), sg.Text('Stack Size: 0', size = (20, 1), key = 'storage_item_stats')]], title = 'None', key = 'storage_item_frame')]
                         ], title = 'Inventory', element_justification = 'center'),
-                        sg.Image(data = icm_f.generate_img('images/Misc_WIP/Carpenter Cardinal.gif', (38, 66), False), key = 'carpenter_cardinal1'), sg.Text('More to come')
+                        sg.Image(data = icm_f.generate_img('images/Misc_WIP/Constructor Crow.gif', (38, 66), False), key = 'constructor_crow'), sg.Text('More to come')
                     ]]
