@@ -10,4 +10,4 @@ You can overwrite the data in data/idleon_data.json with your own data from the 
 
 Not really sure what features this is going to have yet beyond a character sheet where you can view the stats of your characters and possibly estimates of next level, when they'll need food, or when their inventories will be full. I may also include some crafting calculators at some point.
 
-If you have any suggestions feel free to message me on discord: Arraval#5726.
+If you have any suggestions, questions, or bugs to report feel free to message me on discord: Arraval#5726.
