@@ -158,4 +158,10 @@ while True:
             for j in range(0, 6):
                 window['storage{}'.format(6 * i + j)].draw_image(data = icm_f.get_storage_item(6 * i + j + 24 * (int(window['current_stor'].get()) - 1), icm_f.image_paths), location = (0, 72))
 
+    if event == 'add_item':
+        icm_f.crafting_popup()
+
+#    if event != '__TIMEOUT__':
+#        print(event)
+
 window.close()       

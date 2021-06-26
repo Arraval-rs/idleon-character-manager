@@ -6,6 +6,7 @@
 import os
 import io
 import json
+import PySimpleGUI as sg
 from PIL import Image, ImageDraw
 
 # General Functions
@@ -172,7 +173,26 @@ def get_storage_item(i, paths):
             return generate_img(path, (72, 72), True)
     return generate_img('images/Missing.png', (72, 72), True)
 
-# General Variables from here
+def crafting_popup():
+    preview_frame = sg.Frame('None', layout = [[sg.Image(data = generate_img('images/Empty Slot.png', (72, 72), False))]])
+    cost_frame = sg.Frame('Costs', layout = [[sg.Image(data = generate_img('images/Empty Slot.png', (72, 72), False)) for i in range(0 , 2)] for j in range(0, 2)])
+    tab = []
+    for i in range(0, 3):
+        tab.append(sg.Column([[sg.Image(data = generate_img('images/Empty Slot.png', (72, 72), False)) for j in range(0 , 4)] for k in range(0, 4)]))
+    anvil_tab_1 = sg.Tab('I', layout = [[tab[0]]])
+    anvil_tab_2 = sg.Tab('II', layout = [[tab[1]]])
+    anvil_tab_3 = sg.Tab('III', layout = [[tab[2]]])
+    layout = [[sg.Column([[preview_frame], [cost_frame], [sg.Button('Confirm')]], element_justification = 'left'), sg.Column([[sg.TabGroup([[anvil_tab_1, anvil_tab_2, anvil_tab_3]])], [sg.Column([[sg.Button('Prev'), sg.Text('1', relief = 'sunken', size = (3, 1), justification = 'center'), sg.Button('Next')]], pad = (50, 0)), sg.Column([[sg.Button('Cancel')]])]], element_justification = 'right')]]
+    window = sg.Window('Crafting Menu', layout, modal = True)
+    while True:
+        event, values = window.read()
+        if event in ('Exit', sg.WIN_CLOSED, 'confirm_craft'):
+            break
+        #    if event != '__TIMEOUT__':
+        #        print(event)
+    return
+
+# General Variables from here on
 
 # Dictionary for JSON from Idleon API Downloader
 json_file = open("data/idleon_data.json", "rt")
