@@ -1,0 +1,4496 @@
+{
+  "Beginner Tier": [
+    {
+      "name": "Boxing Gloves",
+      "ingredients": [
+        {
+          "name": "Crimson String",
+          "count": 1
+        },
+        {
+          "name": "Cue Tape",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "name": "Wooden Spear",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Wooden Bow",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Gnarled Wand",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Farmer Brim",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Orange Tee",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Torn Jeans",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Flip Flops",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Copper Pickaxe",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Cramped Mining Pouch",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Copper Chopper",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Cramped Mining Pouch",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Leather Cap",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "The Stingers",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Cramped Food Pouch",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Cramped Material Pouch",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Copper Helmet",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Copper Platelegs",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Copper Boots",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Militia Helm",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Thief Hood",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Top Hat",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Party Hat",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Coming Soon",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Coming Soon",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Easy Blunderhills NPC Token",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Small Soul Pouch",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    }
+  ],
+  "Novice Tier": [
+    {
+      "name": "Gold Helmet",
+      "ingredients": [
+        {
+          "name": "Fly",
+          "count": 2000
+        },
+        {
+          "name": "Copper Helmet",
+          "count": 4
+        },
+        {
+          "name": "Gold Bar",
+          "count": 250
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Sizable Soul Pouch",
+      "ingredients": [
+        {
+          "name": "Dune Soul",
+          "count": 2500
+        },
+        {
+          "name": "Redox Salts",
+          "count": 20
+        }
+      ]
+    }
+  ],
+  "Apprentice Tier": [
+    {
+      "name": "Dementia Helmet",
+      "ingredients": [
+        {
+          "name": "Froge",
+          "count": 5000
+        },
+        {
+          "name": "Platinum Helmet",
+          "count": 300
+        },
+        {
+          "name": "Dementia Bar",
+          "count": 300
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "ingredients": [
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        },
+        {
+          "name": "Item",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Shivering Sack",
+      "ingredients": [
+        {
+          "name": "Mamooth Hide Bag",
+          "count": 1
+        },
+        {
+          "name": "Melty Cube",
+          "count": 2000
+        },
+        {
+          "name": "Yellow Snowflake",
+          "count": 3
+        }
+      ]
+    }
+  ],
+  "Adept Tier": []
+}

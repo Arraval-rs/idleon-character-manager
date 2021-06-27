@@ -68,7 +68,6 @@ while True:
         window['builder_bird'].UpdateAnimation('images/Misc_WIP/Builder Bird.gif', time_between_frames = 100)
         window['constructor_crow'].UpdateAnimation('images/Misc_WIP/Constructor Crow.gif', time_between_frames = 100)
         window['carpenter_cardinal'].UpdateAnimation('images/Misc_WIP/Carpenter Cardinal.gif', time_between_frames = 100)
-        window['carpenter_cardinal1'].UpdateAnimation('images/Misc_WIP/Carpenter Cardinal.gif', time_between_frames = 100)
     else:
         break
     if event == 'active_character':
@@ -158,5 +157,11 @@ while True:
         for i in range(0, 4):
             for j in range(0, 6):
                 window['storage{}'.format(6 * i + j)].draw_image(data = icm_f.get_storage_item(6 * i + j + 24 * (int(window['current_stor'].get()) - 1), icm_f.image_paths), location = (0, 72))
+
+    if event == 'add_item':
+        icm_f.crafting_popup()
+
+#    if event != '__TIMEOUT__':
+#        print(event)
 
 window.close()       
