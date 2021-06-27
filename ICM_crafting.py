@@ -7,11 +7,6 @@ import json
 
 import ICM_functions as icm_f
 
-# Dictionary for crafting recepies
-json_file = open("data/crafting_data.json", "rt")
-json_text = json_file.read()
-craftables = json.loads(json_text)
-
 crafting_column = 	sg.Column(
 					[
 						[

@@ -173,24 +173,103 @@ def get_storage_item(i, paths):
             return generate_img(path, (72, 72), True)
     return generate_img('images/Missing.png', (72, 72), True)
 
+def get_crafting_item(tab, i, paths):
+    if i >= len(craftables[tab]):
+        return generate_img('images/Locked.png', (72, 72), False)
+    if craftables[tab][i]['name'] == 'None':
+        return generate_img('None', (72, 72), False)
+    for p in paths:
+        path = 'images/{}/{}.png'.format(p, craftables[tab][i]['name'])
+        if os.path.exists(path):
+            return generate_img(path, (72, 72), True)
+    return generate_img('images/Missing.png', (72, 72), True)
+
+def get_crafting_ingredient(tab, item, index, paths):
+    if index > len(craftables[tab][item]['ingredients']) - 1:
+        return generate_img('images/Locked.png', (72, 72), False)
+    for p in paths:
+        path = 'images/{}/{}.png'.format(p, craftables[tab][item]['ingredients'][index]['name'])
+        if os.path.exists(path):
+            return generate_img(path, (72, 72), True)
+    return generate_img('images/Missing.png', (72, 72), True)
+
+def update_selected_crafting_item():
+    return
+
 def crafting_popup():
-    preview_frame = sg.Frame('None', layout = [[sg.Image(data = generate_img('images/Empty Slot.png', (72, 72), False))]])
-    cost_frame = sg.Frame('Costs', layout = [[sg.Image(data = generate_img('images/Empty Slot.png', (72, 72), False)) for i in range(0 , 2)] for j in range(0, 2)])
+    preview_frame = sg.Frame('None', layout = [[sg.Sizer(40), 
+                                                sg.Image(data = generate_img('images/Empty Slot.png', (72, 72), False), key = 'preview_image'), 
+                                                sg.Sizer(40)]], key = 'preview_frame', element_justification = 'center')
+    ingredient_col = []
+    for i in range(0, 2):
+        for j in range(0, 2):
+            ingredient_col.append(sg.Column(
+                                    [
+                                        [sg.Image(data = generate_img('images/Locked.png', (72, 72), False), key = 'ingredient{}'.format(2 * i + j))], 
+                                        [sg.Text('0', size = (5, 1), relief = 'sunken', justification = 'center', key = 'ingredient{}cost'.format(2 * i + j))]], 
+                                    element_justification = 'center'))
+    cost_frame = sg.Frame('Costs', layout = [[ingredient_col[0], ingredient_col[1]], [ingredient_col[2], ingredient_col[3]]])
     tab = []
     for i in range(0, 3):
-        tab.append(sg.Column([[sg.Image(data = generate_img('images/Empty Slot.png', (72, 72), False)) for j in range(0 , 4)] for k in range(0, 4)]))
+        tab.append(sg.Column([[sg.Graph((72, 72), (0, 0), (72, 72), change_submits = True, key = 'tab{}_item{}'.format(i, 4 * k + j)) for j in range(0 , 4)] for k in range(0, 4)]))
     anvil_tab_1 = sg.Tab('I', layout = [[tab[0]]])
     anvil_tab_2 = sg.Tab('II', layout = [[tab[1]]])
     anvil_tab_3 = sg.Tab('III', layout = [[tab[2]]])
-    layout = [[sg.Column([[preview_frame], [cost_frame], [sg.Button('Confirm')]], element_justification = 'left'), sg.Column([[sg.TabGroup([[anvil_tab_1, anvil_tab_2, anvil_tab_3]])], [sg.Column([[sg.Button('Prev'), sg.Text('1', relief = 'sunken', size = (3, 1), justification = 'center'), sg.Button('Next')]], pad = (50, 0)), sg.Column([[sg.Button('Cancel')]])]], element_justification = 'right')]]
+    left_col = sg.Column([[preview_frame], [cost_frame], [sg.Button('Confirm', key = 'confirm_craft')]], element_justification = 'left')
+    right_col = sg.Column(
+                [
+                    [sg.TabGroup([[anvil_tab_1, anvil_tab_2, anvil_tab_3]])], 
+                    [
+                        sg.Column(
+                        [[
+                                sg.Button('Prev'), 
+                                sg.Text('1', relief = 'sunken', size = (3, 1), justification = 'center', key = 'current_page'), 
+                                sg.Button('Next')
+                        ]], pad = ((0, 150), (0, 0))), 
+                        sg.Column([[sg.Button('Cancel', key = 'Exit')]])]
+                ], element_justification = 'right')
+    layout = [[left_col, right_col]]
     window = sg.Window('Crafting Menu', layout, modal = True)
+    window.Finalize()
+    # Draw canvases
+    for i in range(0, 3):
+        for j in range(0, 4):
+            for k in range(0, 4):
+                window['tab{}_item{}'.format(i, 4 * j + k)].draw_image(data = get_crafting_item(tab_titles[i], 4 * j + k, image_paths), location = (0, 72))
+    current_selection = [-1, 0]
+    # Event loop
     while True:
         event, values = window.read()
-        if event in ('Exit', sg.WIN_CLOSED, 'confirm_craft'):
+        if event in ('Exit', sg.WIN_CLOSED):
             break
-        #    if event != '__TIMEOUT__':
-        #        print(event)
-    return
+        if event == 'confirm_craft' and current_selection[0] != 'None':
+            window.close()
+            return current_selection
+        if 'tab' in event:
+            current_selection = [int(event[3]), 16 * (int(window['current_page'].get()) - 1) + int(event[9:])]
+            window['preview_frame'].update(value = craftables[tab_titles[current_selection[0]]][current_selection[1]]['name'])
+            window['preview_image'].update(data = get_crafting_item(tab_titles[int(event[3])], 16 * (int(window['current_page'].get()) - 1) + int(event[9:]), image_paths))
+            for i in range(0, 2):
+                for j in range(0, 2):
+                    window['ingredient{}'.format(2 * i + j)].update(data = get_crafting_ingredient(tab_titles[current_selection[0]], current_selection[1], 2 * i + j, image_paths))
+                    if 2 * i + j > len(craftables[tab_titles[current_selection[0]]][current_selection[1]]['ingredients']) - 1:
+                        window['ingredient{}'.format(2 * i + j)].set_tooltip(None)
+                        window['ingredient{}cost'.format(2 * i + j)].update('0')
+                    else:
+                        window['ingredient{}'.format(2 * i + j)].set_tooltip(craftables[tab_titles[current_selection[0]]][current_selection[1]]['ingredients'][2 * i + j]['name'])
+                        window['ingredient{}cost'.format(2 * i + j)].update(craftables[tab_titles[current_selection[0]]][current_selection[1]]['ingredients'][2 * i + j]['count'])              
+        if event == 'Next' and int(window['current_page'].get()) < 6 or event =='Prev' and int(window['current_page'].get()) > 1:
+            if event == 'Next':
+                window['current_page'].update(int(window['current_page'].get()) + 1)
+            else:
+                window['current_page'].update(int(window['current_page'].get()) - 1)
+            for i in range(0, 3):
+                for j in range(0, 4):
+                    for k in range(0, 4):
+                        window['tab{}_item{}'.format(i, 4 * j + k)].draw_image(data = get_crafting_item(tab_titles[i], 16 * (int(window['current_page'].get()) - 1) + 4 * j + k, image_paths), location = (0, 72))
+    window.close()
+    return 'None'
+
 
 # General Variables from here on
 
@@ -198,6 +277,12 @@ def crafting_popup():
 json_file = open("data/idleon_data.json", "rt")
 json_text = json_file.read()
 dictionary = json.loads(json_text)
+
+# Dictionary for crafting recepies
+json_file = open("data/crafting_data.json", "rt")
+json_text = json_file.read()
+craftables = json.loads(json_text)
+tab_titles = ['Beginner Tier', 'Novice Tier', 'Apprentice Tier', 'Adept Tier']
 
 # All image paths
 image_paths = [ 'Materials', 'Statues', 'Food', 'Tools', \
