@@ -11,8 +11,7 @@ crafting_column = 	sg.Column(
 					[
 						[
 							sg.Image(data = icm_f.generate_img('None', (72, 72), True), key = 'craft{}image'.format(i)), 
-							sg.Text('None', key = 'craft{}name'.format(i)), 
-							sg.Spin([i for i in range(0, 11)], enable_events = True, initial_value = 1, size = (2, 1), key = 'craft{}count'.format(i)), 
+							sg.Spin([i for i in range(1, 100)], enable_events = True, initial_value = 1, size = (2, 1), key = 'craft{}count'.format(i)), 
 							sg.Button('X', key = 'craft{}remove'.format(i))
 						] for i in range(0, 5)
 					])
@@ -22,11 +21,10 @@ ingredients_column = 	sg.Column(
 							[sg.Column(
 							[
 								[
-									sg.Image(data = icm_f.generate_img('None', (72, 72), True), key = 'ingredient{}image'.format(3 * i + j)), 
-									sg.Text('None', key = 'ingredient{}name'.format(3 * i + j)), 
-									sg.Text('0', relief = 'sunken', size = (5, 1), justification = 'center', key = 'ingredient{}count'.format(3 * i + j))
+									sg.Image(data = icm_f.generate_img('None', (72, 72), True), key = 'ingredient{}image'.format(4 * i + j)), 
+									sg.Text('0', relief = 'sunken', size = (5, 1), justification = 'center', key = 'ingredient{}count'.format(4 * i + j))
 								] for i in range(0, 5)
-							]) for j in range(0 , 3)]
+							]) for j in range(0 , 4)]
 						])
 
 crafting_frame = 	sg.Frame(layout = 

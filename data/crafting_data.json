@@ -17,20 +17,12 @@
       "name": "Wooden Spear",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Spore Cap",
+          "count": 25
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Copper Bar",
+          "count": 10
         }
       ]
     },
@@ -38,20 +30,12 @@
       "name": "Wooden Bow",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Spore Cap",
+          "count": 25
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Thread",
+          "count": 30
         }
       ]
     },
@@ -59,20 +43,12 @@
       "name": "Gnarled Wand",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Spore Cap",
+          "count": 25
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Oak Logs",
+          "count": 30
         }
       ]
     },
@@ -80,20 +56,12 @@
       "name": "Farmer Brim",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Spore Cap",
+          "count": 5
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Copper Ore",
+          "count": 15
         }
       ]
     },
@@ -101,20 +69,12 @@
       "name": "Orange Tee",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Spore Cap",
+          "count": 10
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Oak Logs",
+          "count": 15
         }
       ]
     },
@@ -122,20 +82,16 @@
       "name": "Torn Jeans",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Frog Leg",
+          "count": 20
         },
         {
-          "name": "Item",
-          "count": 0
+          "name": "Copper Bar",
+          "count": 8
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Thread",
+          "count": 15
         }
       ]
     },
@@ -143,20 +99,16 @@
       "name": "Flip Flops",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Bean Slices",
+          "count": 30
         },
         {
-          "name": "Item",
-          "count": 0
+          "name": "Copper Bar",
+          "count": 20
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Grass Leaf",
+          "count": 20
         }
       ]
     },
@@ -164,20 +116,12 @@
       "name": "Copper Pickaxe",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Copper Bar",
+          "count": 13
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Frog Leg",
+          "count": 30
         }
       ]
     },
@@ -185,20 +129,8 @@
       "name": "Cramped Mining Pouch",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Copper Ore",
+          "count": 120
         }
       ]
     },
@@ -206,41 +138,29 @@
       "name": "Copper Chopper",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Copper Bar",
+          "count": 13
         },
         {
-          "name": "Item",
-          "count": 0
+          "name": "Oak Logs",
+          "count": 30
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Thread",
+          "count": 15
         }
       ]
     },
     {
-      "name": "Cramped Mining Pouch",
+      "name": "Cramped Choppin Pouch",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Oak Logs",
+          "count": 150
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Trusty Nails",
+          "count": 30
         }
       ]
     },
@@ -248,20 +168,16 @@
       "name": "Leather Cap",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Frog Leg",
+          "count": 25
         },
         {
-          "name": "Item",
-          "count": 0
+          "name": "Oak Logs",
+          "count": 45
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Thread",
+          "count": 13
         }
       ]
     },
@@ -269,20 +185,16 @@
       "name": "The Stingers",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Copper Bar",
+          "count": 20
         },
         {
-          "name": "Item",
-          "count": 0
+          "name": "Oak Logs",
+          "count": 75
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Trusty Nails",
+          "count": 20
         }
       ]
     },
@@ -290,20 +202,20 @@
       "name": "Cramped Food Pouch",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Nomwich",
+          "count": 75
         },
         {
-          "name": "Item",
-          "count": 0
+          "name": "Hot Dog",
+          "count": 25
         },
         {
-          "name": "Item",
-          "count": 0
+          "name": "Oak Logs",
+          "count": 60
         },
         {
-          "name": "Item",
-          "count": 0
+          "name": "Copper Bar",
+          "count": 15
         }
       ]
     },
@@ -311,20 +223,16 @@
       "name": "Cramped Material Pouch",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Trusty Nails",
+          "count": 80
         },
         {
-          "name": "Item",
-          "count": 0
+          "name": "Frog Leg",
+          "count": 40
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Bean Slices",
+          "count": 30
         }
       ]
     },
@@ -332,41 +240,25 @@
       "name": "Copper Helmet",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Copper Bar",
+          "count": 30
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Bean Slices",
+          "count": 50
         }
       ]
     },
     {
-      "name": "Item",
+      "name": "Copper Platebody",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Copper Bar",
+          "count": 45
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Trusty Nails",
+          "count": 120
         }
       ]
     },
@@ -374,20 +266,12 @@
       "name": "Copper Platelegs",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Copper Bar",
+          "count": 60
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Bleach Logs",
+          "count": 150
         }
       ]
     },
@@ -395,20 +279,8 @@
       "name": "Copper Boots",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Copper Bar",
+          "count": 125
         }
       ]
     },
@@ -416,20 +288,16 @@
       "name": "Militia Helm",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Iron Bar",
+          "count": 25
         },
         {
-          "name": "Item",
-          "count": 0
+          "name": "Copper Ore",
+          "count": 150
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Copper Helmet",
+          "count": 2
         }
       ]
     },
@@ -437,20 +305,16 @@
       "name": "Thief Hood",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Iron Bar",
+          "count": 25
         },
         {
-          "name": "Item",
-          "count": 0
+          "name": "Thread",
+          "count": 150
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Copper Helmet",
+          "count": 2
         }
       ]
     },
@@ -458,20 +322,16 @@
       "name": "Top Hat",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Iron Bar",
+          "count": 25
         },
         {
-          "name": "Item",
-          "count": 0
+          "name": "Oak Logs",
+          "count": 200
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Copper Helmet",
+          "count": 2
         }
       ]
     },
@@ -479,20 +339,12 @@
       "name": "Party Hat",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Iron Bar",
+          "count": 200
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Copper Helmet",
+          "count": 4
         }
       ]
     },
@@ -1739,20 +1591,12 @@
       "name": "Small Soul Pouch",
       "ingredients": [
         {
-          "name": "Item",
-          "count": 0
+          "name": "Forest Soul",
+          "count": 200
         },
         {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
-        },
-        {
-          "name": "Item",
-          "count": 0
+          "name": "Redox Salts",
+          "count": 3
         }
       ]
     }
