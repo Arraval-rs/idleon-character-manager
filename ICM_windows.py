@@ -74,9 +74,9 @@ def update_crafting_widgets(window, event): # TODO: Add tooltips to craft/ingred
 				window['ingredient{}count'.format(i)].update(0)
 
 def crafting_popup():
-    preview_frame = sg.Frame('None', layout = [[sg.Sizer(40), 
+    preview_frame = sg.Frame('None', layout = [[sg.Sizer(50), 
                                                 sg.Image(data = icm_f.generate_img('images/Empty Slot.png', (72, 72), False), key = 'preview_image'), 
-                                                sg.Sizer(40)]], key = 'preview_frame', element_justification = 'center')
+                                                sg.Sizer(50)]], key = 'preview_frame', element_justification = 'center')
     ingredient_col = []
     for i in range(0, 2):
         for j in range(0, 2):
