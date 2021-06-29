@@ -1,6 +1,6 @@
 #####################################################
 # ICM_functions.py                                  #
-# All functions used by the app for easy searching  #
+# Various functions used by the app                 #
 # Also includes some variables used across the app  # 
 #####################################################
 import os
@@ -45,6 +45,13 @@ def generate_img(f, s, bg): # Generates image using PIL
     bio = io.BytesIO()
     img.save(bio, format = "PNG")
     return bio.getvalue()
+
+def find_image(name, paths):
+    for p in paths:
+        path = 'images/{}/{}.png'.format(p, name)
+        if os.path.exists(path):
+            return path
+    return 'images/Missing.png'
 
 def get_base_class(c): # returns the base class of a given class
     if c == 'Wizard' or c == 'Shaman':
@@ -184,7 +191,7 @@ def get_crafting_item(tab, i, paths):
             return generate_img(path, (72, 72), True)
     return generate_img('images/Missing.png', (72, 72), True)
 
-def get_crafting_ingredient(tab, item, index, paths):
+def get_ingredient_image(tab, item, index, paths):
     if index > len(craftables[tab][item]['ingredients']) - 1:
         return generate_img('images/Locked.png', (72, 72), False)
     for p in paths:
@@ -193,83 +200,23 @@ def get_crafting_ingredient(tab, item, index, paths):
             return generate_img(path, (72, 72), True)
     return generate_img('images/Missing.png', (72, 72), True)
 
-def update_selected_crafting_item():
-    return
-
-def crafting_popup():
-    preview_frame = sg.Frame('None', layout = [[sg.Sizer(40), 
-                                                sg.Image(data = generate_img('images/Empty Slot.png', (72, 72), False), key = 'preview_image'), 
-                                                sg.Sizer(40)]], key = 'preview_frame', element_justification = 'center')
-    ingredient_col = []
-    for i in range(0, 2):
-        for j in range(0, 2):
-            ingredient_col.append(sg.Column(
-                                    [
-                                        [sg.Image(data = generate_img('images/Locked.png', (72, 72), False), key = 'ingredient{}'.format(2 * i + j))], 
-                                        [sg.Text('0', size = (5, 1), relief = 'sunken', justification = 'center', key = 'ingredient{}cost'.format(2 * i + j))]], 
-                                    element_justification = 'center'))
-    cost_frame = sg.Frame('Costs', layout = [[ingredient_col[0], ingredient_col[1]], [ingredient_col[2], ingredient_col[3]]])
-    tab = []
-    for i in range(0, 3):
-        tab.append(sg.Column([[sg.Graph((72, 72), (0, 0), (72, 72), change_submits = True, key = 'tab{}_item{}'.format(i, 4 * k + j)) for j in range(0 , 4)] for k in range(0, 4)]))
-    anvil_tab_1 = sg.Tab('I', layout = [[tab[0]]])
-    anvil_tab_2 = sg.Tab('II', layout = [[tab[1]]])
-    anvil_tab_3 = sg.Tab('III', layout = [[tab[2]]])
-    left_col = sg.Column([[preview_frame], [cost_frame], [sg.Button('Confirm', key = 'confirm_craft')]], element_justification = 'left')
-    right_col = sg.Column(
-                [
-                    [sg.TabGroup([[anvil_tab_1, anvil_tab_2, anvil_tab_3]])], 
-                    [
-                        sg.Column(
-                        [[
-                                sg.Button('Prev'), 
-                                sg.Text('1', relief = 'sunken', size = (3, 1), justification = 'center', key = 'current_page'), 
-                                sg.Button('Next')
-                        ]], pad = ((0, 150), (0, 0))), 
-                        sg.Column([[sg.Button('Cancel', key = 'Exit')]])]
-                ], element_justification = 'right')
-    layout = [[left_col, right_col]]
-    window = sg.Window('Crafting Menu', layout, modal = True)
-    window.Finalize()
-    # Draw canvases
-    for i in range(0, 3):
-        for j in range(0, 4):
-            for k in range(0, 4):
-                window['tab{}_item{}'.format(i, 4 * j + k)].draw_image(data = get_crafting_item(tab_titles[i], 4 * j + k, image_paths), location = (0, 72))
-    current_selection = [-1, 0]
-    # Event loop
-    while True:
-        event, values = window.read()
-        if event in ('Exit', sg.WIN_CLOSED):
-            break
-        if event == 'confirm_craft' and current_selection[0] != 'None':
-            window.close()
-            return current_selection
-        if 'tab' in event:
-            current_selection = [int(event[3]), 16 * (int(window['current_page'].get()) - 1) + int(event[9:])]
-            window['preview_frame'].update(value = craftables[tab_titles[current_selection[0]]][current_selection[1]]['name'])
-            window['preview_image'].update(data = get_crafting_item(tab_titles[int(event[3])], 16 * (int(window['current_page'].get()) - 1) + int(event[9:]), image_paths))
-            for i in range(0, 2):
-                for j in range(0, 2):
-                    window['ingredient{}'.format(2 * i + j)].update(data = get_crafting_ingredient(tab_titles[current_selection[0]], current_selection[1], 2 * i + j, image_paths))
-                    if 2 * i + j > len(craftables[tab_titles[current_selection[0]]][current_selection[1]]['ingredients']) - 1:
-                        window['ingredient{}'.format(2 * i + j)].set_tooltip(None)
-                        window['ingredient{}cost'.format(2 * i + j)].update('0')
-                    else:
-                        window['ingredient{}'.format(2 * i + j)].set_tooltip(craftables[tab_titles[current_selection[0]]][current_selection[1]]['ingredients'][2 * i + j]['name'])
-                        window['ingredient{}cost'.format(2 * i + j)].update(craftables[tab_titles[current_selection[0]]][current_selection[1]]['ingredients'][2 * i + j]['count'])              
-        if event == 'Next' and int(window['current_page'].get()) < 6 or event =='Prev' and int(window['current_page'].get()) > 1:
-            if event == 'Next':
-                window['current_page'].update(int(window['current_page'].get()) + 1)
-            else:
-                window['current_page'].update(int(window['current_page'].get()) - 1)
-            for i in range(0, 3):
-                for j in range(0, 4):
-                    for k in range(0, 4):
-                        window['tab{}_item{}'.format(i, 4 * j + k)].draw_image(data = get_crafting_item(tab_titles[i], 16 * (int(window['current_page'].get()) - 1) + 4 * j + k, image_paths), location = (0, 72))
-    window.close()
-    return 'None'
-
+def update_ingredient_counts(crafts):
+    new_counts = []
+    for item in crafts:
+        for tab in tab_titles:
+            for craft_item in craftables[tab]:
+                if craft_item['name'] == item[0]:
+                    for new_ingredient in craft_item['ingredients']:
+                        found = False
+                        for current_ingredient in new_counts:
+                            if new_ingredient['name'] == current_ingredient['name']:
+                                found = True
+                                current_ingredient['count'] += new_ingredient['count'] * item[1]
+                                break
+                        if not found:
+                            new_counts.append({'name':new_ingredient['name'], 'count':new_ingredient['count']})
+                            new_counts[-1]['count'] = new_ingredient['count'] * item[1]
+    return new_counts
 
 # General Variables from here on
 
@@ -313,3 +260,9 @@ skill_names =   [
                     'Fishing', 'Alchemy', 'Catching', 
                     'Trapping', 'Construction', 'Worship'
                 ]
+
+# List of currently selected crafting recipies
+current_recipies = []
+
+# List of ingredients for currently selected recipies
+total_ingredients = []
