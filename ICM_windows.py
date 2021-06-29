@@ -14,10 +14,10 @@ def update_crafting_widgets(window, event): # TODO: Add tooltips to craft/ingred
 	if event in crafting_events:
 		if 'craft' in event and 'remove' in event:
 			if len(icm_f.current_recipies) > int(event[5]):
-				icm_f.current_recipies.pop(int(event[5]))
+				icm_f.current_recipies.pop(5 * (int(window['current_crafting'].get()) - 1) + int(event[5]))
 				icm_f.total_ingredients =  icm_f.update_ingredient_counts(icm_f.current_recipies)
-				# if removal results in an empty page(for crafts or ingredients), go back a page
-				# Update spinboxes
+				window['current_crafting'].update(max(1, int(len(icm_f.current_recipies)/5) + (len(icm_f.current_recipies)%5 > 0)))
+				window['current_ingredients'].update(max(1, int(len(icm_f.total_ingredients)/20) + (len(icm_f.total_ingredients)%20 > 0)))
 		if 'count' in event:
 			if 5 * (int(window['current_crafting'].get()) - 1) + int(event[5]) < len(icm_f.current_recipies):
 				icm_f.current_recipies[5 * (int(window['current_crafting'].get()) - 1) + int(event[5])][1] = window[event].get()
@@ -39,7 +39,6 @@ def update_crafting_widgets(window, event): # TODO: Add tooltips to craft/ingred
 			if event == 'prev_crafting' and int(window['current_crafting'].get()) > 1:
 				window['current_crafting'].update(int(window['current_crafting'].get()) - 1)
 			icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies)
-			# Update spinboxes
 		if event == 'next_ingredients' and int(window['current_ingredients'].get()) < len(icm_f.total_ingredients)/20:
 			window['current_ingredients'].update(int(window['current_ingredients'].get()) + 1)
 		if event == 'prev_ingredients' and int(window['current_ingredients'].get()) > 1:
@@ -47,27 +46,31 @@ def update_crafting_widgets(window, event): # TODO: Add tooltips to craft/ingred
 		if event == 'add_item':
 			item_to_add = crafting_popup()
 			if item_to_add[0] != 'None':
-				if len(icm_f.current_recipies) != 0 and item_to_add[0] in icm_f.current_recipies[0:len(icm_f.current_recipies)][0]:
+				found = False
+				if len(icm_f.current_recipies) != 0:
 					for i in range(0, len(icm_f.current_recipies)):
 						if icm_f.current_recipies[i][0] == item_to_add[0]:
+							found = True
 							if icm_f.current_recipies[i][1] < 99:
 								icm_f.current_recipies[i][1] += 1
-								window['craft{}count'.format(i)].update(icm_f.current_recipies[i][1])
 								icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies)
 							break
-				else:
+				if not found:
 					icm_f.current_recipies.append([item_to_add[0], 1]) 
 					icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies)
 	    # Update crafting images/counts
 		for i in range(0, 5):
 			if i + 5 * (int(window['current_crafting'].get()) - 1) < len(icm_f.current_recipies):
 				window['craft{}image'.format(i)].update(data = icm_f.generate_img(icm_f.find_image(icm_f.current_recipies[i + 5 * (int(window['current_crafting'].get()) - 1)][0], icm_f.image_paths), (72, 72), True))
+				window['craft{}count'.format(i)].update(icm_f.current_recipies[i + 5 * (int(window['current_crafting'].get()) - 1)][1])
 			else:
 				window['craft{}image'.format(i)].update(data = icm_f.generate_img('images/Empty Slot.png', (72, 72), False))
+				window['craft{}count'.format(i)].update(1)
 		# Update ingredients images/counts
 		for i in range(0, 20):
 			if i + 20 * (int(window['current_ingredients'].get()) - 1) < len(icm_f.total_ingredients):
 				window['ingredient{}image'.format(i)].update(data = icm_f.generate_img(icm_f.find_image(icm_f.total_ingredients[i + 20 * (int(window['current_ingredients'].get()) - 1)]['name'], icm_f.image_paths), (72, 72), True))
+				window['ingredient{}image'.format(i)].set_tooltip()
 				window['ingredient{}count'.format(i)].update(icm_f.total_ingredients[i + 20 * (int(window['current_ingredients'].get()) - 1)]['count'])
 			else:
 				window['ingredient{}image'.format(i)].update(data = icm_f.generate_img('images/Empty Slot.png', (72, 72), True))
@@ -124,18 +127,19 @@ def crafting_popup():
             window.close()
             return [icm_f.craftables[icm_f.tab_titles[current_selection[0]]][current_selection[1]]['name'], icm_f.craftables[icm_f.tab_titles[current_selection[0]]][current_selection[1]]['ingredients']]
         if 'tab' in event:
-            current_selection = [int(event[3]), 16 * (int(window['current_page'].get()) - 1) + int(event[9:])]
-            window['preview_frame'].update(value = icm_f.craftables[icm_f.tab_titles[current_selection[0]]][current_selection[1]]['name'])
-            window['preview_image'].update(data = icm_f.get_crafting_item(icm_f.tab_titles[int(event[3])], 16 * (int(window['current_page'].get()) - 1) + int(event[9:]), icm_f.image_paths))
-            for i in range(0, 2):
-                for j in range(0, 2):
-                    window['ingredient{}'.format(2 * i + j)].update(data = icm_f.get_ingredient_image(icm_f.tab_titles[current_selection[0]], current_selection[1], 2 * i + j, icm_f.image_paths))
-                    if 2 * i + j > len(icm_f.craftables[icm_f.tab_titles[current_selection[0]]][current_selection[1]]['ingredients']) - 1:
-                        window['ingredient{}'.format(2 * i + j)].set_tooltip(None)
-                        window['ingredient{}cost'.format(2 * i + j)].update('0')
-                    else:
-                        window['ingredient{}'.format(2 * i + j)].set_tooltip(icm_f.craftables[icm_f.tab_titles[current_selection[0]]][current_selection[1]]['ingredients'][2 * i + j]['name'])
-                        window['ingredient{}cost'.format(2 * i + j)].update(icm_f.craftables[icm_f.tab_titles[current_selection[0]]][current_selection[1]]['ingredients'][2 * i + j]['count'])              
+        	if 16 * (int(window['current_page'].get()) - 1) + int(event[9:]) < len(icm_f.craftables[icm_f.tab_titles[int(event[3])]]):
+	            current_selection = [int(event[3]), 16 * (int(window['current_page'].get()) - 1) + int(event[9:])]
+	            window['preview_frame'].update(value = icm_f.craftables[icm_f.tab_titles[current_selection[0]]][current_selection[1]]['name'])
+	            window['preview_image'].update(data = icm_f.get_crafting_item(icm_f.tab_titles[int(event[3])], 16 * (int(window['current_page'].get()) - 1) + int(event[9:]), icm_f.image_paths))
+	            for i in range(0, 2):
+	                for j in range(0, 2):
+	                    window['ingredient{}'.format(2 * i + j)].update(data = icm_f.get_ingredient_image(icm_f.tab_titles[current_selection[0]], current_selection[1], 2 * i + j, icm_f.image_paths))
+	                    if 2 * i + j > len(icm_f.craftables[icm_f.tab_titles[current_selection[0]]][current_selection[1]]['ingredients']) - 1:
+	                        window['ingredient{}'.format(2 * i + j)].set_tooltip(None)
+	                        window['ingredient{}cost'.format(2 * i + j)].update('0')
+	                    else:
+	                        window['ingredient{}'.format(2 * i + j)].set_tooltip(icm_f.craftables[icm_f.tab_titles[current_selection[0]]][current_selection[1]]['ingredients'][2 * i + j]['name'])
+	                        window['ingredient{}cost'.format(2 * i + j)].update(icm_f.craftables[icm_f.tab_titles[current_selection[0]]][current_selection[1]]['ingredients'][2 * i + j]['count'])              
         if event == 'Next' and int(window['current_page'].get()) < 6 or event =='Prev' and int(window['current_page'].get()) > 1:
             if event == 'Next':
                 window['current_page'].update(int(window['current_page'].get()) + 1)
