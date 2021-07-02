@@ -22,7 +22,8 @@ root_tabs = [
                         icm_f.character_list,
                         default_value = icm_f.character_list[0],
                         key = 'active_character',
-                        enable_events = True
+                        enable_events = True,
+                        readonly = True
                     ),
                     sg.Image(data = icm_f.generate_img('images/Classes/{}Icon.png'.format(icm_f.dictionary['characters'][0]['class']), (38, 36), False), key = 'class_icon')
                 ],
@@ -60,15 +61,14 @@ for i in range(0, 4):
 
 # Event loop
 while True:
-    event, values = window.read(timeout = 100)
+    event, values = window.read(timeout = 120)
 
     if event != "Exit" and event != sg.WIN_CLOSED:
         index = icm_f.character_list.index(values['active_character'])
-        # Update WIP gifs
-        window['meel'].UpdateAnimation('images/Misc_WIP/Meel.gif', time_between_frames = 100)
-        window['builder_bird'].UpdateAnimation('images/Misc_WIP/Builder Bird.gif', time_between_frames = 100)
-        window['constructor_crow'].UpdateAnimation('images/Misc_WIP/Constructor Crow.gif', time_between_frames = 100)
-        window['carpenter_cardinal'].UpdateAnimation('images/Misc_WIP/Carpenter Cardinal.gif', time_between_frames = 100)
+        # Update gifs
+        window['meel'].UpdateAnimation('images/Misc_WIP/Meel.gif', time_between_frames = 120)
+        window['constructor_crow'].UpdateAnimation('images/Misc_WIP/Constructor Crow.gif', time_between_frames = 120)
+        window['carpenter_cardinal'].UpdateAnimation('images/Misc_WIP/Carpenter Cardinal.gif', time_between_frames = 120)
     else:
         break
     if event == 'active_character':
@@ -160,9 +160,9 @@ while True:
                 window['storage{}'.format(6 * i + j)].draw_image(data = icm_f.get_storage_item(6 * i + j + 24 * (int(window['current_stor'].get()) - 1), icm_f.image_paths), location = (0, 72))
 
     icm_w.update_crafting_widgets(window, event)
+    icm_w.update_monster_widgets(window, event)
 
-        # print(icm_f.total_ingredients)
-#    if event != '__TIMEOUT__':
-#        print(event)
+    #if event != '__TIMEOUT__':
+    #    print(event)
 
 window.close()       

@@ -10,6 +10,52 @@ from PIL import Image, ImageDraw
 
 import ICM_functions as icm_f
 
+def update_monster_widgets(window, event):
+	if event == '__TIMEOUT__' and icm_f.current_monster[0] != '':
+		if'Amarok' not in icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Name'] and \
+		'Efaunt' not in icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Name'] and \
+		'Chizoar' not in icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Name']:
+			if icm_f.current_monster[0] == 'Boss':
+				window['monster_gif'].update_animation_no_buffering('images/Monsters/Boss/{}.gif'.format(icm_f.monsters['Boss'][icm_f.current_monster[1]]['Name']))
+			elif 'Blueberry' not in icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Name'] and 'Plasti' not in icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Name']:
+				window['monster_gif'].update_animation_no_buffering('images/Monsters/{}/{} {}.gif'.format(icm_f.current_monster[0], icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Name'], window['anim_style'].get()), time_between_frames = 120)
+	elif event in monster_events:
+		if 'W1' in event:
+			icm_f.current_monster = ['W1', int(event[3:len(event)])]
+		if 'W2' in event:
+			icm_f.current_monster = ['W2', int(event[3:len(event)])]
+		if 'W3' in event:
+			icm_f.current_monster = ['W3', int(event[3:len(event)])]
+		if 'Event' in event:
+			icm_f.current_monster = ['Event', int(event[6:len(event)])]
+			if 'Blueberry' in icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Name'] or 'Plasti' in icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Name']:
+				window['monster_gif'].update(data = icm_f.generate_img('images/Monsters/Event/{} Idle.png'.format(icm_f.monsters['Event'][icm_f.current_monster[1]]['Name']), (150, 150), False))
+		if 'Boss' in event and event != 'Boss':
+			icm_f.current_monster = ['Boss', int(event[5:len(event)])]
+			if 'Amarok' in icm_f.monsters['Boss'][icm_f.current_monster[1]]['Name'] or \
+			'Efaunt' in icm_f.monsters['Boss'][icm_f.current_monster[1]]['Name'] or \
+			'Chizoar' in icm_f.monsters['Boss'][icm_f.current_monster[1]]['Name']:
+				window['monster_gif'].update(data = icm_f.generate_img('images/Monsters/Boss/{}.png'.format(icm_f.monsters['Boss'][icm_f.current_monster[1]]['Name']), (150, 150), False))
+		window['mon_name'].update(icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Name'])
+		window['mon_health'].update('Health: {}'.format(f'{int(icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]["Health"]):,}'))
+		window['mon_exp'].update('Experience: {}'.format(f'{int(icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]["Experience"]):,}'))
+		# hit chance
+		# acc_needed
+		# def_needed
+		if icm_f.current_monster[0] == 'Boss' and \
+		('Amarok' in icm_f.monsters['Boss'][icm_f.current_monster[1]]['Name'] or \
+		'Efaunt' in icm_f.monsters['Boss'][icm_f.current_monster[1]]['Name'] or \
+		'Chizoar' in icm_f.monsters['Boss'][icm_f.current_monster[1]]['Name']):
+			atk_string = ''
+			for i in range(0, len(icm_f.monsters['Boss'][icm_f.current_monster[1]]['Attacks'])):
+				atk_string += '{}) {}: {}\nDamage Taken: {}\n'.format(i + 1, icm_f.monsters['Boss'][icm_f.current_monster[1]]['Attacks'][i]['Name'], icm_f.monsters['Boss'][icm_f.current_monster[1]]['Attacks'][i]['Attack'], 0)
+			window['mon_attack'].update(atk_string)
+		else:
+			damage = icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Attack']
+			window['mon_attack'].update('Attack: {}\nDamage Taken: {}'.format(damage, icm_f.calculate_damage_taken(0, int(damage))))
+			window['mon_speed'].update('Speed: {}'.format(icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Speed']))
+			window['mon_respawn'].update('Respawn: {}'.format(f'{int(icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]["Respawn"]):,}'))
+
 def update_crafting_widgets(window, event): # TODO: Add tooltips to craft/ingredients (easy)
 	if event in crafting_events:
 		if 'craft' in event and 'remove' in event:
@@ -70,7 +116,7 @@ def update_crafting_widgets(window, event): # TODO: Add tooltips to craft/ingred
 		for i in range(0, 20):
 			if i + 20 * (int(window['current_ingredients'].get()) - 1) < len(icm_f.total_ingredients):
 				window['ingredient{}image'.format(i)].update(data = icm_f.generate_img(icm_f.find_image(icm_f.total_ingredients[i + 20 * (int(window['current_ingredients'].get()) - 1)]['name'], icm_f.image_paths), (72, 72), True))
-				window['ingredient{}image'.format(i)].set_tooltip()
+				#window['ingredient{}image'.format(i)].set_tooltip()
 				window['ingredient{}count'.format(i)].update(icm_f.total_ingredients[i + 20 * (int(window['current_ingredients'].get()) - 1)]['count'])
 			else:
 				window['ingredient{}image'.format(i)].update(data = icm_f.generate_img('images/Empty Slot.png', (72, 72), True))
@@ -157,3 +203,11 @@ crafting_events = ['add_item', 'prev_crafting', 'next_crafting', 'prev_ingredien
 for i in range(0, 5):
 	crafting_events.append('craft{}count'.format(i))
 	crafting_events.append('craft{}remove'.format(i))
+
+monster_events = []
+for i in range(0, 17):
+	monster_events.append('W1_{}'.format(i))
+	monster_events.append('W2_{}'.format(i))
+	monster_events.append('W3_{}'.format(i))
+	monster_events.append('Boss_{}'.format(i))
+	monster_events.append('Event_{}'.format(i))
