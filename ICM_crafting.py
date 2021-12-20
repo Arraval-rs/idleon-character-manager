@@ -48,11 +48,15 @@ ingredients_frame = 	sg.Frame(layout =
 							]
 						], title = 'Ingredients', element_justification = 'center')
 
-# [sg.Checkbox('Use Base Materials', default = False)]
-# [sg.Text('The list is empty!')]
-# Use aboxe text for if the list is craftable or not (does the user have the materials required)
+material_column = 	sg.Column(
+					[
+						[sg.Text('The list is empty!'), sg.Checkbox('Use Base Materials', default = False, enable_events = True, key = 'toggle_base')],
+						[ingredients_frame]
+					])
+
+# Use text for if the list is craftable or not (does the user have the materials and inventory spaces required)
 # colour it red (not craftable), yellow (empty), or green (craftable)
 
 crafting_tab =      [
-                        [crafting_frame, ingredients_frame]
+                        [crafting_frame, material_column]
                     ]
