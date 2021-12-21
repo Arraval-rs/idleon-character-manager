@@ -171,7 +171,7 @@ def update_selected_storage_item(window, slot, paths):
     return
 
 def get_inventory_item(i, paths, character):
-    if 'name' not in dictionary['characters'][character]['inventory'][i]:
+    if 'name' not in dictionary['characters'][character]['inventory'][i] or dictionary['characters'][character]['inventory'][i]['name'] == 'LockedInvSpace':
         return generate_img('images/Locked.png', (72, 72), False)
     if dictionary['characters'][character]['inventory'][i]['name'] == 'None':
         return generate_img('None', (72, 72), False)
@@ -182,7 +182,7 @@ def get_inventory_item(i, paths, character):
     return generate_img('images/Missing.png', (72, 72), True)
 
 def get_storage_item(i, paths):
-    if 'item' not in dictionary['account']['chest'][i]:
+    if 'item' not in dictionary['account']['chest'][i] or dictionary['account']['chest'][i]['item'] == 'LockedInvSpace':
         return generate_img('images/Locked.png', (72, 72), False)
     if dictionary['account']['chest'][i]['item'] == 'None':
         return generate_img('None', (72, 72), False)
@@ -212,22 +212,60 @@ def get_ingredient_image(tab, item, index, paths):
             return generate_img(path, (72, 72), True)
     return generate_img('images/Missing.png', (72, 72), True)
 
-def update_ingredient_counts(crafts):
+def is_craftable(item):
+    for tab in tab_titles:
+        for craft_item in craftables[tab]:
+            if craft_item['name'] == item['name']:
+                return True
+    return False
+
+
+def update_ingredient_counts(crafts, recursive):
     new_counts = []
-    for item in crafts:
-        for tab in tab_titles:
-            for craft_item in craftables[tab]:
-                if craft_item['name'] == item[0]:
-                    for new_ingredient in craft_item['ingredients']:
-                        found = False
-                        for current_ingredient in new_counts:
-                            if new_ingredient['name'] == current_ingredient['name']:
-                                found = True
-                                current_ingredient['count'] += new_ingredient['count'] * item[1]
-                                break
-                        if not found:
-                            new_counts.append({'name':new_ingredient['name'], 'count':new_ingredient['count']})
-                            new_counts[-1]['count'] = new_ingredient['count'] * item[1]
+    if recursive: #determine if item is craftable and update accordingly
+        craftable_materials = []
+        for item in crafts:
+            for tab in tab_titles:
+                for craft_item in craftables[tab]:
+                    if craft_item['name'] == item[0]:
+                        for new_ingredient in craft_item['ingredients']:
+                            if is_craftable(new_ingredient):
+                                craftable_materials.append([new_ingredient['name'], new_ingredient['count']])
+                                craftable_materials[-1][0] = craftable_materials[-1][0] * item[1]
+                            else:
+                                found = False
+                                for current_ingredient in new_counts:
+                                    if new_ingredient['name'] == current_ingredient['name']:
+                                        found = True
+                                        current_ingredient['count'] += new_ingredient['count'] * item[1]
+                                        break
+                                if not found:
+                                    new_counts.append({'name':new_ingredient['name'], 'count':new_ingredient['count']})
+                                    new_counts[-1]['count'] = new_ingredient['count'] * item[1]
+        if len(craftable_materials) > 0:
+            for new_ingredient in update_ingredient_counts(craftable_materials, True):
+                found = False
+                for current_ingredient in new_counts:
+                    if new_ingredient['name'] == current_ingredient['name']:
+                        found = True
+                        current_ingredient['count'] += new_ingredient['count']
+                if not found:
+                    new_counts.append(new_ingredient)
+    else:
+        for item in crafts:
+            for tab in tab_titles:
+                for craft_item in craftables[tab]:
+                    if craft_item['name'] == item[0]:
+                        for new_ingredient in craft_item['ingredients']:
+                            found = False
+                            for current_ingredient in new_counts:
+                                if new_ingredient['name'] == current_ingredient['name']:
+                                    found = True
+                                    current_ingredient['count'] += new_ingredient['count'] * item[1]
+                                    break
+                            if not found:
+                                new_counts.append({'name':new_ingredient['name'], 'count':new_ingredient['count']})
+                                new_counts[-1]['count'] = new_ingredient['count'] * item[1]
     return new_counts
 
 
