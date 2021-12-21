@@ -38,7 +38,7 @@ def generate_img(f, s, bg): # Generates image using PIL
         f = 'images/Missing.png'
     img = Image.open(f).resize(s)
     if bg:
-        item_bg = Image.open('images/Empty Slot.png')
+        item_bg = Image.open('images/Empty Slot.png').resize(s)
         item_bg.paste(img, (0, 0), img.convert('RGBA'))
         img = item_bg
     img.thumbnail(s)
@@ -68,6 +68,18 @@ def is_base_class(c): # returns true if the given class is a base class (Beginne
     if c in ('Beginner', 'Warrior', 'Mage', 'Archer', 'Journeyman'):
         return True
     return False
+
+def calculate_hit_chance(char_acc, acc_100):
+    return min(100, 142.5 * char_acc / acc_100 - 42.5)
+
+def calculate_accuracy_needed(char_acc, acc_100):
+    return max(0, acc_100 - char_acc)
+
+def calculate_damage_taken(char_def, atk_dam):
+    return int((atk_dam - 2.5 * char_def**0.8) / max(1, 1 + char_def**2.5 / max(100, 100*atk_dam)))
+
+def calculate_defence_needed(char_def, def_0):
+    return max(0, def_0 - char_def)
 
 def max_hp(character):
     return 0 # placeholder
@@ -256,6 +268,7 @@ def update_ingredient_counts(crafts, recursive):
                                 new_counts[-1]['count'] = new_ingredient['count'] * item[1]
     return new_counts
 
+
 # General Variables from here on
 
 # Dictionary for JSON from Idleon API Downloader
@@ -268,6 +281,11 @@ json_file = open("data/crafting_data.json", "rt")
 json_text = json_file.read()
 craftables = json.loads(json_text)
 tab_titles = ['Beginner Tier', 'Novice Tier', 'Apprentice Tier', 'Adept Tier']
+
+# Dictionary for monsters
+json_file = open("data/monster_data.json", "rt")
+json_text = json_file.read()
+monsters = json.loads(json_text)
 
 # All image paths
 image_paths = [ 'Materials', 'Statues', 'Food', 'Tools', \
@@ -304,3 +322,6 @@ current_recipies = []
 
 # List of ingredients for currently selected recipies
 total_ingredients = []
+
+# List of the two possible monster animations
+current_monster = ['', 0]
