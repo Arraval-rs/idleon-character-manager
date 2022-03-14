@@ -231,7 +231,7 @@ def update_ingredient_counts(crafts, recursive):
                         for new_ingredient in craft_item['ingredients']:
                             if is_craftable(new_ingredient):
                                 craftable_materials.append([new_ingredient['name'], new_ingredient['count']])
-                                craftable_materials[-1][0] = craftable_materials[-1][0] * item[1]
+                                craftable_materials[-1][1] = craftable_materials[-1][1] * item[1]
                             else:
                                 found = False
                                 for current_ingredient in new_counts:
