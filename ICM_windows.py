@@ -61,7 +61,7 @@ def update_crafting_widgets(window, event):
 		if 'craft' in event and 'remove' in event:
 			if len(icm_f.current_recipies) > int(event[5]):
 				icm_f.current_recipies.pop(5 * (int(window['current_crafting'].get()) - 1) + int(event[5]))
-				icm_f.total_ingredients =  icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get())
+				icm_f.total_ingredients =  icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get(), window['crafting_text'])
 				window['current_crafting'].update(max(1, int(len(icm_f.current_recipies)/5) + (len(icm_f.current_recipies)%5 > 0)))
 				window['current_ingredients'].update(max(1, int(len(icm_f.total_ingredients)/20) + (len(icm_f.total_ingredients)%20 > 0)))
 		if 'count' in event:
@@ -69,12 +69,13 @@ def update_crafting_widgets(window, event):
 				icm_f.current_recipies[5 * (int(window['current_crafting'].get()) - 1) + int(event[5])][1] = window[event].get()
 			else:
 				window[event].update(1)
-			icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get())
+			icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get(), window['crafting_text'])
 		if event == 'remove_all':
 			icm_f.current_recipies = []
 			icm_f.total_ingredients = []
 			window['current_crafting'].update(1)
 			window['current_ingredients'].update(1)
+			window['crafting_text'].update('List is empty!')
 			for i in range(0, 5):
 				window['craft{}count'.format(i)].update(1)
 			for i in range(0, 20):
@@ -84,7 +85,7 @@ def update_crafting_widgets(window, event):
 				window['current_crafting'].update(int(window['current_crafting'].get()) + 1)
 			if event == 'prev_crafting' and int(window['current_crafting'].get()) > 1:
 				window['current_crafting'].update(int(window['current_crafting'].get()) - 1)
-			icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get())
+			icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get(), window['crafting_text'])
 		if event == 'next_ingredients' and int(window['current_ingredients'].get()) < len(icm_f.total_ingredients)/20:
 			window['current_ingredients'].update(int(window['current_ingredients'].get()) + 1)
 		if event == 'prev_ingredients' and int(window['current_ingredients'].get()) > 1:
@@ -99,13 +100,13 @@ def update_crafting_widgets(window, event):
 							found = True
 							if icm_f.current_recipies[i][1] < 99:
 								icm_f.current_recipies[i][1] += 1
-								icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get())
+								icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get(), window['crafting_text'])
 							break
 				if not found:
 					icm_f.current_recipies.append([item_to_add[0], 1]) 
-					icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get())
+					icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get(), window['crafting_text'])
 		if event == 'toggle_base':
-			icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get())
+			icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get(), window['crafting_text'])
 
 	    # Update crafting images/counts
 		for i in range(0, 5):
@@ -141,15 +142,16 @@ def crafting_popup():
                                     element_justification = 'center'))
     cost_frame = sg.Frame('Costs', layout = [[ingredient_col[0], ingredient_col[1]], [ingredient_col[2], ingredient_col[3]]])
     tab = []
-    for i in range(0, 3):
+    for i in range(0, 4):
         tab.append(sg.Column([[sg.Graph((72, 72), (0, 0), (72, 72), enable_events = True, key = 'tab{}_item{}'.format(i, 4 * k + j)) for j in range(0 , 4)] for k in range(0, 4)]))
     anvil_tab_1 = sg.Tab('I', layout = [[tab[0]]])
     anvil_tab_2 = sg.Tab('II', layout = [[tab[1]]])
     anvil_tab_3 = sg.Tab('III', layout = [[tab[2]]])
+    anvil_tab_4 = sg.Tab('IV', layout = [[tab[3]]])
     left_col = sg.Column([[preview_frame], [cost_frame], [sg.Button('Confirm', key = 'confirm_craft')]], element_justification = 'left')
     right_col = sg.Column(
                 [
-                    [sg.TabGroup([[anvil_tab_1, anvil_tab_2, anvil_tab_3]])], 
+                    [sg.TabGroup([[anvil_tab_1, anvil_tab_2, anvil_tab_3, anvil_tab_4]])], 
                     [
                         sg.Column(
                         [[
@@ -163,7 +165,7 @@ def crafting_popup():
     window = sg.Window('Crafting Menu', layout, modal = True)
     window.Finalize()
     # Draw canvases
-    for i in range(0, 3):
+    for i in range(0, 4):
         for j in range(0, 4):
             for k in range(0, 4):
                 window['tab{}_item{}'.format(i, 4 * j + k)].draw_image(data = icm_f.get_crafting_item(icm_f.tab_titles[i], 4 * j + k, icm_f.image_paths), location = (0, 72))
@@ -195,7 +197,7 @@ def crafting_popup():
                 window['current_page'].update(int(window['current_page'].get()) + 1)
             else:
                 window['current_page'].update(int(window['current_page'].get()) - 1)
-            for i in range(0, 3):
+            for i in range(0, 4):
                 for j in range(0, 4):
                     for k in range(0, 4):
                         window['tab{}_item{}'.format(i, 4 * j + k)].draw_image(data = icm_f.get_crafting_item(icm_f.tab_titles[i], 16 * (int(window['current_page'].get()) - 1) + 4 * j + k, icm_f.image_paths), location = (0, 72))

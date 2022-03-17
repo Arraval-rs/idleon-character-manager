@@ -22,6 +22,7 @@ for i in range(30, 45):
     icm_f.talents['Warrior']['Squire'][str(i)] = icm_f.generate_img('images/Talents/Warrior/Squire/{}.png'.format(i), (56, 56), False)
     icm_f.talents['Archer']['Bowman'][str(i)] = icm_f.generate_img('images/Talents/Archer/Bowman/{}.png'.format(i), (56, 56), False)
     icm_f.talents['Archer']['Hunter'][str(i)] = icm_f.generate_img('images/Talents/Archer/Hunter/{}.png'.format(i), (56, 56), False)
+    icm_f.talents['Journeyman']['Maestro'][str(i)] = icm_f.generate_img('images/Talents/Journeyman/Maestro/{}.png'.format(i), (56, 56), False)
 
 # tabs
 talents_1 =         [[sg.Column(

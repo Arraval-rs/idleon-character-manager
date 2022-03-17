@@ -50,7 +50,7 @@ ingredients_frame = 	sg.Frame(layout =
 
 material_column = 	sg.Column(
 					[
-						[sg.Text('The list is empty!'), sg.Checkbox('Use Base Materials', default = False, enable_events = True, key = 'toggle_base')],
+						[sg.Checkbox('Use Base Materials', default = False, enable_events = True, key = 'toggle_base'), sg.Text('List is empty!', key = 'crafting_text')],
 						[ingredients_frame]
 					])
 

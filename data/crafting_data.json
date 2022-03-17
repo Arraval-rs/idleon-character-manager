@@ -3430,20 +3430,20 @@
       "name": "Anvil_Tab_4",
       "ingredients": [
         {
-          "name": "Coming_Soon",
-          "count": 6
+          "name": "Void_Bar",
+          "count": 1200
         },
         {
           "name": "Frigid_Soul",
-          "count": 22
+          "count": 7500
         },
         {
           "name": "Eternal_Lord_of_The_Undying_Ember",
-          "count": 1
+          "count": 10
         },
         {
           "name": "Spontaneity_Salts",
-          "count": 1
+          "count": 400
         }
       ]
     },
@@ -3844,5 +3844,6 @@
       ]
     }
   ],
+  "____ Tier": [],
   "Adept Tier": []
 }
