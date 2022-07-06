@@ -2628,7 +2628,7 @@
         },
         {
           "name": "Platinum_Helmet",
-          "count": 300
+          "count": 2
         },
         {
           "name": "Dementia_Bar",
@@ -2682,7 +2682,7 @@
           "count": 1
         },
         {
-          "name": "Dementia_Boots",
+          "name": "Dementia_Bar",
           "count": 500
         }
       ]

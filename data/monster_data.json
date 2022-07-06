@@ -1,1 +1,848 @@
-{"W1":[{"Name":"Green Mushroom","Attack":1,"Health":10,"Speed":4,"Experience":2,"Accuracy 5%":1,"Accuracy 100%":2,"Defence for 0":0.2,"Respawn":35},{"Name":"Red Mushroom","Attack":30,"Health":1000,"Speed":4,"Experience":47,"Accuracy 5%":13,"Accuracy 100%":38,"Defence for 0":21.6,"Respawn":45},{"Name":"Frog","Attack":5,"Health":50,"Speed":4,"Experience":7,"Accuracy 5%":1,"Accuracy 100%":3,"Defence for 0":2.1,"Respawn":40},{"Name":"Bored Bean","Attack":11,"Health":150,"Speed":4,"Experience":15,"Accuracy 5%":2,"Accuracy 100%":6,"Defence for 0":5.97,"Respawn":50},{"Name":"Slime","Attack":15,"Health":250,"Speed":4,"Experience":23,"Accuracy 5%":5,"Accuracy 100%":14,"Defence for 0":8.9,"Respawn":42},{"Name":"Baby Boa","Attack":18,"Health":450,"Speed":8,"Experience":34,"Accuracy 5%":9,"Accuracy 100%":27,"Defence for 0":11.22,"Respawn":45},{"Name":"Carrotman","Attack":22,"Health":800,"Speed":6,"Experience":45,"Accuracy 5%":15,"Accuracy 100%":45,"Defence for 0":14.57,"Respawn":50},{"Name":"Glublin","Attack":30,"Health":1250,"Speed":4,"Experience":60,"Accuracy 5%":26,"Accuracy 100%":78,"Defence for 0":21.54,"Respawn":52},{"Name":"Wode Board","Attack":35,"Health":1800,"Speed":3,"Experience":75,"Accuracy 5%":35,"Accuracy 100%":105,"Defence for 0":26.12,"Respawn":45},{"Name":"Gigafrog","Attack":45,"Health":2500,"Speed":3,"Experience":95,"Accuracy 5%":55,"Accuracy 100%":165,"Defence for 0":35.69,"Respawn":55},{"Name":"Poop","Attack":150,"Health":9000,"Speed":4,"Experience":220,"Accuracy 5%":50,"Accuracy 100%":150,"Defence for 0":152.99,"Respawn":60},{"Name":"Rat","Attack":220,"Health":20000,"Speed":8,"Experience":330,"Accuracy 5%":90,"Accuracy 100%":270,"Defence for 0":238.5,"Respawn":60},{"Name":"Boop","Attack":250,"Health":200000,"Speed":3,"Experience":1000,"Accuracy 5%":60,"Accuracy 100%":180,"Defence for 0":276,"Respawn":74500},{"Name":"Walking Stick","Attack":20,"Health":1500,"Speed":4,"Experience":120,"Accuracy 5%":75,"Accuracy 100%":225,"Defence for 0":12.82,"Respawn":60},{"Name":"Nutto","Attack":40,"Health":4000,"Speed":5,"Experience":190,"Accuracy 5%":100,"Accuracy 100%":300,"Defence for 0":30.9,"Respawn":60},{"Name":"Wood Mushroom","Attack":75,"Health":10000,"Speed":4,"Experience":300,"Accuracy 5%":250,"Accuracy 100%":750,"Defence for 0":66.8,"Respawn":50},{"Name":"Crystal Carrot","Attack":0,"Health":0,"Speed":0,"Experience":0,"Accuracy 5%":0,"Accuracy 100%":0,"Defence for 0":0,"Respawn":0}],"W2":[{"Name":"Sandy Pot","Attack":70,"Health":4000,"Speed":5,"Experience":150,"Accuracy 5%":63,"Accuracy 100%":188,"Defence for 0":61.5,"Respawn":50},{"Name":"Mimic","Attack":62,"Health":5500,"Speed":4,"Experience":180,"Accuracy 5%":66,"Accuracy 100%":198,"Defence for 0":52.96,"Respawn":50},{"Name":"Crabcake","Attack":70,"Health":7500,"Speed":4,"Experience":210,"Accuracy 5%":75,"Accuracy 100%":225,"Defence for 0":61.42,"Respawn":40},{"Name":"Mafioso","Attack":90,"Health":11000,"Speed":4,"Experience":240,"Accuracy 5%":90,"Accuracy 100%":270,"Defence for 0":83.29,"Respawn":40},{"Name":"Sand Castle","Attack":99,"Health":13000,"Speed":3,"Experience":265,"Accuracy 5%":103,"Accuracy 100%":308,"Defence for 0":93.41,"Respawn":40},{"Name":"Pincermin","Attack":112,"Health":15500,"Speed":5,"Experience":290,"Accuracy 5%":120,"Accuracy 100%":360,"Defence for 0":108.27,"Respawn":50},{"Name":"Mashed Potato","Attack":125,"Health":18500,"Speed":6,"Experience":310,"Accuracy 5%":130,"Accuracy 100%":390,"Defence for 0":123.37,"Respawn":40},{"Name":"Tyson","Attack":150,"Health":23000,"Speed":5,"Experience":350,"Accuracy 5%":150,"Accuracy 100%":450,"Defence for 0":152.99,"Respawn":40},{"Name":"Moonmoon","Attack":170,"Health":26500,"Speed":4,"Experience":380,"Accuracy 5%":165,"Accuracy 100%":495,"Defence for 0":177.1,"Respawn":40},{"Name":"Sand Giant","Attack":195,"Health":30000,"Speed":3,"Experience":410,"Accuracy 5%":183,"Accuracy 100%":548,"Defence for 0":207.65,"Respawn":40},{"Name":"Snelbie","Attack":225,"Health":35000,"Speed":4,"Experience":460,"Accuracy 5%":200,"Accuracy 100%":600,"Defence for 0":244.76,"Respawn":40},{"Name":"Dig Doug","Attack":2,"Health":14000,"Speed":4,"Experience":420,"Accuracy 5%":114,"Accuracy 100%":342,"Defence for 0":0.5,"Respawn":40},{"Name":"Crystal Crabal","Attack":0,"Health":0,"Speed":0,"Experience":0,"Accuracy 5%":0,"Accuracy 100%":0,"Defence for 0":0,"Respawn":0}],"W3":[{"Name":"Sheepie","Attack":300,"Health":55000,"Speed":4,"Experience":620,"Accuracy 5%":275,"Accuracy 100%":825,"Defence for 0":338.94,"Respawn":40},{"Name":"Frost Flake","Attack":360,"Health":67000,"Speed":4,"Experience":700,"Accuracy 5%":350,"Accuracy 100%":1050,"Defence for 0":415.1,"Respawn":40},{"Name":"Sir Stache","Attack":420,"Health":81000,"Speed":4,"Experience":800,"Accuracy 5%":450,"Accuracy 100%":1350,"Defence for 0":491.48,"Respawn":40},{"Name":"Bloque","Attack":500,"Health":100000,"Speed":4,"Experience":940,"Accuracy 5%":575,"Accuracy 100%":1725,"Defence for 0":593.5,"Respawn":40},{"Name":"Mamooth","Attack":580,"Health":115000,"Speed":3,"Experience":1030,"Accuracy 5%":700,"Accuracy 100%":2100,"Defence for 0":695.37,"Respawn":40},{"Name":"Snowman","Attack":690,"Health":135000,"Speed":6,"Experience":1130,"Accuracy 5%":850,"Accuracy 100%":2550,"Defence for 0":834.89,"Respawn":40},{"Name":"Penguin","Attack":800,"Health":160000,"Speed":4,"Experience":1250,"Accuracy 5%":1000,"Accuracy 100%":3000,"Defence for 0":973.57,"Respawn":40},{"Name":"Thermister","Attack":950,"Health":185000,"Speed":4,"Experience":1370,"Accuracy 5%":1125,"Accuracy 100%":3375,"Defence for 0":1161.15,"Respawn":40},{"Name":"Quenchie","Attack":1150,"Health":225000,"Speed":4,"Experience":1570,"Accuracy 5%":1300,"Accuracy 100%":3900,"Defence for 0":1408.37,"Respawn":45},{"Name":"Cryosnake","Attack":1425,"Health":260000,"Speed":6,"Experience":1690,"Accuracy 5%":1450,"Accuracy 100%":4350,"Defence for 0":1743.06,"Respawn":45},{"Name":"Bop Box","Attack":1700,"Health":310000,"Speed":4,"Experience":1780,"Accuracy 5%":1600,"Accuracy 100%":4800,"Defence for 0":2072.08,"Respawn":45},{"Name":"Neyeptune","Attack":2000,"Health":350000,"Speed":4,"Experience":1900,"Accuracy 5%":1700,"Accuracy 100%":5100,"Defence for 0":2424.95,"Respawn":45},{"Name":"Dedotated Ram","Attack":3000,"Health":1250000,"Speed":6,"Experience":3500,"Accuracy 5%":750,"Accuracy 100%":2250,"Defence for 0":3563.92,"Respawn":35},{"Name":"Xylobone","Attack":200,"Health":200000,"Speed":4,"Experience":2000,"Accuracy 5%":50,"Accuracy 100%":250,"Defence for 0":213.8,"Respawn":40},{"Name":"Bloodbone","Attack":3000,"Health":10000000,"Speed":4,"Experience":6000,"Accuracy 5%":50,"Accuracy 100%":150,"Defence for 0":3563.92,"Respawn":60},{"Name":"Crystal Cattle","Attack":0,"Health":0,"Speed":0,"Experience":0,"Accuracy 5%":0,"Accuracy 100%":0,"Defence for 0":0,"Respawn":0}],"Boss":[{"Name":"Baba Yaga","Attack":400,"Health":150000,"Speed":4,"Experience":1750,"Accuracy 5%":150,"Accuracy 100%":450,"Defence for 0":466,"Respawn":3600},{"Name":"Dr Defecaus","Attack":1000,"Health":750000,"Speed":3,"Experience":12000,"Accuracy 5%":300,"Accuracy 100%":900,"Defence for 0":1223.3,"Respawn":74500},{"Name":"Normal Amarok","Attacks":[{"Name":"Fireball","Attack":50},{"Name":"Stomp","Attack":120},{"Name":"Rock Spikes","Attack":70},{"Name":"Spike Traps","Attack":68},{"Name":"Sword Swing","Attack":100},{"Name":"Uppercut","Attack":200},{"Name":"Rocketfist","Attack":100}],"Health":25000,"Accuracy 5%":52.5,"Accuracy 100%":157.5,"Experience":4000},{"Name":"Chaotic Amarok","Attacks":[{"Name":"Fireball","Attack":50},{"Name":"Stomp","Attack":120},{"Name":"Rock Spikes","Attack":70},{"Name":"Spike Traps","Attack":68},{"Name":"Sword Swing","Attack":100},{"Name":"Uppercut","Attack":200},{"Name":"Rocketfist","Attack":100}],"Health":25000,"Accuracy 5%":52.5,"Accuracy 100%":157.5,"Experience":4000},{"Name":"Biggie Hours","Attack":500,"Health":800000,"Speed":5,"Experience":12500,"Accuracy 5%":297,"Accuracy 100%":891,"Defence for 0":0,"Respawn":0},{"Name":"King Doot","Attack":800,"Health":3000000,"Speed":4,"Experience":50000,"Accuracy 5%":500,"Accuracy 100%":1500,"Defence for 0":0,"Respawn":0},{"Name":"Normal Efaunt","Attacks":[{"Name":"Hammer","Attack":1250},{"Name":"Scimitar","Attack":300},{"Name":"Fire Column","Attack":350},{"Name":"Purple Psionic Hoops","Attack":450},{"Name":"Finger Gun","Attack":5000},{"Name":"Headpat","Attack":10000},{"Name":"Blue Psionic Hoops","Attack":400},{"Name":"Kick","Attack":0}],"Health":1000000,"Accuracy 5%":275,"Accuracy 100%":825,"Experience":100000},{"Name":"Chaotic Efaunt","Attacks":[{"Name":"Hammer","Attack":1250},{"Name":"Scimitar","Attack":300},{"Name":"Fire Column","Attack":350},{"Name":"Purple Psionic Hoops","Attack":450},{"Name":"Finger Gun","Attack":5000},{"Name":"Headpat","Attack":10000},{"Name":"Blue Psionic Hoops","Attack":400},{"Name":"Kick","Attack":0}],"Health":100000000,"Accuracy 5%":2000,"Accuracy 100%":6000,"Experience":2000000},{"Name":"Normal Chizoar","Health":0,"Accuracy 5%":0,"Accuracy 100%":0,"Experience":0,"Attacks":{}},{"Name":"Chaotic Chizoar","Health":0,"Accuracy 5%":0,"Accuracy 100%":0,"Experience":0,"Attacks":{}}],"Event":[{"Name":"Ghost","Attack":0,"Health":0,"Speed":0,"Experience":0,"Accuracy 5%":0,"Accuracy 100%":0,"Defence for 0":0,"Respawn":0},{"Name":"Valentslime","Attack":0,"Health":0,"Speed":0,"Experience":0,"Accuracy 5%":0,"Accuracy 100%":0,"Defence for 0":0,"Respawn":0},{"Name":"Floofie","Attack":0,"Health":0,"Speed":0,"Experience":0,"Accuracy 5%":0,"Accuracy 100%":0,"Defence for 0":0,"Respawn":0},{"Name":"Shell Snake","Attack":0,"Health":0,"Speed":0,"Experience":0,"Accuracy 5%":0,"Accuracy 100%":0,"Defence for 0":0,"Respawn":0},{"Name":"Plasti Doug","Attack":0,"Health":0,"Speed":0,"Experience":0,"Accuracy 5%":0,"Accuracy 100%":0,"Defence for 0":0,"Respawn":0},{"Name":"Mr Blueberry","Attack":0,"Health":0,"Speed":0,"Experience":0,"Accuracy 5%":0,"Accuracy 100%":0,"Defence for 0":0,"Respawn":0}]}
+{
+  "W1": [
+    {
+      "Name": "Green Mushroom",
+      "Attack": 1,
+      "Health": 10,
+      "Speed": 4,
+      "Experience": 2,
+      "Accuracy 5%": 1,
+      "Accuracy 100%": 2,
+      "Defence for 0": 0.2,
+      "Respawn": 35
+    },
+    {
+      "Name": "Red Mushroom",
+      "Attack": 30,
+      "Health": 1000,
+      "Speed": 4,
+      "Experience": 47,
+      "Accuracy 5%": 13,
+      "Accuracy 100%": 38,
+      "Defence for 0": 21.6,
+      "Respawn": 45
+    },
+    {
+      "Name": "Frog",
+      "Attack": 5,
+      "Health": 50,
+      "Speed": 4,
+      "Experience": 7,
+      "Accuracy 5%": 1,
+      "Accuracy 100%": 3,
+      "Defence for 0": 2.1,
+      "Respawn": 40
+    },
+    {
+      "Name": "Bored Bean",
+      "Attack": 11,
+      "Health": 150,
+      "Speed": 4,
+      "Experience": 15,
+      "Accuracy 5%": 2,
+      "Accuracy 100%": 6,
+      "Defence for 0": 5.97,
+      "Respawn": 50
+    },
+    {
+      "Name": "Slime",
+      "Attack": 15,
+      "Health": 250,
+      "Speed": 4,
+      "Experience": 23,
+      "Accuracy 5%": 5,
+      "Accuracy 100%": 14,
+      "Defence for 0": 8.9,
+      "Respawn": 42
+    },
+    {
+      "Name": "Baby Boa",
+      "Attack": 18,
+      "Health": 450,
+      "Speed": 8,
+      "Experience": 34,
+      "Accuracy 5%": 9,
+      "Accuracy 100%": 27,
+      "Defence for 0": 11.22,
+      "Respawn": 45
+    },
+    {
+      "Name": "Carrotman",
+      "Attack": 22,
+      "Health": 800,
+      "Speed": 6,
+      "Experience": 45,
+      "Accuracy 5%": 15,
+      "Accuracy 100%": 45,
+      "Defence for 0": 14.57,
+      "Respawn": 50
+    },
+    {
+      "Name": "Glublin",
+      "Attack": 30,
+      "Health": 1250,
+      "Speed": 4,
+      "Experience": 60,
+      "Accuracy 5%": 26,
+      "Accuracy 100%": 78,
+      "Defence for 0": 21.54,
+      "Respawn": 52
+    },
+    {
+      "Name": "Wode Board",
+      "Attack": 35,
+      "Health": 1800,
+      "Speed": 3,
+      "Experience": 75,
+      "Accuracy 5%": 35,
+      "Accuracy 100%": 105,
+      "Defence for 0": 26.12,
+      "Respawn": 45
+    },
+    {
+      "Name": "Gigafrog",
+      "Attack": 45,
+      "Health": 2500,
+      "Speed": 3,
+      "Experience": 95,
+      "Accuracy 5%": 55,
+      "Accuracy 100%": 165,
+      "Defence for 0": 35.69,
+      "Respawn": 55
+    },
+    {
+      "Name": "Poop",
+      "Attack": 150,
+      "Health": 9000,
+      "Speed": 4,
+      "Experience": 220,
+      "Accuracy 5%": 50,
+      "Accuracy 100%": 150,
+      "Defence for 0": 152.99,
+      "Respawn": 60
+    },
+    {
+      "Name": "Rat",
+      "Attack": 220,
+      "Health": 20000,
+      "Speed": 8,
+      "Experience": 330,
+      "Accuracy 5%": 90,
+      "Accuracy 100%": 270,
+      "Defence for 0": 238.5,
+      "Respawn": 60
+    },
+    {
+      "Name": "Boop",
+      "Attack": 250,
+      "Health": 200000,
+      "Speed": 3,
+      "Experience": 1000,
+      "Accuracy 5%": 60,
+      "Accuracy 100%": 180,
+      "Defence for 0": 276,
+      "Respawn": 74500
+    },
+    {
+      "Name": "Walking Stick",
+      "Attack": 20,
+      "Health": 1500,
+      "Speed": 4,
+      "Experience": 120,
+      "Accuracy 5%": 75,
+      "Accuracy 100%": 225,
+      "Defence for 0": 12.82,
+      "Respawn": 60
+    },
+    {
+      "Name": "Nutto",
+      "Attack": 40,
+      "Health": 4000,
+      "Speed": 5,
+      "Experience": 190,
+      "Accuracy 5%": 100,
+      "Accuracy 100%": 300,
+      "Defence for 0": 30.9,
+      "Respawn": 60
+    },
+    {
+      "Name": "Wood Mushroom",
+      "Attack": 75,
+      "Health": 10000,
+      "Speed": 4,
+      "Experience": 300,
+      "Accuracy 5%": 250,
+      "Accuracy 100%": 750,
+      "Defence for 0": 66.8,
+      "Respawn": 50
+    },
+    {
+      "Name": "Crystal Carrot",
+      "Attack": 0,
+      "Health": 0,
+      "Speed": 0,
+      "Experience": 0,
+      "Accuracy 5%": 0,
+      "Accuracy 100%": 0,
+      "Defence for 0": 0,
+      "Respawn": 0
+    }
+  ],
+  "W2": [
+    {
+      "Name": "Sandy Pot",
+      "Attack": 70,
+      "Health": 4000,
+      "Speed": 5,
+      "Experience": 150,
+      "Accuracy 5%": 63,
+      "Accuracy 100%": 188,
+      "Defence for 0": 61.5,
+      "Respawn": 50
+    },
+    {
+      "Name": "Mimic",
+      "Attack": 62,
+      "Health": 5500,
+      "Speed": 4,
+      "Experience": 180,
+      "Accuracy 5%": 66,
+      "Accuracy 100%": 198,
+      "Defence for 0": 52.96,
+      "Respawn": 50
+    },
+    {
+      "Name": "Crabcake",
+      "Attack": 70,
+      "Health": 7500,
+      "Speed": 4,
+      "Experience": 210,
+      "Accuracy 5%": 75,
+      "Accuracy 100%": 225,
+      "Defence for 0": 61.42,
+      "Respawn": 40
+    },
+    {
+      "Name": "Mafioso",
+      "Attack": 90,
+      "Health": 11000,
+      "Speed": 4,
+      "Experience": 240,
+      "Accuracy 5%": 90,
+      "Accuracy 100%": 270,
+      "Defence for 0": 83.29,
+      "Respawn": 40
+    },
+    {
+      "Name": "Sand Castle",
+      "Attack": 99,
+      "Health": 13000,
+      "Speed": 3,
+      "Experience": 265,
+      "Accuracy 5%": 103,
+      "Accuracy 100%": 308,
+      "Defence for 0": 93.41,
+      "Respawn": 40
+    },
+    {
+      "Name": "Pincermin",
+      "Attack": 112,
+      "Health": 15500,
+      "Speed": 5,
+      "Experience": 290,
+      "Accuracy 5%": 120,
+      "Accuracy 100%": 360,
+      "Defence for 0": 108.27,
+      "Respawn": 50
+    },
+    {
+      "Name": "Mashed Potato",
+      "Attack": 125,
+      "Health": 18500,
+      "Speed": 6,
+      "Experience": 310,
+      "Accuracy 5%": 130,
+      "Accuracy 100%": 390,
+      "Defence for 0": 123.37,
+      "Respawn": 40
+    },
+    {
+      "Name": "Tyson",
+      "Attack": 150,
+      "Health": 23000,
+      "Speed": 5,
+      "Experience": 350,
+      "Accuracy 5%": 150,
+      "Accuracy 100%": 450,
+      "Defence for 0": 152.99,
+      "Respawn": 40
+    },
+    {
+      "Name": "Moonmoon",
+      "Attack": 170,
+      "Health": 26500,
+      "Speed": 4,
+      "Experience": 380,
+      "Accuracy 5%": 165,
+      "Accuracy 100%": 495,
+      "Defence for 0": 177.1,
+      "Respawn": 40
+    },
+    {
+      "Name": "Sand Giant",
+      "Attack": 195,
+      "Health": 30000,
+      "Speed": 3,
+      "Experience": 410,
+      "Accuracy 5%": 183,
+      "Accuracy 100%": 548,
+      "Defence for 0": 207.65,
+      "Respawn": 40
+    },
+    {
+      "Name": "Snelbie",
+      "Attack": 225,
+      "Health": 35000,
+      "Speed": 4,
+      "Experience": 460,
+      "Accuracy 5%": 200,
+      "Accuracy 100%": 600,
+      "Defence for 0": 244.76,
+      "Respawn": 40
+    },
+    {
+      "Name": "Dig Doug",
+      "Attack": 2,
+      "Health": 14000,
+      "Speed": 4,
+      "Experience": 420,
+      "Accuracy 5%": 114,
+      "Accuracy 100%": 342,
+      "Defence for 0": 0.5,
+      "Respawn": 40
+    },
+    {
+      "Name": "Crystal Crabal",
+      "Attack": 0,
+      "Health": 0,
+      "Speed": 0,
+      "Experience": 0,
+      "Accuracy 5%": 0,
+      "Accuracy 100%": 0,
+      "Defence for 0": 0,
+      "Respawn": 0
+    }
+  ],
+  "W3": [
+    {
+      "Name": "Sheepie",
+      "Attack": 300,
+      "Health": 55000,
+      "Speed": 4,
+      "Experience": 620,
+      "Accuracy 5%": 275,
+      "Accuracy 100%": 825,
+      "Defence for 0": 338.94,
+      "Respawn": 40
+    },
+    {
+      "Name": "Frost Flake",
+      "Attack": 360,
+      "Health": 67000,
+      "Speed": 4,
+      "Experience": 700,
+      "Accuracy 5%": 350,
+      "Accuracy 100%": 1050,
+      "Defence for 0": 415.1,
+      "Respawn": 40
+    },
+    {
+      "Name": "Sir Stache",
+      "Attack": 420,
+      "Health": 81000,
+      "Speed": 4,
+      "Experience": 800,
+      "Accuracy 5%": 450,
+      "Accuracy 100%": 1350,
+      "Defence for 0": 491.48,
+      "Respawn": 40
+    },
+    {
+      "Name": "Bloque",
+      "Attack": 500,
+      "Health": 100000,
+      "Speed": 4,
+      "Experience": 940,
+      "Accuracy 5%": 575,
+      "Accuracy 100%": 1725,
+      "Defence for 0": 593.5,
+      "Respawn": 40
+    },
+    {
+      "Name": "Mamooth",
+      "Attack": 580,
+      "Health": 115000,
+      "Speed": 3,
+      "Experience": 1030,
+      "Accuracy 5%": 700,
+      "Accuracy 100%": 2100,
+      "Defence for 0": 695.37,
+      "Respawn": 40
+    },
+    {
+      "Name": "Snowman",
+      "Attack": 690,
+      "Health": 135000,
+      "Speed": 6,
+      "Experience": 1130,
+      "Accuracy 5%": 850,
+      "Accuracy 100%": 2550,
+      "Defence for 0": 834.89,
+      "Respawn": 40
+    },
+    {
+      "Name": "Penguin",
+      "Attack": 800,
+      "Health": 160000,
+      "Speed": 4,
+      "Experience": 1250,
+      "Accuracy 5%": 1000,
+      "Accuracy 100%": 3000,
+      "Defence for 0": 973.57,
+      "Respawn": 40
+    },
+    {
+      "Name": "Thermister",
+      "Attack": 950,
+      "Health": 185000,
+      "Speed": 4,
+      "Experience": 1370,
+      "Accuracy 5%": 1125,
+      "Accuracy 100%": 3375,
+      "Defence for 0": 1161.15,
+      "Respawn": 40
+    },
+    {
+      "Name": "Quenchie",
+      "Attack": 1150,
+      "Health": 225000,
+      "Speed": 4,
+      "Experience": 1570,
+      "Accuracy 5%": 1300,
+      "Accuracy 100%": 3900,
+      "Defence for 0": 1408.37,
+      "Respawn": 45
+    },
+    {
+      "Name": "Cryosnake",
+      "Attack": 1425,
+      "Health": 260000,
+      "Speed": 6,
+      "Experience": 1690,
+      "Accuracy 5%": 1450,
+      "Accuracy 100%": 4350,
+      "Defence for 0": 1743.06,
+      "Respawn": 45
+    },
+    {
+      "Name": "Bop Box",
+      "Attack": 1700,
+      "Health": 310000,
+      "Speed": 4,
+      "Experience": 1780,
+      "Accuracy 5%": 1600,
+      "Accuracy 100%": 4800,
+      "Defence for 0": 2072.08,
+      "Respawn": 45
+    },
+    {
+      "Name": "Neyeptune",
+      "Attack": 2000,
+      "Health": 350000,
+      "Speed": 4,
+      "Experience": 1900,
+      "Accuracy 5%": 1700,
+      "Accuracy 100%": 5100,
+      "Defence for 0": 2424.95,
+      "Respawn": 45
+    },
+    {
+      "Name": "Dedotated Ram",
+      "Attack": 3000,
+      "Health": 1250000,
+      "Speed": 6,
+      "Experience": 3500,
+      "Accuracy 5%": 750,
+      "Accuracy 100%": 2250,
+      "Defence for 0": 3563.92,
+      "Respawn": 35
+    },
+    {
+      "Name": "Xylobone",
+      "Attack": 200,
+      "Health": 200000,
+      "Speed": 4,
+      "Experience": 2000,
+      "Accuracy 5%": 50,
+      "Accuracy 100%": 250,
+      "Defence for 0": 213.8,
+      "Respawn": 40
+    },
+    {
+      "Name": "Bloodbone",
+      "Attack": 3000,
+      "Health": 10000000,
+      "Speed": 4,
+      "Experience": 6000,
+      "Accuracy 5%": 50,
+      "Accuracy 100%": 150,
+      "Defence for 0": 3563.92,
+      "Respawn": 60
+    },
+    {
+      "Name": "Crystal Cattle",
+      "Attack": 0,
+      "Health": 0,
+      "Speed": 0,
+      "Experience": 0,
+      "Accuracy 5%": 0,
+      "Accuracy 100%": 0,
+      "Defence for 0": 0,
+      "Respawn": 0
+    }
+  ],
+  "Boss": [
+    {
+      "Name": "Baba Yaga",
+      "Attack": 400,
+      "Health": 150000,
+      "Speed": 4,
+      "Experience": 1750,
+      "Accuracy 5%": 150,
+      "Accuracy 100%": 450,
+      "Defence for 0": 466,
+      "Respawn": 3600
+    },
+    {
+      "Name": "Dr Defecaus",
+      "Attack": 1000,
+      "Health": 750000,
+      "Speed": 3,
+      "Experience": 12000,
+      "Accuracy 5%": 300,
+      "Accuracy 100%": 900,
+      "Defence for 0": 1223.3,
+      "Respawn": 74500
+    },
+    {
+      "Name": "Normal Amarok",
+      "Attacks": [
+        {
+          "Name": "Fireball",
+          "Attack": 50
+        },
+        {
+          "Name": "Stomp",
+          "Attack": 120
+        },
+        {
+          "Name": "Rock Spikes",
+          "Attack": 70
+        },
+        {
+          "Name": "Spike Traps",
+          "Attack": 68
+        },
+        {
+          "Name": "Sword Swing",
+          "Attack": 100
+        },
+        {
+          "Name": "Uppercut",
+          "Attack": 200
+        },
+        {
+          "Name": "Rocketfist",
+          "Attack": 100
+        }
+      ],
+      "Health": 25000,
+      "Accuracy 5%": 52.5,
+      "Accuracy 100%": 157.5,
+      "Experience": 4000,
+      "Defence for 0": 198
+    },
+    {
+      "Name": "Chaotic Amarok",
+      "Attacks": [
+        {
+          "Name": "Fireball",
+          "Attack": 650
+        },
+        {
+          "Name": "Stomp",
+          "Attack": 1500
+        },
+        {
+          "Name": "Rock Spikes",
+          "Attack": 800
+        },
+        {
+          "Name": "Spike Traps",
+          "Attack": 675
+        },
+        {
+          "Name": "Sword Swing",
+          "Attack": 1500
+        },
+        {
+          "Name": "Uppercut",
+          "Attack": 3000
+        },
+        {
+          "Name": "Rocketfist",
+          "Attack": 1000
+        }
+      ],
+      "Health": 25000,
+      "Accuracy 5%": 52.5,
+      "Accuracy 100%": 157.5,
+      "Experience": 4000,
+      "Defence for 0": 2911
+    },
+    {
+      "Name": "Biggie Hours",
+      "Attack": 500,
+      "Health": 800000,
+      "Speed": 5,
+      "Experience": 12500,
+      "Accuracy 5%": 297,
+      "Accuracy 100%": 891,
+      "Defence for 0": 0,
+      "Respawn": 0
+    },
+    {
+      "Name": "King Doot",
+      "Attack": 800,
+      "Health": 3000000,
+      "Speed": 4,
+      "Experience": 50000,
+      "Accuracy 5%": 500,
+      "Accuracy 100%": 1500,
+      "Defence for 0": 0,
+      "Respawn": 0
+    },
+    {
+      "Name": "Normal Efaunt",
+      "Attacks": [
+        {
+          "Name": "Hammer",
+          "Attack": 1250
+        },
+        {
+          "Name": "Scimitar",
+          "Attack": 300
+        },
+        {
+          "Name": "Fire Column",
+          "Attack": 350
+        },
+        {
+          "Name": "Purple Psionic Hoops",
+          "Attack": 450
+        },
+        {
+          "Name": "Finger Gun",
+          "Attack": 5000
+        },
+        {
+          "Name": "Headpat",
+          "Attack": 10000
+        },
+        {
+          "Name": "Blue Psionic Hoops",
+          "Attack": 400
+        },
+        {
+          "Name": "Kick",
+          "Attack": 0
+        }
+      ],
+      "Health": 1000000,
+      "Accuracy 5%": 275,
+      "Accuracy 100%": 825,
+      "Experience": 100000,
+      "Defence for 0": 8438
+    },
+    {
+      "Name": "Chaotic Efaunt",
+      "Attacks": [
+        {
+          "Name": "Hammer",
+          "Attack": 1800
+        },
+        {
+          "Name": "Scimitar",
+          "Attack": 4000
+        },
+        {
+          "Name": "Fire Column",
+          "Attack": 2000
+        },
+        {
+          "Name": "Purple Psionic Hoops",
+          "Attack": 1500
+        },
+        {
+          "Name": "Finger Gun",
+          "Attack": 2500
+        },
+        {
+          "Name": "Headpat",
+          "Attack": 5000
+        },
+        {
+          "Name": "Blue Psionic Hoops",
+          "Attack": 3300
+        },
+        {
+          "Name": "Kick",
+          "Attack": 4000
+        }
+      ],
+      "Health": 100000000,
+      "Accuracy 5%": 2000,
+      "Accuracy 100%": 6000,
+      "Experience": 2000000,
+      "Defence for 0": 4600
+    },
+    {
+      "Name": "Normal Chizoar",
+      "Attacks": [
+      	{
+      		"Name": "Front Stomp",
+      		"Attack": 3200
+      	},
+      	{
+      		"Name": "Back Stomp",
+      		"Attack": 3600
+      	},
+      	{
+      		"Name": "Frozen Spikes",
+      		"Attack": 2500
+      	},
+      	{
+      		"Name": "Falling Icicles",
+      		"Attack": 2100
+      	},
+      	{
+      		"Name": "Tusk Swipe",
+      		"Attack": 2900
+      	}
+      ],
+      "Health": 40000000,
+      "Accuracy 5%": 1125,
+      "Accuracy 100%": 3375,
+      "Experience": 4000,
+      "Defence for 0": 3431
+    },
+    {
+      "Name": "Chaotic Chizoar",
+      "Attacks": [
+      	{
+      		"Name": "Front Stomp",
+      		"Attack": 6000
+      	},
+      	{
+      		"Name": "Back Stomp",
+      		"Attack": 9000
+      	},
+      	{
+      		"Name": "Frozen Spikes",
+      		"Attack": 5000
+      	},
+      	{
+      		"Name": "Falling Icicles",
+      		"Attack": 4000
+      	},
+      	{
+      		"Name": "Tusk Swipe",
+      		"Attack": 6000
+      	}
+      ],
+      "Health": 2000000000,
+      "Accuracy 5%": 3750,
+      "Accuracy 100%": 11300,
+      "Experience": 4000,
+      "Defence for 0": 7702
+    }
+  ],
+  "Event": [
+    {
+      "Name": "Ghost",
+      "Attack": 0,
+      "Health": 0,
+      "Speed": 0,
+      "Experience": 0,
+      "Accuracy 5%": 0,
+      "Accuracy 100%": 0,
+      "Defence for 0": 0,
+      "Respawn": 0
+    },
+    {
+      "Name": "Valentslime",
+      "Attack": 0,
+      "Health": 0,
+      "Speed": 0,
+      "Experience": 0,
+      "Accuracy 5%": 0,
+      "Accuracy 100%": 0,
+      "Defence for 0": 0,
+      "Respawn": 0
+    },
+    {
+      "Name": "Floofie",
+      "Attack": 0,
+      "Health": 0,
+      "Speed": 0,
+      "Experience": 0,
+      "Accuracy 5%": 0,
+      "Accuracy 100%": 0,
+      "Defence for 0": 0,
+      "Respawn": 0
+    },
+    {
+      "Name": "Shell Snake",
+      "Attack": 0,
+      "Health": 0,
+      "Speed": 0,
+      "Experience": 0,
+      "Accuracy 5%": 0,
+      "Accuracy 100%": 0,
+      "Defence for 0": 0,
+      "Respawn": 0
+    },
+    {
+      "Name": "Plasti Doug",
+      "Attack": 0,
+      "Health": 0,
+      "Speed": 0,
+      "Experience": 0,
+      "Accuracy 5%": 0,
+      "Accuracy 100%": 0,
+      "Defence for 0": 0,
+      "Respawn": 0
+    },
+    {
+      "Name": "Mr Blueberry",
+      "Attack": 0,
+      "Health": 0,
+      "Speed": 0,
+      "Experience": 0,
+      "Accuracy 5%": 0,
+      "Accuracy 100%": 0,
+      "Defence for 0": 0,
+      "Respawn": 0
+    }
+  ]
+}
