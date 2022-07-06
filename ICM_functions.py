@@ -35,6 +35,7 @@ def generate_img(f, s, bg): # Generates image using PIL
     if "None" in f:
         f = 'images/Empty Slot.png'
     if not os.path.exists(f):
+        print('ERROR: Cannot find {}'.format(f))
         f = 'images/Missing.png'
     img = Image.open(f).resize(s)
     if bg:
@@ -70,15 +71,35 @@ def is_base_class(c): # returns true if the given class is a base class (Beginne
     return False
 
 def calculate_hit_chance(char_acc, acc_100):
-    return min(100, 142.5 * char_acc / acc_100 - 42.5)
+    if acc_100 != 0:
+        try:
+            char_acc = int(char_acc)
+        except:
+            char_acc = 0
+        hit_chance = int(max(0, min(100, 142.5 * char_acc / acc_100 - 42.5)))
+        if hit_chance >= 5:
+            return hit_chance
+    return 0
 
 def calculate_accuracy_needed(char_acc, acc_100):
+    try:
+        char_acc = int(char_acc)
+    except:
+        char_acc = 0
     return max(0, acc_100 - char_acc)
 
 def calculate_damage_taken(char_def, atk_dam):
-    return int((atk_dam - 2.5 * char_def**0.8) / max(1, 1 + char_def**2.5 / max(100, 100*atk_dam)))
+    try: 
+        char_def = int(char_def)
+    except:
+        char_def = 0
+    return max(0, int((atk_dam - 2.5 * char_def**0.8) / max(1, 1 + char_def**2.5 / max(100, 100*atk_dam))))
 
 def calculate_defence_needed(char_def, def_0):
+    try: 
+        char_def = int(char_def)
+    except:
+        char_def = 0
     return max(0, def_0 - char_def)
 
 def max_hp(character):
@@ -219,7 +240,6 @@ def is_craftable(item):
                 return True
     return False
 
-
 def update_ingredient_counts(crafts, recursive):
     new_counts = []
     if recursive: #determine if item is craftable and update accordingly
@@ -231,7 +251,7 @@ def update_ingredient_counts(crafts, recursive):
                         for new_ingredient in craft_item['ingredients']:
                             if is_craftable(new_ingredient):
                                 craftable_materials.append([new_ingredient['name'], new_ingredient['count']])
-                                craftable_materials[-1][0] = craftable_materials[-1][0] * item[1]
+                                craftable_materials[-1][1] = craftable_materials[-1][1] * item[1]
                             else:
                                 found = False
                                 for current_ingredient in new_counts:
@@ -298,7 +318,8 @@ talents =   {
                 'Mage':{'Shaman':{}, 'Wizard':{}}, 
                 'Warrior':{'Barbarian':{}, 'Squire':{}}, 
                 'Archer':{'Bowman':{}, 'Hunter':{}},
-                'Journeyman':{}
+                'Journeyman':{},
+                'Star':{'Tab1':{}, 'Tab2':{}, 'Tab3':{}, 'Tab4':{}, 'Tab5':{}}
             }
 
 # List of characters for the combobox

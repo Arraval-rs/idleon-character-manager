@@ -39,20 +39,21 @@ def update_monster_widgets(window, event):
 		window['mon_name'].update(icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Name'])
 		window['mon_health'].update('Health: {}'.format(f'{int(icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]["Health"]):,}'))
 		window['mon_exp'].update('Experience: {}'.format(f'{int(icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]["Experience"]):,}'))
-		# hit chance
-		# acc_needed
-		# def_needed
+		window['hit_chance'].update('Hit Chance: {}%'.format(icm_f.calculate_hit_chance(window['char_acc'].get(), icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Accuracy 100%'])))
+		window['acc_needed'].update('Accuracy Needed: {}'.format(icm_f.calculate_accuracy_needed(window['char_acc'].get(), int(icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Accuracy 100%']))))
+		window['def_needed'].update('Defence Needed: {}'.format(icm_f.calculate_defence_needed(window['char_def'].get(), int(icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Defence for 0']))))
 		if icm_f.current_monster[0] == 'Boss' and \
 		('Amarok' in icm_f.monsters['Boss'][icm_f.current_monster[1]]['Name'] or \
 		'Efaunt' in icm_f.monsters['Boss'][icm_f.current_monster[1]]['Name'] or \
 		'Chizoar' in icm_f.monsters['Boss'][icm_f.current_monster[1]]['Name']):
 			atk_string = ''
 			for i in range(0, len(icm_f.monsters['Boss'][icm_f.current_monster[1]]['Attacks'])):
-				atk_string += '{}) {}: {}\nDamage Taken: {}\n'.format(i + 1, icm_f.monsters['Boss'][icm_f.current_monster[1]]['Attacks'][i]['Name'], icm_f.monsters['Boss'][icm_f.current_monster[1]]['Attacks'][i]['Attack'], 0)
+				damage = icm_f.monsters['Boss'][icm_f.current_monster[1]]['Attacks'][i]['Attack']
+				atk_string += '{}) {}: {}\nDamage Taken: {}\n'.format(i + 1, icm_f.monsters['Boss'][icm_f.current_monster[1]]['Attacks'][i]['Name'], damage, icm_f.calculate_damage_taken(window['char_def'].get(), int(damage)))
 			window['mon_attack'].update(atk_string)
 		else:
 			damage = icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Attack']
-			window['mon_attack'].update('Attack: {}\nDamage Taken: {}'.format(damage, icm_f.calculate_damage_taken(0, int(damage))))
+			window['mon_attack'].update('Attack: {}\nDamage Taken: {}'.format(damage, icm_f.calculate_damage_taken(window['char_def'].get(), int(damage))))
 			window['mon_speed'].update('Speed: {}'.format(icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Speed']))
 			window['mon_respawn'].update('Respawn: {}'.format(f'{int(icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]["Respawn"]):,}'))
 
@@ -208,7 +209,7 @@ for i in range(0, 5):
 	crafting_events.append('craft{}count'.format(i))
 	crafting_events.append('craft{}remove'.format(i))
 
-monster_events = []
+monster_events = ['char_acc', 'char_def']
 for i in range(0, 17):
 	monster_events.append('W1_{}'.format(i))
 	monster_events.append('W2_{}'.format(i))

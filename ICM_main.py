@@ -66,7 +66,6 @@ while True:
     if event != "Exit" and event != sg.WIN_CLOSED:
         index = icm_f.character_list.index(values['active_character'])
         # Update gifs
-        window['meel'].UpdateAnimation('images/Misc_WIP/Meel.gif', time_between_frames = 120)
         window['constructor_crow'].UpdateAnimation('images/Misc_WIP/Constructor Crow.gif', time_between_frames = 120)
         window['carpenter_cardinal'].UpdateAnimation('images/Misc_WIP/Carpenter Cardinal.gif', time_between_frames = 120)
     else:

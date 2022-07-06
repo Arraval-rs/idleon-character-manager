@@ -22,6 +22,14 @@ for i in range(30, 45):
     icm_f.talents['Warrior']['Squire'][str(i)] = icm_f.generate_img('images/Talents/Warrior/Squire/{}.png'.format(i), (56, 56), False)
     icm_f.talents['Archer']['Bowman'][str(i)] = icm_f.generate_img('images/Talents/Archer/Bowman/{}.png'.format(i), (56, 56), False)
     icm_f.talents['Archer']['Hunter'][str(i)] = icm_f.generate_img('images/Talents/Archer/Hunter/{}.png'.format(i), (56, 56), False)
+for i in range(0, 15):
+    for j in range(0, 5):
+        if i == 10:
+            icm_f.talents['Star']['Tab{}'.format(str(j+1))][str(i)] = icm_f.generate_img('images/Talents/Star/LeftArrow.png', (56, 56), False)
+        elif i == 14:
+            icm_f.talents['Star']['Tab{}'.format(str(j+1))][str(i)] = icm_f.generate_img('images/Talents/Star/RightArrow.png', (56, 56), False)
+        else:
+            icm_f.talents['Star']['Tab{}'.format(str(j+1))][str(i)] = icm_f.generate_img('images/Talents/Star/Tab_{}/{}.png'.format(j+1, i), (56, 56), False)
 
 # tabs
 talents_1 =         [[sg.Column(
@@ -47,9 +55,20 @@ talents_3 =         [[sg.Column(
                         [sg.Text('{}/100'.format(icm_f.dictionary['characters'][0]['talentLevels'][str(30 + 5 * i + j)] if str(30 + 5 * i + j) in icm_f.dictionary['characters'][0]['talentLevels'] and icm_f.get_base_class(icm_f.dictionary['characters'][0]['class']) != 'Beginner' else '0'), key = 'talent{}'.format(str(30 + 5 * i + j)), size = (7,1), justification = 'center', relief = 'sunken') for j in range(0, 5)]
                     ], element_justification = 'center')]for i in range(0, 3)]
 
+star_1 =            [[sg.Column(
+                    [
+                        [sg.Image(data = icm_f.talents['Star']['Tab1'][str(5 * i + j)], key = 'star_1_img{}'.format(str(5 * i + j))) for j in range(0, 5)],
+                        [sg.Text('{}/100'.format(icm_f.dictionary['characters'][0]['starTalentLevels'][str(5 * i + j)] if str(5 * i + j) in icm_f.dictionary['characters'][0]['starTalentLevels'] else '0'), key = 'talent{}'.format(str(5 * i + j)), size = (7,1), justification = 'center', relief = 'sunken') for j in range(0, 5)]
+                    ], element_justification = 'center')]for i in range(0, 3)]
+
+star_2 = [[]]
 
 star_talents =      [
-                        [sg.Image(data = icm_f.generate_img('images/Misc_WIP/Meel.gif', (124, 120), False), key = 'meel'), sg.Text('Get spooped lol')]
+                        [sg.TabGroup(
+                        [[
+                            sg.Tab('I', star_1),
+                            sg.Tab('II', star_2)
+                        ]])]
                     ]
 
 

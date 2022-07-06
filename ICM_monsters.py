@@ -51,6 +51,8 @@ info_col = 	sg.Column(
 				[sg.Text('Experience: 0', size = (18, 1), key = 'mon_exp')], 
 				[sg.Text('Respawn: 0', size = (18, 1), key = 'mon_respawn')], 
 				[sg.Column([[]], pad = (0, 30))], 
+                [sg.Text('Character Accuray:'), sg.Input('0', size = (6, 1), key = 'char_acc', enable_events = True)],
+                [sg.Text('Character Defence:'), sg.Input('0', size = (6, 1), key = 'char_def', enable_events = True)],
 				[sg.Text('Hit Chance: 0%', key = 'hit_chance')], 
 				[sg.Text('Accuracy Needed: 0', key = 'acc_needed')], 
 				[sg.Text('Defence Needed: 0', key = 'def_needed')]
