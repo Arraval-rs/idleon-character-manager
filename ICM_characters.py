@@ -24,11 +24,6 @@ for i in range(30, 45):
     icm_f.talents['Archer']['Hunter'][str(i)] = icm_f.generate_img('images/Talents/Archer/Hunter/{}.png'.format(i), (56, 56), False)
 for i in range(0, 15):
     for j in range(0, 5):
-        if i == 10:
-            icm_f.talents['Star']['Tab{}'.format(str(j+1))][str(i)] = icm_f.generate_img('images/Talents/Star/LeftArrow.png', (56, 56), False)
-        elif i == 14:
-            icm_f.talents['Star']['Tab{}'.format(str(j+1))][str(i)] = icm_f.generate_img('images/Talents/Star/RightArrow.png', (56, 56), False)
-        else:
             icm_f.talents['Star']['Tab{}'.format(str(j+1))][str(i)] = icm_f.generate_img('images/Talents/Star/Tab_{}/{}.png'.format(j+1, i), (56, 56), False)
 
 # tabs
@@ -55,13 +50,44 @@ talents_3 =         [[sg.Column(
                         [sg.Text('{}/100'.format(icm_f.dictionary['characters'][0]['talentLevels'][str(30 + 5 * i + j)] if str(30 + 5 * i + j) in icm_f.dictionary['characters'][0]['talentLevels'] and icm_f.get_base_class(icm_f.dictionary['characters'][0]['class']) != 'Beginner' else '0'), key = 'talent{}'.format(str(30 + 5 * i + j)), size = (7,1), justification = 'center', relief = 'sunken') for j in range(0, 5)]
                     ], element_justification = 'center')]for i in range(0, 3)]
 
-star_1 =            [[sg.Column(
-                    [
-                        [sg.Image(data = icm_f.talents['Star']['Tab1'][str(5 * i + j)], key = 'star_1_img{}'.format(str(5 * i + j))) for j in range(0, 5)],
-                        [sg.Text('{}/100'.format(icm_f.dictionary['characters'][0]['starTalentLevels'][str(5 * i + j)] if str(5 * i + j) in icm_f.dictionary['characters'][0]['starTalentLevels'] else '0'), key = 'talent{}'.format(str(5 * i + j)), size = (7,1), justification = 'center', relief = 'sunken') for j in range(0, 5)]
-                    ], element_justification = 'center')]for i in range(0, 3)]
+# Add clicking arrows to event loop
+star_1 =            [[
+                    sg.Column([
+                        [sg.Image(data = icm_f.talents['Star']['Tab1'][str(j)], key = 'star_1_img{}'.format(str(j))) for j in range(0, 5)],
+                        [sg.Text('{}/100'.format(icm_f.dictionary['characters'][0]['starTalentLevels'][j] if (j) < len(icm_f.dictionary['characters'][0]['starTalentLevels']) else '0'), key = 'talent{}'.format(str(j)), size = (7,1), justification = 'center', relief = 'sunken') for j in range(0, 5)],
+                        [sg.Image(data = icm_f.talents['Star']['Tab1'][str(5 + j)], key = 'star_1_img{}'.format(str(5 + j))) for j in range(0, 5)],
+                        [sg.Text('{}/100'.format(icm_f.dictionary['characters'][0]['starTalentLevels'][5 + j] if (5 + j) < len(icm_f.dictionary['characters'][0]['starTalentLevels']) else '0'), key = 'talent{}'.format(str(5 + j)), size = (7,1), justification = 'center', relief = 'sunken') for j in range(0, 5)],
+                        [
+                            sg.Image(data = icm_f.generate_img('Images/Talents/Star/LeftArrow.png', (56, 56), False), key = 'star_1_left'), 
+                            sg.Image(data = icm_f.talents['Star']['Tab1'][str(10)], key = 'star_1_img10'), 
+                            sg.Image(data = icm_f.talents['Star']['Tab1'][str(11)], key = 'star_1_img11'), 
+                            sg.Image(data = icm_f.talents['Star']['Tab1'][str(12)], key = 'star_1_img12'), 
+                            sg.Image(data = icm_f.generate_img('Images/Talents/Star/RightArrow.png', (56, 56), False), key = 'star_1_right')
+                        ],
+                        [
+                            sg.Text('{}/100'.format(icm_f.dictionary['characters'][0]['starTalentLevels'][10 + j] if (10 + j) < len(icm_f.dictionary['characters'][0]['starTalentLevels']) else '0'), key = 'talent{}'.format(str(10 + j)), size = (7,1), justification = 'center', relief = 'sunken') for j in range(0, 3)
+                        ]
+                    ], element_justification = 'center')
+                    ]]
 
-star_2 = [[]]
+star_2 =            [[
+                    sg.Column([
+                        [sg.Image(data = icm_f.talents['Star']['Tab2'][str(j)], key = 'star_2_img{}'.format(str(j))) for j in range(0, 5)],
+                        [sg.Text('{}/100'.format(icm_f.dictionary['characters'][0]['starTalentLevels'][13 + j] if (j) < len(icm_f.dictionary['characters'][0]['starTalentLevels']) else '0'), key = 'talent{}'.format(str(13 + j)), size = (7,1), justification = 'center', relief = 'sunken') for j in range(0, 5)],
+                        [sg.Image(data = icm_f.talents['Star']['Tab2'][str(5 + j)], key = 'star_2_img{}'.format(str(5 + j))) for j in range(0, 5)],
+                        [sg.Text('{}/100'.format(icm_f.dictionary['characters'][0]['starTalentLevels'][18 + j] if (18 + j) < len(icm_f.dictionary['characters'][0]['starTalentLevels']) else '0'), key = 'talent{}'.format(str(18 + j)), size = (7,1), justification = 'center', relief = 'sunken') for j in range(0, 5)],
+                        [
+                            sg.Image(data = icm_f.generate_img('Images/Talents/Star/LeftArrow.png', (56, 56), False), key = 'star_2_left'), 
+                            sg.Image(data = icm_f.talents['Star']['Tab2'][str(10)], key = 'star_2_img10'), 
+                            sg.Image(data = icm_f.talents['Star']['Tab2'][str(11)], key = 'star_2_img11'), 
+                            sg.Image(data = icm_f.talents['Star']['Tab2'][str(12)], key = 'star_2_img12'), 
+                            sg.Image(data = icm_f.generate_img('Images/Talents/Star/RightArrow.png', (56, 56), False), key = 'star_2_right')
+                        ],
+                        [
+                            sg.Text('{}/100'.format(icm_f.dictionary['characters'][0]['starTalentLevels'][23 + j] if (23 + j) < len(icm_f.dictionary['characters'][0]['starTalentLevels']) else '0'), key = 'talent{}'.format(str(23 + j)), size = (7,1), justification = 'center', relief = 'sunken') for j in range(0, 3)
+                        ]
+                    ], element_justification = 'center')
+                    ]]
 
 star_talents =      [
                         [sg.TabGroup(
