@@ -300,7 +300,7 @@ dictionary = json.loads(json_text)
 json_file = open("data/crafting_data.json", "rt")
 json_text = json_file.read()
 craftables = json.loads(json_text)
-tab_titles = ['Beginner Tier', 'Novice Tier', 'Apprentice Tier', 'Adept Tier']
+tab_titles = ['Beginner Tier', 'Novice Tier', 'Apprentice Tier', 'Journeyman Tier', 'Adept Tier']
 
 # Dictionary for monsters
 json_file = open("data/monster_data.json", "rt")

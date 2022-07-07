@@ -142,15 +142,16 @@ def crafting_popup():
                                     element_justification = 'center'))
     cost_frame = sg.Frame('Costs', layout = [[ingredient_col[0], ingredient_col[1]], [ingredient_col[2], ingredient_col[3]]])
     tab = []
-    for i in range(0, 3):
+    for i in range(0, 4):
         tab.append(sg.Column([[sg.Graph((72, 72), (0, 0), (72, 72), enable_events = True, key = 'tab{}_item{}'.format(i, 4 * k + j)) for j in range(0 , 4)] for k in range(0, 4)]))
     anvil_tab_1 = sg.Tab('I', layout = [[tab[0]]])
     anvil_tab_2 = sg.Tab('II', layout = [[tab[1]]])
     anvil_tab_3 = sg.Tab('III', layout = [[tab[2]]])
+    anvil_tab_4 = sg.Tab('IV', layout = [[tab[3]]])
     left_col = sg.Column([[preview_frame], [cost_frame], [sg.Button('Confirm', key = 'confirm_craft')]], element_justification = 'left')
     right_col = sg.Column(
                 [
-                    [sg.TabGroup([[anvil_tab_1, anvil_tab_2, anvil_tab_3]])], 
+                    [sg.TabGroup([[anvil_tab_1, anvil_tab_2, anvil_tab_3, anvil_tab_4]])], 
                     [
                         sg.Column(
                         [[
@@ -164,7 +165,7 @@ def crafting_popup():
     window = sg.Window('Crafting Menu', layout, modal = True)
     window.Finalize()
     # Draw canvases
-    for i in range(0, 3):
+    for i in range(0, 4):
         for j in range(0, 4):
             for k in range(0, 4):
                 window['tab{}_item{}'.format(i, 4 * j + k)].draw_image(data = icm_f.get_crafting_item(icm_f.tab_titles[i], 4 * j + k, icm_f.image_paths), location = (0, 72))
@@ -196,7 +197,7 @@ def crafting_popup():
                 window['current_page'].update(int(window['current_page'].get()) + 1)
             else:
                 window['current_page'].update(int(window['current_page'].get()) - 1)
-            for i in range(0, 3):
+            for i in range(0, 4):
                 for j in range(0, 4):
                     for k in range(0, 4):
                         window['tab{}_item{}'.format(i, 4 * j + k)].draw_image(data = icm_f.get_crafting_item(icm_f.tab_titles[i], 16 * (int(window['current_page'].get()) - 1) + 4 * j + k, icm_f.image_paths), location = (0, 72))
