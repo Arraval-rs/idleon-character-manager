@@ -59,6 +59,12 @@ for i in range(0, 4):
     for j in range(0, 6):
         window['storage{}'.format(6 * i + j)].draw_image(data = icm_f.get_storage_item(6 * i + j, icm_f.image_paths), location = (0, 72))
 
+# Get last storage page
+for i in range(0, len(icm_f.dictionary['account']['chest'])):
+    if icm_f.dictionary['account']['chest'][i]['item'] == 'LockedInvSpace':
+        icm_f.last_storage_page = int(i/24 + 0.5)
+        break
+
 # Event loop
 while True:
     event, values = window.read(timeout = 120)
@@ -70,60 +76,6 @@ while True:
         window['carpenter_cardinal'].UpdateAnimation('images/Misc_WIP/Carpenter Cardinal.gif', time_between_frames = 120)
     else:
         break
-    if event == 'active_character':
-        character_class = icm_f.dictionary['characters'][index]['class']
-        character_base_class = icm_f.get_base_class(character_class)
-
-        # Update standalone character elements
-        window['class_icon'].update(data = icm_f.generate_img('images/Classes/{}Icon.png'.format(icm_f.dictionary['characters'][index]['class']), (38, 36), False))
-        window['class_image'].update(data = icm_f.generate_img('images/Classes/{}.png'.format(icm_f.dictionary['characters'][index]['class']), (129, 110), False))
-        window['character_stats'].update(icm_f.get_character_stats(index, icm_f.dictionary))
-        window['selected_equipment'].update(data = icm_f.generate_img('images/Empty Slot.png', (72, 72), False))
-        window['equipped_item_stats'].update('STR: 0\t\tReach: 0\nAGI: 0\t\tDefence: 0\nWIS: 0\t\tWeapon Power: 0\nLUK: 0\t\tUpgrade Slots Left: 0')
-        window['equipped_item_frame'].update(value = 'None')
-        window['selected_inventory_item'].update(data = icm_f.generate_img('images/Empty Slot.png', (72, 72), False))
-        window['inventory_item_stats'].update('Stack Size: 0')
-        window['inventory_item_frame'].update('None')
-
-        # Update equipment
-        for i in range(0, 4):
-            for j in range(0, 2):
-                window['equipment{}'.format(2 * i + j)].draw_image(data = icm_f.generate_img('images/Equipment/{}.png'.format(icm_f.dictionary['characters'][index]['equipment'][2*i+j]['name']), (72, 72), True), location = (0, 72))
-                window['tools{}'.format(2 * i + j)].draw_image(data = icm_f.generate_img('images/Tools/{}.png'.format(icm_f.dictionary['characters'][index]['tools'][2*i+j]['name']), (72, 72), True), location = (0, 72))
-                window['food{}'.format(2 * i + j)].draw_image(data = icm_f.generate_img('images/Food/{}.png'.format(icm_f.dictionary['characters'][index]['food'][2*i+j]['name']), (72, 72), True), location = (0, 72))
-    
-        # Update skills
-        for i in range(0, 9):
-            window['{}level'.format(icm_f.skill_names[i])].update('{}\nLv. {}'.format(icm_f.skill_names[i], icm_f.dictionary['characters'][index]['skillLevels'][icm_f.skill_names[i].lower()]))
-
-        # Update icm_f.talents tab 1
-        for i in range(0, 10):
-            if str(i) in icm_f.dictionary['characters'][index]['talentLevels'].keys() and character_base_class != 'Beginner': # some icm_f.talents aren't in JSON
-                window['talent{}'.format(i)].update('{}/100'.format(icm_f.dictionary['characters'][index]['talentLevels'][str(i)]))
-            else:
-                window['talent{}'.format(i)].update('0/100')
-        
-        # Update icm_f.talents tab 2
-        for i in range(10, 30):
-            window['talent_img{}'.format(i)].update(data = icm_f.talents['Filler'] if character_base_class == 'Beginner' else icm_f.talents[character_base_class][str(i)])
-            if str(i) in icm_f.dictionary['characters'][index]['talentLevels'].keys()  and character_base_class != 'Beginner': # some icm_f.talents aren't in JSON
-                window['talent{}'.format(i)].update('{}/100'.format(icm_f.dictionary['characters'][index]['talentLevels'][str(i)]))
-            else:
-                window['talent{}'.format(i)].update('0/100')
-        
-        # Update icm_f.talents tab 3
-        for i in range(30, 45):
-            window['talent_img{}'.format(i)].update(data = icm_f.talents['Filler'] if icm_f.is_base_class(character_class) else icm_f.talents[character_base_class][character_class][str(i)])
-            if str(i) in icm_f.dictionary['characters'][index]['talentLevels'].keys() and not icm_f.is_base_class(character_class): # some icm_f.talents aren't in JSON
-                window['talent{}'.format(i)].update('{}/100'.format(icm_f.dictionary['characters'][index]['talentLevels'][str(i)]))
-            else:
-                window['talent{}'.format(i)].update('0/100')
-
-        # Update inventory for new character
-        window['current_inv'].update('1')
-        for i in range(0, 4):
-            for j in range(0, 4):
-                window['inventory{}'.format(j + 4 * i)].draw_image(data = icm_f.get_inventory_item(j + 4 * i + 16 * (int(window['current_inv'].get()) - 1), icm_f.image_paths, index), location = (0, 72))
 
     # Update selected equipment
     if 'equipment' in event or 'tools' in event or 'food' in event:
@@ -137,7 +89,6 @@ while True:
     if 'storage' in event:
         icm_f.update_selected_storage_item(window, int(event.replace('storage', '')) + 24 * (int(window['current_stor'].get()) - 1), icm_f.image_paths)
 
-
     # Update inventory for Prev/Next tab
     if event in ('next_inv', 'prev_inv'):
         if event == 'next_inv' and window['current_inv'].get() != '4':
@@ -150,7 +101,7 @@ while True:
 
     # Update storage for Prev/Next tab
     if event in ('next_stor', 'prev_stor'):
-        if event == 'next_stor' and window['current_stor'].get() != '10':
+        if event == 'next_stor' and int(window['current_stor'].get()) < icm_f.last_storage_page:
             window['current_stor'].update('{}'.format(int(window['current_stor'].get()) + 1))
         if event == 'prev_stor' and window['current_stor'].get() != '1':
             window['current_stor'].update('{}'.format(int(window['current_stor'].get()) - 1))
@@ -160,6 +111,7 @@ while True:
 
     icm_w.update_crafting_widgets(window, event)
     icm_w.update_monster_widgets(window, event)
+    icm_w.update_character_widgets(window, event, index)
 
     #if event != '__TIMEOUT__':
     #    print(event)
