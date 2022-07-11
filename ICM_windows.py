@@ -39,20 +39,21 @@ def update_monster_widgets(window, event):
 		window['mon_name'].update(icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Name'])
 		window['mon_health'].update('Health: {}'.format(f'{int(icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]["Health"]):,}'))
 		window['mon_exp'].update('Experience: {}'.format(f'{int(icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]["Experience"]):,}'))
-		# hit chance
-		# acc_needed
-		# def_needed
+		window['hit_chance'].update('Hit Chance: {}%'.format(icm_f.calculate_hit_chance(window['char_acc'].get(), icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Accuracy 100%'])))
+		window['acc_needed'].update('Accuracy Needed: {}'.format(icm_f.calculate_accuracy_needed(window['char_acc'].get(), int(icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Accuracy 100%']))))
+		window['def_needed'].update('Defence Needed: {}'.format(icm_f.calculate_defence_needed(window['char_def'].get(), int(icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Defence for 0']))))
 		if icm_f.current_monster[0] == 'Boss' and \
 		('Amarok' in icm_f.monsters['Boss'][icm_f.current_monster[1]]['Name'] or \
 		'Efaunt' in icm_f.monsters['Boss'][icm_f.current_monster[1]]['Name'] or \
 		'Chizoar' in icm_f.monsters['Boss'][icm_f.current_monster[1]]['Name']):
 			atk_string = ''
 			for i in range(0, len(icm_f.monsters['Boss'][icm_f.current_monster[1]]['Attacks'])):
-				atk_string += '{}) {}: {}\nDamage Taken: {}\n'.format(i + 1, icm_f.monsters['Boss'][icm_f.current_monster[1]]['Attacks'][i]['Name'], icm_f.monsters['Boss'][icm_f.current_monster[1]]['Attacks'][i]['Attack'], 0)
+				damage = icm_f.monsters['Boss'][icm_f.current_monster[1]]['Attacks'][i]['Attack']
+				atk_string += '{}) {}: {}\nDamage Taken: {}\n'.format(i + 1, icm_f.monsters['Boss'][icm_f.current_monster[1]]['Attacks'][i]['Name'], damage, icm_f.calculate_damage_taken(window['char_def'].get(), int(damage)))
 			window['mon_attack'].update(atk_string)
 		else:
 			damage = icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Attack']
-			window['mon_attack'].update('Attack: {}\nDamage Taken: {}'.format(damage, icm_f.calculate_damage_taken(0, int(damage))))
+			window['mon_attack'].update('Attack: {}\nDamage Taken: {}'.format(damage, icm_f.calculate_damage_taken(window['char_def'].get(), int(damage))))
 			window['mon_speed'].update('Speed: {}'.format(icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Speed']))
 			window['mon_respawn'].update('Respawn: {}'.format(f'{int(icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]["Respawn"]):,}'))
 
@@ -204,13 +205,105 @@ def crafting_popup():
     window.close()
     return ['None', 0]
 
+def update_character_widgets(window, event, index):
+	# Update active star talent page on arrow pressed
+	if 'star_left' in event:
+		active_tab = window['star_talents'].get()
+		if active_tab == 'star_V':
+			window['star_IV'].select()
+		elif active_tab == 'star_IV':
+			window['star_III'].select()
+		elif active_tab == 'star_III':
+			window['star_II'].select()
+		elif active_tab == 'star_II':
+			window['star_I'].select()
+	elif 'star_right' in event:
+		active_tab = window['star_talents'].get()
+		if active_tab == 'star_I':
+			window['star_II'].select()
+		elif active_tab == 'star_II':
+			window['star_III'].select()
+		elif active_tab == 'star_III':
+			window['star_IV'].select()
+		elif active_tab == 'star_IV':
+			window['star_V'].select()
+	elif event == 'active_character':
+		character_class = icm_f.dictionary['characters'][index]['class']
+		character_base_class = icm_f.get_class_path(character_class, 1)
+
+		# Update standalone character elements
+		window['class_icon'].update(data = icm_f.generate_img('images/Classes/{}Icon.png'.format(icm_f.dictionary['characters'][index]['class']), (38, 36), False))
+		window['class_image'].update(data = icm_f.generate_img('images/Classes/{}.png'.format(icm_f.dictionary['characters'][index]['class']), (129, 110), False))
+		window['character_stats'].update(icm_f.get_character_stats(index, icm_f.dictionary))
+		window['selected_equipment'].update(data = icm_f.generate_img('images/Empty Slot.png', (72, 72), False))
+		window['equipped_item_stats'].update('STR: 0\t\tReach: 0\nAGI: 0\t\tDefence: 0\nWIS: 0\t\tWeapon Power: 0\nLUK: 0\t\tUpgrade Slots Left: 0')
+		window['equipped_item_frame'].update(value = 'None')
+		window['selected_inventory_item'].update(data = icm_f.generate_img('images/Empty Slot.png', (72, 72), False))
+		window['inventory_item_stats'].update('Stack Size: 0')
+		window['inventory_item_frame'].update('None')
+
+		# Update equipment
+		for i in range(0, 4):
+			for j in range(0, 2):
+				window['equipment{}'.format(2 * i + j)].draw_image(data = icm_f.generate_img('images/Equipment/{}.png'.format(icm_f.dictionary['characters'][index]['equipment'][2*i+j]['name']), (72, 72), True), location = (0, 72))
+				window['tools{}'.format(2 * i + j)].draw_image(data = icm_f.generate_img('images/Tools/{}.png'.format(icm_f.dictionary['characters'][index]['tools'][2*i+j]['name']), (72, 72), True), location = (0, 72))
+				window['food{}'.format(2 * i + j)].draw_image(data = icm_f.generate_img('images/Food/{}.png'.format(icm_f.dictionary['characters'][index]['food'][2*i+j]['name']), (72, 72), True), location = (0, 72))
+    
+		# Update skills
+		for i in range(0, 9):
+			window['{}level'.format(icm_f.skill_names[i])].update('{}\nLv. {}'.format(icm_f.skill_names[i], icm_f.dictionary['characters'][index]['skillLevels'][icm_f.skill_names[i].lower()]))
+
+		# Update icm_f.talents tab 1 that are shared between classes
+		for i in range(0, 10):
+			if str(i) in icm_f.dictionary['characters'][index]['talentLevels'].keys(): # some icm_f.talents aren't in JSON
+				window['talent{}'.format(i)].update('{}/100'.format(icm_f.dictionary['characters'][index]['talentLevels'][str(i)]))
+			else:
+				window['talent{}'.format(i)].update('0/100')
+        
+		# Update icm_f.talents tab 1 that are not shared between classes and tab 2
+		for i in range(10, 30):
+			window['talent_img{}'.format(i)].update(data = icm_f.talents['Filler'] if icm_f.get_class_depth(character_class) < 1 else icm_f.get_class_path(character_class, 1)[str(i)])
+			if str(i) in icm_f.dictionary['characters'][index]['talentLevels'].keys()  and icm_f.get_class_depth(character_class) > 0: # some icm_f.talents aren't in JSON
+				window['talent{}'.format(i)].update('{}/100'.format(icm_f.dictionary['characters'][index]['talentLevels'][str(i)]))
+			else:
+				window['talent{}'.format(i)].update('0/100')
+        
+		# Update icm_f.talents tab 3
+		for i in range(30, 45):
+			window['talent_img{}'.format(i)].update(data = icm_f.talents['Filler'] if icm_f.get_class_depth(character_class) < 2 else icm_f.get_class_path(character_class, 2)[str(i)])
+			if str(i) in icm_f.dictionary['characters'][index]['talentLevels'].keys() and icm_f.get_class_depth(character_class) > 1: # some icm_f.talents aren't in JSON
+				window['talent{}'.format(i)].update('{}/100'.format(icm_f.dictionary['characters'][index]['talentLevels'][str(i)]))
+			else:
+				window['talent{}'.format(i)].update('0/100')
+
+		# Update icm_f.talents tab 3
+		for i in range(45, 60):
+			window['talent_img{}'.format(i)].update(data = icm_f.talents['Filler'] if icm_f.get_class_depth(character_class) < 3 else icm_f.get_class_path(character_class, 3)[str(i)])
+			if str(i) in icm_f.dictionary['characters'][index]['talentLevels'].keys() and icm_f.get_class_depth(character_class) > 2: # some icm_f.talents aren't in JSON
+				window['talent{}'.format(i)].update('{}/100'.format(icm_f.dictionary['characters'][index]['talentLevels'][str(i)]))
+			else:
+				window['talent{}'.format(i)].update('0/100')
+
+		# Update icm_f.starTalents
+		for i in range(0, 63):
+			if i < len(icm_f.dictionary['characters'][index]['starTalentLevels']):
+				window['star_talent{}'.format(i)].update('{}/100'.format(icm_f.dictionary['characters'][index]['starTalentLevels'][i]))
+			else:
+				window['star_talent{}'.format(i)].update('0/100')
+
+		# Update inventory for new character
+		window['current_inv'].update('1')
+		for i in range(0, 4):
+			for j in range(0, 4):
+				window['inventory{}'.format(j + 4 * i)].draw_image(data = icm_f.get_inventory_item(j + 4 * i + 16 * (int(window['current_inv'].get()) - 1), icm_f.image_paths, index), location = (0, 72))
+
 # Some event lists
 crafting_events = ['add_item', 'prev_crafting', 'next_crafting', 'prev_ingredients', 'next_ingredients', 'remove_all', 'toggle_base']
 for i in range(0, 5):
 	crafting_events.append('craft{}count'.format(i))
 	crafting_events.append('craft{}remove'.format(i))
 
-monster_events = []
+monster_events = ['char_acc', 'char_def']
 for i in range(0, 17):
 	monster_events.append('W1_{}'.format(i))
 	monster_events.append('W2_{}'.format(i))

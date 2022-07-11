@@ -35,6 +35,7 @@ def generate_img(f, s, bg): # Generates image using PIL
     if "None" in f:
         f = 'images/Empty Slot.png'
     if not os.path.exists(f):
+        print('ERROR: Cannot find {}'.format(f))
         f = 'images/Missing.png'
     img = Image.open(f).resize(s)
     if bg:
@@ -53,15 +54,81 @@ def find_image(name, paths):
             return path
     return 'images/Missing.png'
 
+def get_class_path(c, depth): # returns the path to talent images for given class and class depth
+    if depth == 1: # base class
+        if c in ('Mage', 'Wizard', 'Elemental Sorcerer', 'Shaman', 'Bubonic Conjuror'):
+            return talents['Mage']
+        if c in ('Bowman', 'Hunter', 'Siege Breaker', 'Beast Master'):
+            return talents['Archer']
+        if c in ('Barbarian', 'Squire', 'Blood Berserker', 'Divine Knight'):
+            return talents['Warrior']
+        if c in ('Journeyman', 'Maestro'):
+            return talents['Journeyman']
+        print("ERROR: given class '{}' is not a base class".format(c))
+    if depth == 2: # sub class
+        if c in ('Wizard', 'Elemental Sorcerer'):
+            return talents['Mage']['Wizard']
+        if c in ('Shaman', 'Bubonic Conjuror'):
+            return talents['Mage']['Shaman']
+        if c in ('Bowman', 'Siege Breaker'):
+            return talents['Archer']['Bowman']
+        if c in ('Hunter', 'Beast Master'):
+            return talents['Archer']['Hunter']
+        if c in ('Barbarian', 'Blood Berserker'):
+            return talents['Warrior']['Barbarian']
+        if c in ('Squire', 'Divine Knight'):
+            return talents['Warrior']['Squire']
+        if c in ('Maestro'):
+            return talents['Journeyman']['Maestro']
+        print("ERROR: given class '{}' is not a sub class".format(c))
+    if depth == 3: # elite class
+        if c in ('Elemental Sorcerer'):
+            return talents['Mage']['Wizard']['Elemental Sorcerer']
+        if c in ('Bubonic Conjuror'):
+            return talents['Mage']['Shaman']['Bubonic Conjuror']
+        if c in ('Siege Breaker'):
+            return talents['Archer']['Bowman']['Siege Breaker']
+        if c in ('Beast Master'):
+            return talents['Archer']['Hunter']['Beast Master']
+        if c in ('Blood Berserker'):
+            return talents['Warrior']['Barbarian']['Blood Berserker']
+        if c in ('Divine Knight'):
+            return talents['Warrior']['Squire']['Divine Knight']
+        print("ERROR: given class '{}' is not an elite class".format(c))
+
+def get_class_depth(c):
+    if c in ('Mage', 'Archer', 'Warrior', 'Journeyman'):
+        return 1 # Base class
+    if c in ('Wizard', 'Shaman', 'Hunter', 'Bowman', 'Berserker', 'Squire', 'Maestro'):
+        return 2 # Sub class
+    if c in ('Elemental Sorcerer', 'Bubonic Conjuror', 'Beast Master', 'Siege Breaker', 'Blood Berserker', 'Divine Knight'):
+        return 3 # Elite class
+    return 0 # Beginner
+
 def get_base_class(c): # returns the base class of a given class
-    if c == 'Wizard' or c == 'Shaman':
+    if c in ('Wizard', 'Shaman', 'Bubonic Conjuror', 'Elemental Sorcerer'):
         return 'Mage'
-    elif c == 'Bowman' or c == 'Hunter':
+    if c in ('Bowman', 'Hunter', 'Siege Breaker', 'Beast Master'):
         return 'Archer'
-    elif c == 'Barbarian' or c == 'Squire':
+    if c in ('Barbarian', 'Squire', 'Blood Berserker', 'Divine Knight'):
         return 'Warrior'
-    elif c == 'Maestro':
+    if c in ('Maestro'):
         return 'Journeyman'
+    return c
+
+def get_sub_class(c): # returns the sub class of a given class
+    if c in ('Bubonic Conjuror'):
+        return 'Shaman'
+    if c in ('Elemental Sorcerer'):
+        return 'Wizard'
+    if c in ('Siege Breaker'):
+        return 'Bowman'
+    if c in ('Beast Master'):
+        return 'Hunter'
+    if c in ('Blood Berserker'):
+        return 'Barbarian'
+    if c in ('Divine Knight'):
+        return 'Squire'
     return c
 
 def is_base_class(c): # returns true if the given class is a base class (Beginner, Warrior, Mage, Archer, Journeyman)
@@ -69,16 +136,46 @@ def is_base_class(c): # returns true if the given class is a base class (Beginne
         return True
     return False
 
+def is_sub_class(c): # returns true if the given class is a sub class
+    if c in ('Barbarian', 'Squire', 'Bowman', 'Hunter', 'Shaman', 'Wizard', 'Maestro'):
+        return True
+    return False
+
+def is_elite_class(c): # returns true if the given class is an elite class
+    if c in ('Blood Berserker', 'Divine Knight', 'Siege Breaker', 'Beast Master', 'Bubonic Conjuror', 'Elemental Sorcerer'):
+        return True
+    return False
+
 def calculate_hit_chance(char_acc, acc_100):
-    return min(100, 142.5 * char_acc / acc_100 - 42.5)
+    if acc_100 != 0:
+        try:
+            char_acc = int(char_acc)
+        except:
+            char_acc = 0
+        hit_chance = int(max(0, min(100, 142.5 * char_acc / acc_100 - 42.5)))
+        if hit_chance >= 5:
+            return hit_chance
+    return 0
 
 def calculate_accuracy_needed(char_acc, acc_100):
+    try:
+        char_acc = int(char_acc)
+    except:
+        char_acc = 0
     return max(0, acc_100 - char_acc)
 
 def calculate_damage_taken(char_def, atk_dam):
-    return int((atk_dam - 2.5 * char_def**0.8) / max(1, 1 + char_def**2.5 / max(100, 100*atk_dam)))
+    try: 
+        char_def = int(char_def)
+    except:
+        char_def = 0
+    return max(0, int((atk_dam - 2.5 * char_def**0.8) / max(1, 1 + char_def**2.5 / max(100, 100*atk_dam))))
 
 def calculate_defence_needed(char_def, def_0):
+    try: 
+        char_def = int(char_def)
+    except:
+        char_def = 0
     return max(0, def_0 - char_def)
 
 def max_hp(character):
@@ -305,7 +402,7 @@ dictionary = json.loads(json_text)
 json_file = open("data/crafting_data.json", "rt")
 json_text = json_file.read()
 craftables = json.loads(json_text)
-tab_titles = ['Beginner Tier', 'Novice Tier', 'Apprentice Tier', 'Adept Tier']
+tab_titles = ['Beginner Tier', 'Novice Tier', 'Apprentice Tier', 'Journeyman Tier', 'Adept Tier']
 
 # Dictionary for monsters
 json_file = open("data/monster_data.json", "rt")
@@ -320,10 +417,11 @@ image_paths = [ 'Materials', 'Statues', 'Food', 'Tools', \
 
 # Dictionary for talent images
 talents =   {
-                'Mage':{'Shaman':{}, 'Wizard':{}}, 
-                'Warrior':{'Barbarian':{}, 'Squire':{}}, 
-                'Archer':{'Bowman':{}, 'Hunter':{}},
-                'Journeyman':{'Maestro':{}}
+                'Mage':{'Shaman':{'Bubonic Conjuror':{}}, 'Wizard':{'Elemental Sorcerer':{}}}, 
+                'Warrior':{'Barbarian':{'Blood Berserker':{}}, 'Squire':{'Divine Knight':{}}}, 
+                'Archer':{'Bowman':{'Siege Breaker':{}}, 'Hunter':{'Beast Master':{}}},
+                'Journeyman':{'Maestro':{}},
+                'Star':{'Tab1':{}, 'Tab2':{}, 'Tab3':{}, 'Tab4':{}, 'Tab5':{}}
             }
 
 # List of characters for the combobox
@@ -350,3 +448,6 @@ total_ingredients = []
 
 # List of the two possible monster animations
 current_monster = ['', 0]
+
+# Last storage page
+last_storage_page = 0

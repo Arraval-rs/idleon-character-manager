@@ -18,7 +18,7 @@
       "ingredients": [
         {
           "name": "Spore_Cap",
-          "count": 25
+          "count": 10
         },
         {
           "name": "Copper_Bar",
@@ -31,42 +31,16 @@
       "ingredients": [
         {
           "name": "Spore_Cap",
-          "count": 25
+          "count": 10
         },
         {
           "name": "Thread",
-          "count": 30
-        }
-      ]
-    },
-    {
-      "name": "Gnarled_Wand",
-      "ingredients": [
-        {
-          "name": "Spore_Cap",
-          "count": 25
-        },
-        {
-          "name": "Oak_Logs",
-          "count": 30
-        }
-      ]
-    },
-    {
-      "name": "Farmer_Brim",
-      "ingredients": [
-        {
-          "name": "Spore_Cap",
-          "count": 5
-        },
-        {
-          "name": "Copper_Ore",
           "count": 15
         }
       ]
     },
     {
-      "name": "Orange_Tee",
+      "name": "Gnarled_Wand",
       "ingredients": [
         {
           "name": "Spore_Cap",
@@ -79,19 +53,41 @@
       ]
     },
     {
+      "name": "Farmer_Brim",
+      "ingredients": [
+        {
+          "name": "Spore_Cap",
+          "count": 4
+        },
+        {
+          "name": "Copper_Ore",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "name": "Orange_Tee",
+      "ingredients": [
+        {
+          "name": "Spore_Cap",
+          "count": 6
+        },
+        {
+          "name": "Oak_Logs",
+          "count": 3
+        }
+      ]
+    },
+    {
       "name": "Torn_Jeans",
       "ingredients": [
         {
           "name": "Frog_Leg",
-          "count": 20
+          "count": 6
         },
         {
           "name": "Copper_Bar",
-          "count": 8
-        },
-        {
-          "name": "Thread",
-          "count": 15
+          "count": 3
         }
       ]
     },
@@ -100,15 +96,11 @@
       "ingredients": [
         {
           "name": "Bean_Slices",
-          "count": 30
-        },
-        {
-          "name": "Copper_Bar",
-          "count": 20
+          "count": 12
         },
         {
           "name": "Grass_Leaf",
-          "count": 20
+          "count": 5
         }
       ]
     },
@@ -117,11 +109,11 @@
       "ingredients": [
         {
           "name": "Copper_Bar",
-          "count": 13
+          "count": 5
         },
         {
           "name": "Frog_Leg",
-          "count": 30
+          "count": 10
         }
       ]
     },
@@ -139,15 +131,15 @@
       "ingredients": [
         {
           "name": "Copper_Bar",
-          "count": 13
+          "count": 5
         },
         {
           "name": "Oak_Logs",
-          "count": 30
+          "count": 10
         },
         {
           "name": "Thread",
-          "count": 15
+          "count": 5
         }
       ]
     },
@@ -169,15 +161,15 @@
       "ingredients": [
         {
           "name": "Frog_Leg",
-          "count": 25
+          "count": 15
         },
         {
           "name": "Oak_Logs",
-          "count": 45
+          "count": 30
         },
         {
           "name": "Thread",
-          "count": 13
+          "count": 10
         }
       ]
     },
@@ -241,11 +233,11 @@
       "ingredients": [
         {
           "name": "Copper_Bar",
-          "count": 30
+          "count": 20
         },
         {
           "name": "Bean_Slices",
-          "count": 50
+          "count": 40
         }
       ]
     },
@@ -254,7 +246,7 @@
       "ingredients": [
         {
           "name": "Copper_Bar",
-          "count": 45
+          "count": 25
         },
         {
           "name": "Trusty_Nails",
@@ -267,7 +259,7 @@
       "ingredients": [
         {
           "name": "Copper_Bar",
-          "count": 60
+          "count": 30
         },
         {
           "name": "Bleach_Logs",
@@ -280,7 +272,7 @@
       "ingredients": [
         {
           "name": "Copper_Bar",
-          "count": 125
+          "count": 75
         }
       ]
     },
@@ -288,16 +280,16 @@
       "name": "Militia_Helm",
       "ingredients": [
         {
+          "name": "Copper_Helmet",
+          "count": 1
+        },
+        {
           "name": "Iron_Bar",
-          "count": 25
+          "count": 15
         },
         {
           "name": "Copper_Ore",
-          "count": 150
-        },
-        {
-          "name": "Copper_Helmet",
-          "count": 2
+          "count": 80
         }
       ]
     },
@@ -305,16 +297,16 @@
       "name": "Thief_Hood",
       "ingredients": [
         {
+          "name": "Copper_Helmet",
+          "count": 1
+        },
+        {
           "name": "Iron_Bar",
-          "count": 25
+          "count": 15
         },
         {
           "name": "Thread",
-          "count": 150
-        },
-        {
-          "name": "Copper_Helmet",
-          "count": 2
+          "count": 40
         }
       ]
     },
@@ -322,29 +314,37 @@
       "name": "Top_Hat",
       "ingredients": [
         {
+          "name": "Copper_Helmet",
+          "count": 1
+        },
+        {
           "name": "Iron_Bar",
-          "count": 25
+          "count": 15
         },
         {
           "name": "Oak_Logs",
-          "count": 200
-        },
-        {
-          "name": "Copper_Helmet",
-          "count": 2
+          "count": 150
         }
       ]
     },
     {
-      "name": "Party_Hat",
+      "name": "Coming_Soon",
       "ingredients": [
         {
-          "name": "Iron_Bar",
-          "count": 200
+          "name": "Coming_Soon",
+          "count": 0
         },
         {
-          "name": "Copper_Helmet",
-          "count": 4
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
         }
       ]
     },
@@ -401,11 +401,11 @@
       "ingredients": [
         {
           "name": "Iron_Bar",
-          "count": 100
+          "count": 70
         },
         {
           "name": "Carrot_Cube",
-          "count": 200
+          "count": 150
         }
       ]
     },
@@ -423,11 +423,11 @@
       "ingredients": [
         {
           "name": "Jungle_Logs",
-          "count": 250
+          "count": 200
         },
         {
           "name": "Boring_Brick",
-          "count": 125
+          "count": 100
         }
       ]
     },
@@ -504,16 +504,16 @@
       "name": "Blue_Tee",
       "ingredients": [
         {
+          "name": "Orange_Tee",
+          "count": 1
+        },
+        {
           "name": "Spore_Cap",
           "count": 25
         },
         {
           "name": "Oak_Logs",
           "count": 50
-        },
-        {
-          "name": "Orange_Tee",
-          "count": 2
         }
       ]
     },
@@ -521,20 +521,20 @@
       "name": "Sleek_Shank",
       "ingredients": [
         {
-          "name": "Thread",
-          "count": 300
-        },
-        {
-          "name": "Wooden_Spear",
-          "count": 3
-        },
-        {
           "name": "Wooden_Bow",
-          "count": 3
+          "count": 1
         },
         {
           "name": "Gnarled_Wand",
-          "count": 3
+          "count": 1
+        },
+        {
+          "name": "Wooden_Spear",
+          "count": 2
+        },
+        {
+          "name": "Thread",
+          "count": 300
         }
       ]
     },
@@ -542,16 +542,16 @@
       "name": "Iron_Boots",
       "ingredients": [
         {
+          "name": "Copper_Boots",
+          "count": 1
+        },
+        {
           "name": "Trusty_Nails",
           "count": 500
         },
         {
           "name": "Iron_Bar",
           "count": 125
-        },
-        {
-          "name": "Copper_Boots",
-          "count": 2
         }
       ]
     },
@@ -611,16 +611,16 @@
       "name": "Goo_Galoshes",
       "ingredients": [
         {
+          "name": "Copper_Boots",
+          "count": 1
+        },
+        {
           "name": "Slime_Sludge",
           "count": 600
         },
         {
           "name": "Jungle_Logs",
           "count": 1000
-        },
-        {
-          "name": "Copper_Boots",
-          "count": 2
         }
       ]
     },
@@ -641,16 +641,16 @@
       "name": "Hide_Shirt",
       "ingredients": [
         {
-          "name": "Bleach_Logs",
-          "count": 325
-        },
-        {
           "name": "Copper_Platebody",
-          "count": 2
+          "count": 1
         },
         {
           "name": "Steel_Axe",
           "count": 1
+        },
+        {
+          "name": "Bleach_Logs",
+          "count": 325
         }
       ]
     },
@@ -671,16 +671,16 @@
       "name": "Dooble_Goopi",
       "ingredients": [
         {
-          "name": "Slime_Sludge",
-          "count": 1000
-        },
-        {
           "name": "Copper_Band",
           "count": 1
         },
         {
           "name": "Steel_Band",
           "count": 1
+        },
+        {
+          "name": "Slime_Sludge",
+          "count": 1000
         }
       ]
     },
@@ -689,7 +689,7 @@
       "ingredients": [
         {
           "name": "Torn_Jeans",
-          "count": 10
+          "count": 3
         },
         {
           "name": "Plank",
@@ -706,7 +706,7 @@
       "ingredients": [
         {
           "name": "Torn_Jeans",
-          "count": 8
+          "count": 3
         },
         {
           "name": "Iron_Ore",
@@ -765,16 +765,16 @@
       "name": "Purple_Tee",
       "ingredients": [
         {
+          "name": "Orange_Tee",
+          "count": 1
+        },
+        {
           "name": "Red_Spore_Cap",
           "count": 40
         },
         {
           "name": "Bleach_Logs",
           "count": 100
-        },
-        {
-          "name": "Orange_Tee",
-          "count": 3
         }
       ]
     },
@@ -782,16 +782,16 @@
       "name": "Green_Tee",
       "ingredients": [
         {
-          "name": "Thread",
-          "count": 150
-        },
-        {
           "name": "Spore_Tee",
-          "count": 2
+          "count": 1
         },
         {
           "name": "Orange_Tee",
-          "count": 3
+          "count": 1
+        },
+        {
+          "name": "Thread",
+          "count": 150
         }
       ]
     },
@@ -804,15 +804,15 @@
         },
         {
           "name": "Blue_Tee",
-          "count": 3
+          "count": 2
         },
         {
           "name": "Purple_Tee",
-          "count": 3
+          "count": 2
         },
         {
           "name": "Green_Tee",
-          "count": 3
+          "count": 2
         }
       ]
     },
@@ -837,22 +837,26 @@
       "name": "Blunder_Skills_Completion_Token",
       "ingredients": [
         {
+          "name": "Amarok_Helmet",
+          "count": 1
+        },
+        {
           "name": "Platinum_Bar",
           "count": 1000
         },
         {
           "name": "Veiny_Logs",
           "count": 2000
-        },
-        {
-          "name": "Amarok_Helmet",
-          "count": 1
         }
       ]
     },
     {
       "name": "Blunderhills_Misc_Completion_Token",
       "ingredients": [
+        {
+          "name": "Carrot_Launcher",
+          "count": 1
+        },
         {
           "name": "Golden_Peanut",
           "count": 30
@@ -864,10 +868,6 @@
         {
           "name": "Bolt_Cutters",
           "count": 1
-        },
-        {
-          "name": "Carrot_Launcher",
-          "count": 2
         }
       ]
     },
@@ -948,23 +948,15 @@
       ]
     },
     {
-      "name": "Coming_Soon",
+      "name": "Serrated_Rex_Ring",
       "ingredients": [
         {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Rex_Ring",
+          "count": 1
         },
         {
-          "name": "Coming_Soon",
-          "count": 0
-        },
-        {
-          "name": "Coming_Soon",
-          "count": 42069
-        },
-        {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Iron_Bar",
+          "count": 1000
         }
       ]
     },
@@ -981,7 +973,7 @@
         },
         {
           "name": "Woodular_Circle",
-          "count": 8
+          "count": 5
         }
       ]
     },
@@ -994,11 +986,11 @@
         },
         {
           "name": "Iron_Bar",
-          "count": 400
+          "count": 300
         },
         {
           "name": "Corn_Kernels",
-          "count": 900
+          "count": 600
         }
       ]
     },
@@ -1011,11 +1003,11 @@
         },
         {
           "name": "Chain_Link",
-          "count": 400
+          "count": 300
         },
         {
           "name": "Bullfrog_Horn",
-          "count": 700
+          "count": 500
         }
       ]
     },
@@ -1023,16 +1015,16 @@
       "name": "Amarok_Paws",
       "ingredients": [
         {
+          "name": "Iron_Boots",
+          "count": 1
+        },
+        {
           "name": "Amarok_Slab",
           "count": 5
         },
         {
           "name": "Grass_Leaf",
           "count": 125
-        },
-        {
-          "name": "Iron_Boots",
-          "count": 1
         }
       ]
     },
@@ -1041,7 +1033,7 @@
       "ingredients": [
         {
           "name": "Bleached_Designer_Wode_Patch_Pants",
-          "count": 3
+          "count": 2
         },
         {
           "name": "Goldfish",
@@ -1054,7 +1046,7 @@
       "ingredients": [
         {
           "name": "Dirty_Coal_Miner_Baggy_Soot_Pants",
-          "count": 3
+          "count": 2
         },
         {
           "name": "Fly",
@@ -1109,7 +1101,7 @@
         },
         {
           "name": "Goldfish",
-          "count": 400
+          "count": 180
         }
       ]
     },
@@ -1153,7 +1145,7 @@
         },
         {
           "name": "Hermit_Can",
-          "count": 850
+          "count": 650
         },
         {
           "name": "Distilled_Water",
@@ -1262,12 +1254,12 @@
       "name": "Gold_Helmet",
       "ingredients": [
         {
-          "name": "Fly",
-          "count": 2000
+          "name": "Copper_Helmet",
+          "count": 1
         },
         {
-          "name": "Copper_Helmet",
-          "count": 4
+          "name": "Fly",
+          "count": 2000
         },
         {
           "name": "Gold_Bar",
@@ -1279,12 +1271,12 @@
       "name": "Gold_Platebody",
       "ingredients": [
         {
-          "name": "Pocket_Sand",
-          "count": 1500
+          "name": "Copper_Platebody",
+          "count": 1
         },
         {
-          "name": "Copper_Platebody",
-          "count": 5
+          "name": "Pocket_Sand",
+          "count": 1500
         },
         {
           "name": "Gold_Bar",
@@ -1296,12 +1288,12 @@
       "name": "Gold_Platelegs",
       "ingredients": [
         {
-          "name": "Goldfish",
-          "count": 500
+          "name": "Copper_Platelegs",
+          "count": 1
         },
         {
-          "name": "Copper_Platelegs",
-          "count": 6
+          "name": "Goldfish",
+          "count": 500
         },
         {
           "name": "Gold_Bar",
@@ -1313,12 +1305,12 @@
       "name": "Gold_Boots",
       "ingredients": [
         {
-          "name": "Gold_Bar",
-          "count": 600
+          "name": "Iron_Boots",
+          "count": 1
         },
         {
-          "name": "Iron_Boots",
-          "count": 2
+          "name": "Gold_Bar",
+          "count": 600
         },
         {
           "name": "Distilled_Water",
@@ -1330,12 +1322,12 @@
       "name": "Bandage_Wraps",
       "ingredients": [
         {
-          "name": "Cue_Tape",
-          "count": 5000
+          "name": "The_Stingers",
+          "count": 3
         },
         {
-          "name": "The_Stingers",
-          "count": 5
+          "name": "Cue_Tape",
+          "count": 5000
         },
         {
           "name": "Potty_Rolls",
@@ -1347,12 +1339,12 @@
       "name": "Royal_Bayonet",
       "ingredients": [
         {
-          "name": "Forest_Fibres",
-          "count": 1250
+          "name": "Steel_Axe",
+          "count": 1
         },
         {
-          "name": "Steel_Axe",
-          "count": 3
+          "name": "Forest_Fibres",
+          "count": 1250
         },
         {
           "name": "Distilled_Water",
@@ -1364,12 +1356,12 @@
       "name": "Spiked_Menace",
       "ingredients": [
         {
-          "name": "Gold_Bar",
-          "count": 250
+          "name": "Birch_Longbow",
+          "count": 1
         },
         {
-          "name": "Birch_Longbow",
-          "count": 3
+          "name": "Gold_Bar",
+          "count": 250
         },
         {
           "name": "Distilled_Water",
@@ -1381,12 +1373,12 @@
       "name": "Starlight",
       "ingredients": [
         {
-          "name": "Chain_Link",
-          "count": 1000
+          "name": "Quarterstaff",
+          "count": 1
         },
         {
-          "name": "Quarterstaff",
-          "count": 3
+          "name": "Chain_Link",
+          "count": 1000
         },
         {
           "name": "Distilled_Water",
@@ -1398,16 +1390,16 @@
       "name": "Gold_Pickaxe",
       "ingredients": [
         {
+          "name": "Iron_Pickaxe",
+          "count": 1
+        },
+        {
           "name": "Megalodon_Tooth",
           "count": 2500
         },
         {
           "name": "Gold_Bar",
           "count": 800
-        },
-        {
-          "name": "Iron_Pickaxe",
-          "count": 3
         }
       ]
     },
@@ -1416,15 +1408,15 @@
       "ingredients": [
         {
           "name": "Cramped_Mining_Pouch",
-          "count": 5
+          "count": 2
         },
         {
           "name": "Small_Mining_Pouch",
-          "count": 3
+          "count": 1
         },
         {
           "name": "Gold_Ore",
-          "count": 1400
+          "count": 2000
         }
       ]
     },
@@ -1432,16 +1424,16 @@
       "name": "Golden_Axe",
       "ingredients": [
         {
+          "name": "Iron_Hatchet",
+          "count": 1
+        },
+        {
           "name": "Golden_Dubloon",
           "count": 5
         },
         {
           "name": "Crabby_Cakey",
           "count": 2000
-        },
-        {
-          "name": "Iron_Hatchet",
-          "count": 3
         }
       ]
     },
@@ -1450,15 +1442,15 @@
       "ingredients": [
         {
           "name": "Cramped_Choppin_Pouch",
-          "count": 5
+          "count": 2
         },
         {
           "name": "Small_Choppin_Pouch",
-          "count": 3
+          "count": 1
         },
         {
           "name": "Forest_Fibres",
-          "count": 1800
+          "count": 2100
         }
       ]
     },
@@ -1475,7 +1467,7 @@
         },
         {
           "name": "Iron_Fishing_Rod",
-          "count": 3
+          "count": 1
         }
       ]
     },
@@ -1484,15 +1476,15 @@
       "ingredients": [
         {
           "name": "Cramped_Fish_Pouch",
-          "count": 5
+          "count": 2
         },
         {
           "name": "Small_Fish_Pouch",
-          "count": 3
+          "count": 1
         },
         {
           "name": "Hermit_Can",
-          "count": 1500
+          "count": 2000
         }
       ]
     },
@@ -1509,7 +1501,7 @@
         },
         {
           "name": "Reinforced_Net",
-          "count": 3
+          "count": 1
         }
       ]
     },
@@ -1518,15 +1510,15 @@
       "ingredients": [
         {
           "name": "Cramped_Bug_Pouch",
-          "count": 5
+          "count": 2
         },
         {
           "name": "Small_Bug_Pouch",
-          "count": 3
+          "count": 1
         },
         {
           "name": "Butterfly",
-          "count": 1600
+          "count": 2100
         }
       ]
     },
@@ -1535,11 +1527,11 @@
       "ingredients": [
         {
           "name": "Goldfish",
-          "count": 16000
+          "count": 10000
         },
         {
           "name": "Golden_Plop",
-          "count": 17
+          "count": 4
         },
         {
           "name": "Distilled_Water",
@@ -1551,12 +1543,12 @@
       "name": "Strung_Bludgeon",
       "ingredients": [
         {
-          "name": "Bullfrog_Horn",
-          "count": 9000
+          "name": "Sleek_Shank",
+          "count": 1
         },
         {
           "name": "Glass_Shard",
-          "count": 10
+          "count": 4
         },
         {
           "name": "Distilled_Water",
@@ -1569,19 +1561,19 @@
       "ingredients": [
         {
           "name": "Cramped_Food_Pouch",
-          "count": 7
+          "count": 2
         },
         {
           "name": "Meat_Pie",
-          "count": 250
+          "count": 400
         },
         {
           "name": "Icing_Ironbite",
-          "count": 600
+          "count": 700
         },
         {
           "name": "Saucy_Logfries",
-          "count": 600
+          "count": 700
         }
       ]
     },
@@ -1590,7 +1582,7 @@
       "ingredients": [
         {
           "name": "Cramped_Material_Pouch",
-          "count": 7
+          "count": 2
         },
         {
           "name": "Glass_Shard",
@@ -1598,7 +1590,7 @@
         },
         {
           "name": "Chain_Link",
-          "count": 1250
+          "count": 1700
         }
       ]
     },
@@ -1606,12 +1598,12 @@
       "name": "Platinum_Helmet",
       "ingredients": [
         {
-          "name": "Jellyfish",
-          "count": 4000
+          "name": "Iron_Helmet",
+          "count": 1
         },
         {
-          "name": "Iron_Helmet",
-          "count": 4
+          "name": "Jellyfish",
+          "count": 2250
         },
         {
           "name": "Platinum_Bar",
@@ -1623,12 +1615,12 @@
       "name": "Platinum_Platbody",
       "ingredients": [
         {
-          "name": "Potato_Remains",
-          "count": 5000
+          "name": "Iron_Platebody",
+          "count": 1
         },
         {
-          "name": "Iron_Platebody",
-          "count": 5
+          "name": "Potato_Remains",
+          "count": 5000
         },
         {
           "name": "Platinum_Bar",
@@ -1640,12 +1632,12 @@
       "name": "Platinum_Shins",
       "ingredients": [
         {
-          "name": "Sentient_Cereal",
-          "count": 5000
+          "name": "Iron_Platelegs",
+          "count": 1
         },
         {
-          "name": "Iron_Platelegs",
-          "count": 6
+          "name": "Sentient_Cereal",
+          "count": 5000
         },
         {
           "name": "Platinum_Bar",
@@ -1657,37 +1649,29 @@
       "name": "Platinum_Boots",
       "ingredients": [
         {
+          "name": "Gold_Boots",
+          "count": 1
+        },
+        {
           "name": "Tropilogs",
-          "count": 8000
+          "count": 7000
         },
         {
           "name": "Jellyfish",
-          "count": 8000
-        },
-        {
-          "name": "Gold_Boots",
-          "count": 3
+          "count": 3000
         }
       ]
     },
     {
-      "name": "Coming_Soon",
+      "name": "Polished_Bludgeon",
       "ingredients": [
         {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Strung_Bludgeon",
+          "count": 1
         },
         {
-          "name": "Coming_Soon",
-          "count": 0
-        },
-        {
-          "name": "Coming_Soon",
-          "count": 0
-        },
-        {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Distilled_Water",
+          "count": 25
         }
       ]
     },
@@ -1695,16 +1679,16 @@
       "name": "Enforced_Slasher",
       "ingredients": [
         {
+          "name": "Royal_Bayonet",
+          "count": 1
+        },
+        {
           "name": "Nuget_Cake",
           "count": 3
         },
         {
           "name": "Leather_Hide",
           "count": 2500
-        },
-        {
-          "name": "Royal_Bayonet",
-          "count": 2
         }
       ]
     },
@@ -1712,16 +1696,16 @@
       "name": "Pharoah_Bow",
       "ingredients": [
         {
+          "name": "Spiked_Menace",
+          "count": 1
+        },
+        {
           "name": "Woodular_Circle",
           "count": 3
         },
         {
           "name": "Bloach",
-          "count": 3200
-        },
-        {
-          "name": "Spiked_Menace",
-          "count": 2
+          "count": 1400
         }
       ]
     },
@@ -1729,16 +1713,16 @@
       "name": "Crows_Nest",
       "ingredients": [
         {
+          "name": "Starlight",
+          "count": 1
+        },
+        {
           "name": "Golden_Plop",
           "count": 3
         },
         {
           "name": "Fruitfly",
           "count": 4000
-        },
-        {
-          "name": "Starlight",
-          "count": 2
         }
       ]
     },
@@ -1746,16 +1730,16 @@
       "name": "Platinum_Pickaxe",
       "ingredients": [
         {
+          "name": "Gold_Pickaxe",
+          "count": 1
+        },
+        {
           "name": "Platinum_Bar",
-          "count": 8000
+          "count": 800
         },
         {
           "name": "Pincer_Arm",
           "count": 10500
-        },
-        {
-          "name": "Gold_Pickaxe",
-          "count": 2
         }
       ]
     },
@@ -1764,17 +1748,20 @@
       "ingredients": [
         {
           "name": "Platinum_Ore",
-          "count": 6750
+          "count": 7500
         },
         {
           "name": "Average_Mining_Pouch",
-          "count": 3
+          "count": 1
         }
       ]
     },
     {
-      "name": "Plat_Hatchet",
       "ingredients": [
+        {
+          "name": "Golden_Axe",
+          "count": 1
+        },
         {
           "name": "Tropilogs",
           "count": 6500
@@ -1782,23 +1769,20 @@
         {
           "name": "Chain_Link",
           "count": 5000
-        },
-        {
-          "name": "Golden_Axe",
-          "count": 2
         }
-      ]
+      ],
+      "name": "Plat_Hatchet"
     },
     {
       "name": "Sizable_Choppin_Pouch",
       "ingredients": [
         {
           "name": "Tropilogs",
-          "count": 6750
+          "count": 7500
         },
         {
           "name": "Average_Choppin_Pouch",
-          "count": 3
+          "count": 1
         }
       ]
     },
@@ -1807,7 +1791,7 @@
       "ingredients": [
         {
           "name": "Bloach",
-          "count": 7000
+          "count": 2000
         },
         {
           "name": "Platinum_Bar",
@@ -1815,7 +1799,7 @@
         },
         {
           "name": "Gold_Fishing_Rod",
-          "count": 2
+          "count": 1
         }
       ]
     },
@@ -1824,11 +1808,15 @@
       "ingredients": [
         {
           "name": "Bloach",
-          "count": 6750
+          "count": 2500
+        },
+        {
+          "name": "Goldfish",
+          "count": 5000
         },
         {
           "name": "Average_Fish_Pouch",
-          "count": 3
+          "count": 1
         }
       ]
     },
@@ -1845,7 +1833,7 @@
         },
         {
           "name": "Gilded_Net",
-          "count": 2
+          "count": 1
         }
       ]
     },
@@ -1854,11 +1842,11 @@
       "ingredients": [
         {
           "name": "Fruitfly",
-          "count": 6750
+          "count": 7500
         },
         {
           "name": "Average_Bug_Pouch",
-          "count": 3
+          "count": 1
         }
       ]
     },
@@ -1871,7 +1859,7 @@
         },
         {
           "name": "Nuget_Cake",
-          "count": 6
+          "count": 4
         },
         {
           "name": "Average_Food_Pouch",
@@ -1884,11 +1872,11 @@
       "ingredients": [
         {
           "name": "Golden_Plop",
-          "count": 5
+          "count": 3
         },
         {
           "name": "Woodular_Circle",
-          "count": 5
+          "count": 4
         },
         {
           "name": "Average_Material_Pouch",
@@ -1965,6 +1953,10 @@
         {
           "name": "Distilled_Water",
           "count": 5
+        },
+        {
+          "name": "Capitalist_Case",
+          "count": 1
         }
       ]
     },
@@ -2016,7 +2008,7 @@
       "ingredients": [
         {
           "name": "Militia_Helm",
-          "count": 5
+          "count": 1
         },
         {
           "name": "Gold_Bar",
@@ -2033,7 +2025,7 @@
       "ingredients": [
         {
           "name": "Thief_hood",
-          "count": 5
+          "count": 1
         },
         {
           "name": "Tropilogs",
@@ -2050,7 +2042,7 @@
       "ingredients": [
         {
           "name": "Top_Hat",
-          "count": 5
+          "count": 1
         },
         {
           "name": "Corn_Kernels",
@@ -2088,7 +2080,7 @@
       "ingredients": [
         {
           "name": "Hide_Shirt",
-          "count": 4
+          "count": 1
         },
         {
           "name": "Megalodon_Tooth",
@@ -2105,7 +2097,7 @@
       "ingredients": [
         {
           "name": "Fur_Shirt",
-          "count": 4
+          "count": 1
         },
         {
           "name": "Stick",
@@ -2122,7 +2114,7 @@
       "ingredients": [
         {
           "name": "Tattered_Cloth",
-          "count": 4
+          "count": 1
         },
         {
           "name": "Leather_Hide",
@@ -2282,12 +2274,12 @@
       "name": "Efaunt_Helmet",
       "ingredients": [
         {
-          "name": "Ripped_Tunic",
-          "count": 20
-        },
-        {
           "name": "Trimmed_Rune_Platelegs",
           "count": 1
+        },
+        {
+          "name": "Ripped_Tunic",
+          "count": 20
         },
         {
           "name": "Armor_Upgrade_Stone_C",
@@ -2329,7 +2321,7 @@
         },
         {
           "name": "Distilled_Water",
-          "count": 0
+          "count": 25
         }
       ]
     },
@@ -2337,16 +2329,16 @@
       "name": "Efaunts_Broken_Ankles",
       "ingredients": [
         {
+          "name": "Platinum_Boots",
+          "count": 1
+        },
+        {
           "name": "Ripped_Tunic",
           "count": 5
         },
         {
           "name": "Nuget_Cake",
           "count": 3
-        },
-        {
-          "name": "Platinum_Boots",
-          "count": 1
         }
       ]
     },
@@ -2354,62 +2346,50 @@
       "name": "Efaunt_Trunculus",
       "ingredients": [
         {
-          "name": "Ribbed_Tunic",
-          "count": 4
-        },
-        {
-          "name": "Ripped_Tunic",
-          "count": 15
-        },
-        {
           "name": "Bandage_Wraps",
           "count": 1
         },
         {
           "name": "Pharoah_Bow",
           "count": 1
+        },
+        {
+          "name": "Ribbed_Tunic",
+          "count": 4
+        },
+        {
+          "name": "Ripped_Tunic",
+          "count": 15
         }
       ]
     },
     {
-      "name": "Coming_Soon",
+      "name": "Protectors_Pride",
       "ingredients": [
         {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Defenders_Dignity",
+          "count": 1
         },
         {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Trimmed_Rune_Platelegs",
+          "count": 1
         },
         {
-          "name": "Coming_Soon",
-          "count": 0
-        },
-        {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Distilled_Water",
+          "count": 35
         }
       ]
     },
     {
-      "name": "Coming_Soon",
+      "name": "Skullfish_Pendant",
       "ingredients": [
         {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Fishhead_Pendant",
+          "count": 1
         },
         {
-          "name": "Coming_Soon",
-          "count": 0
-        },
-        {
-          "name": "Coming_Soon",
-          "count": 0
-        },
-        {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Distilled_Water",
+          "count": 60
         }
       ]
     },
@@ -2478,7 +2458,7 @@
       "ingredients": [
         {
           "name": "Dune_Soul",
-          "count": 2500
+          "count": 1500
         },
         {
           "name": "Redox_Salts",
@@ -2524,20 +2504,20 @@
       "name": "Yumyum_Misc_Completion_Token",
       "ingredients": [
         {
-          "name": "Minuteglass",
-          "count": 13
-        },
-        {
-          "name": "Ghost",
-          "count": 25
-        },
-        {
           "name": "Efaunt_Helmet",
           "count": 1
         },
         {
           "name": "Fuscismatia",
           "count": 1
+        },
+        {
+          "name": "Minuteglass",
+          "count": 13
+        },
+        {
+          "name": "Ghost",
+          "count": 25
         }
       ]
     },
@@ -2616,6 +2596,27 @@
           "count": 1
         }
       ]
+    },
+    {
+      "name": "Coming_Soon",
+      "ingredients": [
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        }
+      ]
     }
   ],
   "Apprentice Tier": [
@@ -2628,7 +2629,7 @@
         },
         {
           "name": "Platinum_Helmet",
-          "count": 2
+          "count": 1
         },
         {
           "name": "Dementia_Bar",
@@ -2645,7 +2646,7 @@
         },
         {
           "name": "Platinum_Platbody",
-          "count": 2
+          "count": 1
         },
         {
           "name": "Dementia_Bar",
@@ -2662,7 +2663,7 @@
         },
         {
           "name": "Platinum_Shins",
-          "count": 2
+          "count": 1
         },
         {
           "name": "Dementia_Bar",
@@ -2682,7 +2683,7 @@
           "count": 1
         },
         {
-          "name": "Dementia_Boots",
+          "name": "Dementia_Bar",
           "count": 500
         }
       ]
@@ -2709,7 +2710,7 @@
         },
         {
           "name": "Enforced_Slasher",
-          "count": 2
+          "count": 1
         },
         {
           "name": "Redox_Salts",
@@ -2726,7 +2727,7 @@
         },
         {
           "name": "Pharoah_Bow",
-          "count": 2
+          "count": 1
         },
         {
           "name": "Redox_Salts",
@@ -2743,7 +2744,7 @@
         },
         {
           "name": "Crows_Nest",
-          "count": 2
+          "count": 1
         },
         {
           "name": "Redox_Salts",
@@ -2764,7 +2765,7 @@
         },
         {
           "name": "Platinum_Pickaxe",
-          "count": 2
+          "count": 1
         }
       ]
     },
@@ -2794,7 +2795,7 @@
         },
         {
           "name": "Plat_Hatchet",
-          "count": 2
+          "count": 1
         }
       ]
     },
@@ -2824,7 +2825,7 @@
         },
         {
           "name": "Plat_Fishing_Rod",
-          "count": 2
+          "count": 1
         }
       ]
     },
@@ -2858,7 +2859,7 @@
         },
         {
           "name": "Platinet",
-          "count": 2
+          "count": 1
         }
       ]
     },
@@ -3024,7 +3025,7 @@
         },
         {
           "name": "Dementia_Helmet",
-          "count": 2
+          "count": 1
         },
         {
           "name": "Void_Bar",
@@ -3045,7 +3046,7 @@
         },
         {
           "name": "Dementia_Body",
-          "count": 2
+          "count": 1
         },
         {
           "name": "Void_Bar",
@@ -3066,7 +3067,7 @@
         },
         {
           "name": "Dementia_Shins",
-          "count": 2
+          "count": 1
         },
         {
           "name": "Void_Bar",
@@ -3087,7 +3088,7 @@
         },
         {
           "name": "Dementia_Boots",
-          "count": 2
+          "count": 1
         },
         {
           "name": "Void_Bar",
@@ -3133,7 +3134,7 @@
         },
         {
           "name": "The_Ice_Breaker",
-          "count": 3
+          "count": 1
         },
         {
           "name": "Dense_Water",
@@ -3154,7 +3155,7 @@
         },
         {
           "name": "Blizzard_Bow",
-          "count": 3
+          "count": 1
         },
         {
           "name": "Dense_Water",
@@ -3175,7 +3176,7 @@
         },
         {
           "name": "Spriggly_Storm",
-          "count": 3
+          "count": 1
         },
         {
           "name": "Dense_Water",
@@ -3192,7 +3193,7 @@
         },
         {
           "name": "Dementia_Pickaxe",
-          "count": 2
+          "count": 1
         },
         {
           "name": "Dense_Water",
@@ -3222,7 +3223,7 @@
         },
         {
           "name": "Dementia_Dicer",
-          "count": 2
+          "count": 1
         },
         {
           "name": "Dense_Water",
@@ -3256,7 +3257,7 @@
         },
         {
           "name": "Dementia_Rod_for_Fishing",
-          "count": 2
+          "count": 1
         },
         {
           "name": "Dense_Water",
@@ -3286,7 +3287,7 @@
         },
         {
           "name": "Dementia_Net",
-          "count": 2
+          "count": 1
         },
         {
           "name": "Dense_Water",
@@ -3844,6 +3845,1099 @@
       ]
     }
   ],
-  "____ Tier": [],
+  "Journeyman Tier": [
+    {
+      "name": "Lustre_Veil",
+      "ingredients": [
+        {
+          "name": "Void_Impreium_Helm",
+          "count": 1
+        },
+        {
+          "name": "Skelefish",
+          "count": 80000
+        },
+        {
+          "name": "Lustre_Bar",
+          "count": 2500
+        }
+      ]
+    },
+    {
+      "name": "Lustre_Chestplate",
+      "ingredients": [
+        {
+          "name": "Void_Impreium_Platebody",
+          "count": 1
+        },
+        {
+          "name": "Purple_Mush_Cap",
+          "count": 100000
+        },
+        {
+          "name": "Lustre_Bar",
+          "count": 1200
+        }
+      ]
+    },
+    {
+      "name": "Lustre_Scales",
+      "ingredients": [
+        {
+          "name": "Void_Impreium_Shardshins",
+          "count": 1
+        },
+        {
+          "name": "Purple_Screw",
+          "count": 60000
+        },
+        {
+          "name": "Lustre_Bar",
+          "count": 1600
+        }
+      ]
+    },
+    {
+      "name": "Lustre_Shieldshoe",
+      "ingredients": [
+        {
+          "name": "Void_Imperium_Kicks",
+          "count": 1
+        },
+        {
+          "name": "Tv_Remote",
+          "count": 120000
+        },
+        {
+          "name": "Lustre_Bar",
+          "count": 2000
+        }
+      ]
+    },
+    {
+      "name": "Knuckle_Sabers",
+      "ingredients": [
+        {
+          "name": "Electric_Ordeal",
+          "count": 1
+        },
+        {
+          "name": "Thingymabob",
+          "count": 50000
+        },
+        {
+          "name": "Dioxide_Syntehsis",
+          "count": 2000
+        }
+      ]
+    },
+    {
+      "name": "Slimsharp_Fin",
+      "ingredients": [
+        {
+          "name": "Deuscythe",
+          "count": 1
+        },
+        {
+          "name": "Alien_Hive_Chunk",
+          "count": 90000
+        },
+        {
+          "name": "Dioxide_Synthesis",
+          "count": 500
+        }
+      ]
+    },
+    {
+      "name": "Shardsure_Leif",
+      "ingredients": [
+        {
+          "name": "Blackhole_Bow",
+          "count": 1
+        },
+        {
+          "name": "Skelefish",
+          "count": 110000
+        },
+        {
+          "name": "Dioxide_Synthesis",
+          "count": 500
+        }
+      ]
+    },
+    {
+      "name": "Skullslip_Hallow",
+      "ingredients": [
+        {
+          "name": "Grey_Gatsby",
+          "count": 1
+        },
+        {
+          "name": "Bunny",
+          "count": 50000
+        },
+        {
+          "name": "Dioxide_Synthesis",
+          "count": 500
+        }
+      ]
+    },
+    {
+      "name": "Lustre_Pik",
+      "ingredients": [
+        {
+          "name": "Void_Imperium_Pickaxe",
+          "count": 1
+        },
+        {
+          "name": "Lustre_Bar",
+          "count": 1000
+        },
+        {
+          "name": "Dioxide_Synthesis",
+          "count": 600
+        }
+      ]
+    },
+    {
+      "name": "Massive_Mining_Pouch",
+      "ingredients": [
+        {
+          "name": "Lustre_Ore",
+          "count": 110000
+        },
+        {
+          "name": "Dioxide_Synthesis",
+          "count": 400
+        }
+      ]
+    },
+    {
+      "name": "Lustre_Logger",
+      "ingredients": [
+        {
+          "name": "Void_Imperium_Axe",
+          "count": 1
+        },
+        {
+          "name": "Alien_Hive_Chunk",
+          "count": 110000
+        },
+        {
+          "name": "Dioxide_Synthesis",
+          "count": 600
+        }
+      ]
+    },
+    {
+      "name": "Massive_Choppin_Pouch",
+      "ingredients": [
+        {
+          "name": "Alien_Hive_Chunk",
+          "count": 110000
+        },
+        {
+          "name": "Dioxide_Synthesis",
+          "count": 400
+        }
+      ]
+    },
+    {
+      "name": "Lustre_Rod",
+      "ingredients": [
+        {
+          "name": "Skelefish",
+          "count": 90000
+        },
+        {
+          "name": "Void_Imperium_Rod",
+          "count": 1
+        },
+        {
+          "name": "Dioxide_Synthesis",
+          "count": 750
+        }
+      ]
+    },
+    {
+      "name": "Massive_Fish_Pouch",
+      "ingredients": [
+        {
+          "name": "Skelefish",
+          "count": 120000
+        },
+        {
+          "name": "Dioxide_Synthesis",
+          "count": 500
+        }
+      ]
+    },
+    {
+      "name": "Lustre_Netting",
+      "ingredients": [
+        {
+          "name": "Worker_Bee",
+          "count": 130000
+        },
+        {
+          "name": "Void_Imperium_Net",
+          "count": 1
+        },
+        {
+          "name": "Dioxide_Synthesis",
+          "count": 750
+        }
+      ]
+    },
+    {
+      "name": "Massive_Bug_Pouch",
+      "ingredients": [
+        {
+          "name": "Worker_Bee",
+          "count": 110000
+        },
+        {
+          "name": "Dioxide_Synthesis",
+          "count": 500
+        }
+      ]
+    },
+    {
+      "name": "Meaty_Traps",
+      "ingredients": [
+        {
+          "name": "Jade_Scarab",
+          "count": 10
+        },
+        {
+          "name": "Steel_Traps",
+          "count": 1
+        },
+        {
+          "name": "Dioxide_Synthesis",
+          "count": 1000
+        }
+      ]
+    },
+    {
+      "name": "Massive_Critter_Pouch",
+      "ingredients": [
+        {
+          "name": "Honker",
+          "count": 100000
+        },
+        {
+          "name": "Dioxide_Synthesis",
+          "count": 1000
+        }
+      ]
+    },
+    {
+      "name": "Glauss_Skull",
+      "ingredients": [
+        {
+          "name": "Frigid_Soul",
+          "count": 40000
+        },
+        {
+          "name": "Manifested_Skull",
+          "count": 1
+        },
+        {
+          "name": "Dioxide_Synthesis",
+          "count": 1000
+        }
+      ]
+    },
+    {
+      "name": "Massive_Soul_Pouch",
+      "ingredients": [
+        {
+          "name": "Frigid_Soul",
+          "count": 90000
+        },
+        {
+          "name": "Dioxide_Synthesis",
+          "count": 1000
+        }
+      ]
+    },
+    {
+      "name": "Rough_Rockers",
+      "ingredients": [
+        {
+          "name": "Cavern_Trekkers",
+          "count": 1
+        },
+        {
+          "name": "Lustre_Shieldshoes",
+          "count": 1
+        },
+        {
+          "name": "Copper_Ore",
+          "count": 300000
+        }
+      ]
+    },
+    {
+      "name": "Fiberous_Footings",
+      "ingredients": [
+        {
+          "name": "Logger_Heels",
+          "count": 1
+        },
+        {
+          "name": "Lustre_Shieldshoes",
+          "count": 1
+        },
+        {
+          "name": "Oak_Logs",
+          "count": 300000
+        }
+      ]
+    },
+    {
+      "name": "Deep_Sea_Galoshes",
+      "ingredients": [
+        {
+          "name": "Angler_Boots",
+          "count": 1
+        },
+        {
+          "name": "Lustre_Shieldshoes",
+          "count": 1
+        },
+        {
+          "name": "Goldfish",
+          "count": 300000
+        }
+      ]
+    },
+    {
+      "name": "Spaggy_Westerados",
+      "ingredients": [
+        {
+          "name": "Bandito_Boots",
+          "count": 1
+        },
+        {
+          "name": "Lustre_Shieldshoes",
+          "count": 1
+        },
+        {
+          "name": "Fly",
+          "count": 300000
+        }
+      ]
+    },
+    {
+      "name": "Chef_Hat_Shoes",
+      "ingredients": [
+        {
+          "name": "Cooking_Clogs",
+          "count": 4
+        },
+        {
+          "name": "Lustre_Shieldshoes",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Sheek_Scrubs",
+      "ingredients": [
+        {
+          "name": "Laboratory_Scrubs",
+          "count": 4
+        },
+        {
+          "name": "Lustre_Shieldshoes",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Massive_Food_Pouch",
+      "ingredients": [
+        {
+          "name": "Sheepie_Dairy",
+          "count": 175000
+        },
+        {
+          "name": "Magic_Meatloaf",
+          "count": 30
+        },
+        {
+          "name": "Lost_Batteries",
+          "count": 10
+        },
+        {
+          "name": "Dioxide_Synthesis",
+          "count": 1000
+        }
+      ]
+    },
+    {
+      "name": "Massive_Materials_Pouch",
+      "ingredients": [
+        {
+          "name": "Genie_Lamp",
+          "count": 130000
+        },
+        {
+          "name": "Lost_Batteries",
+          "count": 10
+        },
+        {
+          "name": "Dioxide_Synthesis",
+          "count": 1000
+        }
+      ]
+    },
+    {
+      "name": "Diabolical_Headcase",
+      "ingredients": [
+        {
+          "name": "Lustre_Veil",
+          "count": 1
+        },
+        {
+          "name": "Blobfish",
+          "count": 600000
+        },
+        {
+          "name": "Starfire_Bar",
+          "count": 10000
+        },
+        {
+          "name": "Nulo_Salt",
+          "count": 800
+        }
+      ]
+    },
+    {
+      "name": "Diabolical_Trimmed_Leg_Guards",
+      "ingredients": [
+        {
+          "name": "Lustre_Chestplate",
+          "count": 1
+        },
+        {
+          "name": "Cubed_Logs",
+          "count": 400000
+        },
+        {
+          "name": "Starfire_Bar",
+          "count": 4000
+        },
+        {
+          "name": "Nullo_Salt",
+          "count": 600
+        }
+      ]
+    },
+    {
+      "name": "Diabolical_Toe_Tips",
+      "ingredients": [
+        {
+          "name": "Lustre_Shieldshoe",
+          "count": 1
+        },
+        {
+          "name": "Manta_Ray",
+          "count": 500000
+        },
+        {
+          "name": "Starfire_Bar",
+          "count": 5000
+        },
+        {
+          "name": "Nullo_Salt",
+          "count": 700
+        }
+      ]
+    },
+    {
+      "name": "Diabolical_Gauntlet",
+      "ingredients": [
+        {
+          "name": "Knuckle_Sabers",
+          "count": 1
+        },
+        {
+          "name": "Starfire_Bar",
+          "count": 50000
+        },
+        {
+          "name": "Nullo_Salt",
+          "count": 5000
+        }
+      ]
+    },
+    {
+      "name": "Diabolical_Flesh",
+      "ingredients": [
+        {
+          "name": "Slimsharp_Fin",
+          "count": 1
+        },
+        {
+          "name": "Kraken",
+          "count": 200000
+        },
+        {
+          "name": "Starfire_Bar",
+          "count": 3000
+        },
+        {
+          "name": "Nullo_Salt",
+          "count": 750
+        }
+      ]
+    },
+    {
+      "name": "Diabolical_Conduit",
+      "ingredients": [
+        {
+          "name": "Shardsure_Lief",
+          "count": 1
+        },
+        {
+          "name": "Voodofish",
+          "count": 10
+        },
+        {
+          "name": "Starfire_Bar",
+          "count": 3000
+        },
+        {
+          "name": "Nullo_Salt",
+          "count": 750
+        }
+      ]
+    },
+    {
+      "name": "Diabolical_Opticule",
+      "ingredients": [
+        {
+          "name": "Skullslip_Hallow",
+          "count": 1
+        },
+        {
+          "name": "Squishy_Soul",
+          "count": 15000
+        },
+        {
+          "name": "Starfire_Bar",
+          "count": 3000
+        },
+        {
+          "name": "Nullo_Salt",
+          "count": 8000
+        }
+      ]
+    },
+    {
+      "name": "Starfire_Pickaxe",
+      "ingredients": [
+        {
+          "name": "Lustre_Pickaxe",
+          "count": 1
+        },
+        {
+          "name": "Lustre_Bar",
+          "count": 10000
+        },
+        {
+          "name": "Pearler_Shell",
+          "count": 20
+        }
+      ]
+    },
+    {
+      "name": "Volumetric_Mining_Pouch",
+      "ingredients": [
+        {
+          "name": "Starfire_Ore",
+          "count": 300000
+        },
+        {
+          "name": "Pearler_Shell",
+          "count": 4
+        },
+        {
+          "name": "Purple_Salt",
+          "count": 800
+        }
+      ]
+    },
+    {
+      "name": "Starfire_Hatchet",
+      "ingredients": [
+        {
+          "name": "Lustre_Logger",
+          "count": 1
+        },
+        {
+          "name": "Wispy_Lumber",
+          "count": 200000
+        },
+        {
+          "name": "Pearler_Shell",
+          "count": 40
+        }
+      ]
+    },
+    {
+      "name": "Volumetric_Chopping_Pouch",
+      "ingredients": [
+        {
+          "name": "Cubed_Logs",
+          "count": 300000
+        },
+        {
+          "name": "Pearler_Shell",
+          "count": 4
+        },
+        {
+          "name": "Purple_Salt",
+          "count": 800
+        }
+      ]
+    },
+    {
+      "name": "Starfire_Rod",
+      "ingredients": [
+        {
+          "name": "Manta_Ray",
+          "count": 40000
+        },
+        {
+          "name": "Pearler_Shell",
+          "count": 60
+        },
+        {
+          "name": "Lustra_Rod",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Volumetric_Fish_Pouch",
+      "ingredients": [
+        {
+          "name": "Manta_Ray",
+          "count": 300000
+        },
+        {
+          "name": "Nullo_Salt",
+          "count": 600
+        }
+      ]
+    },
+    {
+      "name": "Starfire_Trim_Netting",
+      "ingredients": [
+        {
+          "name": "Worker_Bee",
+          "count": 200000
+        },
+        {
+          "name": "Pearler_Shell",
+          "count": 80
+        },
+        {
+          "name": "Lustre_Netting",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Volumetric_Bug_pouch",
+      "ingredients": [
+        {
+          "name": "Fairy",
+          "count": 300000
+        },
+        {
+          "name": "Nullo_Salt",
+          "count": 600
+        }
+      ]
+    },
+    {
+      "name": "Royal_Traps",
+      "ingredients": [
+        {
+          "name": "Blobfish",
+          "count": 800000
+        },
+        {
+          "name": "Meaty_Traps",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Volumetric_Critta_Pouch",
+      "ingredients": [
+        {
+          "name": "Blobfish",
+          "count": 300000
+        },
+        {
+          "name": "Nullo_Salt",
+          "count": 800
+        }
+      ]
+    },
+    {
+      "name": "Luciferian_Skull",
+      "ingredients": [
+        {
+          "name": "Squishy_Soul",
+          "count": 800000
+        },
+        {
+          "name": "Glauss_Skull",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Volumetric_Soul_Pouch",
+      "ingredients": [
+        {
+          "name": "Squishy_Soul",
+          "count": 300000
+        },
+        {
+          "name": "Nullo_Salt",
+          "count": 800
+        }
+      ]
+    },
+    {
+      "name": "Volumetric_Food_Pouch",
+      "ingredients": [
+        {
+          "name": "Spicy_Space_Ribs",
+          "count": 500000
+        },
+        {
+          "name": "Nullo_Salt",
+          "count": 800
+        },
+        {
+          "name": "Pearler_Shell",
+          "count": 25
+        }
+      ]
+    },
+    {
+      "name": "Volumetric_Matty_Pouch",
+      "ingredients": [
+        {
+          "name": "Condensed_Zap",
+          "count": 500000
+        },
+        {
+          "name": "Pearler_Shell",
+          "count": 25
+        },
+        {
+          "name": "Nullo_Salt",
+          "count": 800
+        }
+      ]
+    },
+    {
+      "name": "Coming_Soon",
+      "ingredients": [
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Anvil_Tab_5",
+      "ingredients": [
+        {
+          "name": "Coming_Soon",
+          "count": 1
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 1000000
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 2500
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 25
+        }
+      ]
+    },
+    {
+      "name": "Peeper_Pouch",
+      "ingredients": [
+        {
+          "name": "Sand_Shark",
+          "count": 10000
+        },
+        {
+          "name": "Worker_Bee",
+          "count": 20000
+        },
+        {
+          "name": "Alien_Hive_Chunk",
+          "count": 20000
+        },
+        {
+          "name": "Squishy_Soul",
+          "count": 5000
+        }
+      ]
+    },
+    {
+      "name": "Bolstered_DNA_Splicer",
+      "ingredients": [
+        {
+          "name": "Ghost",
+          "count": 18
+        },
+        {
+          "name": "Sappy_DNA_Splicer",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "name": "Double_Barreled_DNA_Splicer",
+      "ingredients": [
+        {
+          "name": "Ice_Age_3",
+          "count": 30
+        },
+        {
+          "name": "Bolstered_DNA_Splicer",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Ergonomic_DNA_Splicer",
+      "ingredients": [
+        {
+          "name": "Lost_Batteries",
+          "count": 200
+        },
+        {
+          "name": "Double_Barreled_DNA_Splicer",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Souped_Lab_Ring",
+      "ingredients": [
+        {
+          "name": "Lab_Ring",
+          "count": 5
+        },
+        {
+          "name": "Purple_Mush_Cap",
+          "count": 200000
+        },
+        {
+          "name": "Gelatinous_Chest",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Coming_Soon",
+      "ingredients": [
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Coming_Soon",
+      "ingredients": [
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Coming_Soon",
+      "ingredients": [
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Coming_Soon",
+      "ingredients": [
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Coming_Soon",
+      "ingredients": [
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Coming_Soon",
+      "ingredients": [
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Coming_Soon",
+      "ingredients": [
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "name": "Coming_Soon",
+      "ingredients": [
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        },
+        {
+          "name": "Coming_Soon",
+          "count": 0
+        }
+      ]
+    }
+  ],
   "Adept Tier": []
 }
