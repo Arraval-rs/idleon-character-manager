@@ -236,7 +236,7 @@ def get_item_stats(equip_type, character, index):
         stat_str += '\nWIS: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['WIS'])
         stat_str += '\t\tWeapon Power: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Weapon_Power'] if 'Weapon Power' in dictionary['characters'][character][equip_type][index]['stoneData'] else '0')
         stat_str += '\nLUK: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['LUK'])
-        stat_str += '\t\tUpgrade Slots Left: {}'.format(dictionary_read(dictionary, ['characters', character, equip_type, index, 'stoneData', 'Upgrade_Slots_Left']) if equip_type == 'equipment' else 0)
+        stat_str += '\t\tUpgrade Slots Left: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Upgrade_Slots_Left'] if equip_type == 'equipment' else 0)
     else:
         stat_str = 'Stack Size: {}'.format(dictionary['characters'][character][equip_type][index]['count'])
     return stat_str
