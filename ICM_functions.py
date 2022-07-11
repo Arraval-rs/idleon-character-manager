@@ -236,7 +236,7 @@ def get_item_stats(equip_type, character, index):
         stat_str += '\nWIS: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['WIS'])
         stat_str += '\t\tWeapon Power: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Weapon_Power'] if 'Weapon Power' in dictionary['characters'][character][equip_type][index]['stoneData'] else '0')
         stat_str += '\nLUK: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['LUK'])
-        stat_str += '\t\tUpgrade Slots Left: {}'.format(dictionary_read(dictionary, ['characters', character, equip_type, index, 'stoneData', 'Upgrade_Slots_Left']) if equip_type == 'equipment' else 0)
+        stat_str += '\t\tUpgrade Slots Left: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Upgrade_Slots_Left'] if equip_type == 'equipment' else 0)
     else:
         stat_str = 'Stack Size: {}'.format(dictionary['characters'][character][equip_type][index]['count'])
     return stat_str
@@ -316,25 +316,7 @@ def is_craftable(item):
                 return True
     return False
 
-def have_materials(materials):
-    craft_possible = True
-    for craft_mat in materials:
-        num_held = 0
-        # iterate through storage
-        for stored_item in dictionary['account']['chest']:
-            if stored_item['item'] == craft_mat['name']:
-                num_held += stored_item['count']
-        # iterate through player inventories
-        for character in dictionary['characters']:
-            for held_item in character['inventory']:
-                if held_item['name'] == craft_mat['name']:
-                    num_held += held_item['count']
-        if num_held < craft_mat['count']:
-            craft_possible = False
-            craft_mat['acquired'] = False
-    return craft_possible
-
-def update_ingredient_counts(crafts, recursive, craftable_text):
+def update_ingredient_counts(crafts, recursive):
     new_counts = []
     if recursive: #determine if item is craftable and update accordingly
         craftable_materials = []
@@ -354,10 +336,10 @@ def update_ingredient_counts(crafts, recursive, craftable_text):
                                         current_ingredient['count'] += new_ingredient['count'] * item[1]
                                         break
                                 if not found:
-                                    new_counts.append({'name':new_ingredient['name'], 'count':new_ingredient['count'], 'acquired':True})
+                                    new_counts.append({'name':new_ingredient['name'], 'count':new_ingredient['count']})
                                     new_counts[-1]['count'] = new_ingredient['count'] * item[1]
         if len(craftable_materials) > 0:
-            for new_ingredient in update_ingredient_counts(craftable_materials, True, craftable_text):
+            for new_ingredient in update_ingredient_counts(craftable_materials, True):
                 found = False
                 for current_ingredient in new_counts:
                     if new_ingredient['name'] == current_ingredient['name']:
@@ -378,16 +360,8 @@ def update_ingredient_counts(crafts, recursive, craftable_text):
                                     current_ingredient['count'] += new_ingredient['count'] * item[1]
                                     break
                             if not found:
-                                new_counts.append({'name':new_ingredient['name'], 'count':new_ingredient['count'], 'acquired':True})
+                                new_counts.append({'name':new_ingredient['name'], 'count':new_ingredient['count']})
                                 new_counts[-1]['count'] = new_ingredient['count'] * item[1]
-    if len(new_counts) == 0:
-        craftable_text.update('List is empty!')
-    elif have_materials(new_counts):
-        craftable_text.update('Items are craftable!')
-    else:
-        craftable_text.update('Not enough materials!')
-    # if !have_space():
-    #   craftable_text.update('Not enough inventory space!')
     return new_counts
 
 

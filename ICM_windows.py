@@ -62,7 +62,7 @@ def update_crafting_widgets(window, event):
 		if 'craft' in event and 'remove' in event:
 			if len(icm_f.current_recipies) > int(event[5]):
 				icm_f.current_recipies.pop(5 * (int(window['current_crafting'].get()) - 1) + int(event[5]))
-				icm_f.total_ingredients =  icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get(), window['crafting_text'])
+				icm_f.total_ingredients =  icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get())
 				window['current_crafting'].update(max(1, int(len(icm_f.current_recipies)/5) + (len(icm_f.current_recipies)%5 > 0)))
 				window['current_ingredients'].update(max(1, int(len(icm_f.total_ingredients)/20) + (len(icm_f.total_ingredients)%20 > 0)))
 		if 'count' in event:
@@ -70,13 +70,12 @@ def update_crafting_widgets(window, event):
 				icm_f.current_recipies[5 * (int(window['current_crafting'].get()) - 1) + int(event[5])][1] = window[event].get()
 			else:
 				window[event].update(1)
-			icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get(), window['crafting_text'])
+			icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get())
 		if event == 'remove_all':
 			icm_f.current_recipies = []
 			icm_f.total_ingredients = []
 			window['current_crafting'].update(1)
 			window['current_ingredients'].update(1)
-			window['crafting_text'].update('List is empty!')
 			for i in range(0, 5):
 				window['craft{}count'.format(i)].update(1)
 			for i in range(0, 20):
@@ -86,7 +85,7 @@ def update_crafting_widgets(window, event):
 				window['current_crafting'].update(int(window['current_crafting'].get()) + 1)
 			if event == 'prev_crafting' and int(window['current_crafting'].get()) > 1:
 				window['current_crafting'].update(int(window['current_crafting'].get()) - 1)
-			icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get(), window['crafting_text'])
+			icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get())
 		if event == 'next_ingredients' and int(window['current_ingredients'].get()) < len(icm_f.total_ingredients)/20:
 			window['current_ingredients'].update(int(window['current_ingredients'].get()) + 1)
 		if event == 'prev_ingredients' and int(window['current_ingredients'].get()) > 1:
@@ -101,13 +100,13 @@ def update_crafting_widgets(window, event):
 							found = True
 							if icm_f.current_recipies[i][1] < 99:
 								icm_f.current_recipies[i][1] += 1
-								icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get(), window['crafting_text'])
+								icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get())
 							break
 				if not found:
 					icm_f.current_recipies.append([item_to_add[0], 1]) 
-					icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get(), window['crafting_text'])
+					icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get())
 		if event == 'toggle_base':
-			icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get(), window['crafting_text'])
+			icm_f.total_ingredients = icm_f.update_ingredient_counts(icm_f.current_recipies, window['toggle_base'].get())
 
 	    # Update crafting images/counts
 		for i in range(0, 5):
