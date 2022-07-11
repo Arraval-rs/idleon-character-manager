@@ -3850,7 +3850,7 @@
       "name": "Lustre_Veil",
       "ingredients": [
         {
-          "name": "Void_Impreium_Helm",
+          "name": "Void_Imperium_Helmet",
           "count": 1
         },
         {
@@ -3867,7 +3867,7 @@
       "name": "Lustre_Chestplate",
       "ingredients": [
         {
-          "name": "Void_Impreium_Platebody",
+          "name": "Void_Imperium_Platebody",
           "count": 1
         },
         {
@@ -3884,7 +3884,7 @@
       "name": "Lustre_Scales",
       "ingredients": [
         {
-          "name": "Void_Impreium_Shardshins",
+          "name": "Void_Imperium_Shardshins",
           "count": 1
         },
         {
@@ -3918,7 +3918,7 @@
       "name": "Knuckle_Sabers",
       "ingredients": [
         {
-          "name": "Electric_Ordeal",
+          "name": "Eclectic_Ordeal",
           "count": 1
         },
         {
@@ -3926,7 +3926,7 @@
           "count": 50000
         },
         {
-          "name": "Dioxide_Syntehsis",
+          "name": "Dioxide_Synthesis",
           "count": 2000
         }
       ]
@@ -3983,10 +3983,10 @@
       ]
     },
     {
-      "name": "Lustre_Pik",
+      "name": "Lustre_Pickaxe",
       "ingredients": [
         {
-          "name": "Void_Imperium_Pickaxe",
+          "name": "Void_Imperium_Pik",
           "count": 1
         },
         {
@@ -4170,7 +4170,7 @@
           "count": 1
         },
         {
-          "name": "Lustre_Shieldshoes",
+          "name": "Lustre_Shieldshoe",
           "count": 1
         },
         {
@@ -4187,7 +4187,7 @@
           "count": 1
         },
         {
-          "name": "Lustre_Shieldshoes",
+          "name": "Lustre_Shieldshoe",
           "count": 1
         },
         {
@@ -4204,7 +4204,7 @@
           "count": 1
         },
         {
-          "name": "Lustre_Shieldshoes",
+          "name": "Lustre_Shieldshoe",
           "count": 1
         },
         {
@@ -4221,7 +4221,7 @@
           "count": 1
         },
         {
-          "name": "Lustre_Shieldshoes",
+          "name": "Lustre_Shieldshoe",
           "count": 1
         },
         {
@@ -4238,7 +4238,7 @@
           "count": 4
         },
         {
-          "name": "Lustre_Shieldshoes",
+          "name": "Lustre_Shieldshoe",
           "count": 1
         }
       ]
@@ -4251,7 +4251,7 @@
           "count": 4
         },
         {
-          "name": "Lustre_Shieldshoes",
+          "name": "Lustre_Shieldshoe",
           "count": 1
         }
       ]
@@ -4310,13 +4310,13 @@
           "count": 10000
         },
         {
-          "name": "Nulo_Salt",
+          "name": "Nullo_Salt",
           "count": 800
         }
       ]
     },
     {
-      "name": "Diabolical_Trimmed_Leg_Guards",
+      "name": "Diabolical_Trimed_Leg_Guards",
       "ingredients": [
         {
           "name": "Lustre_Chestplate",
@@ -4396,10 +4396,10 @@
       ]
     },
     {
-      "name": "Diabolical_Conduit",
+      "name": "Diabolical_Continuit",
       "ingredients": [
         {
-          "name": "Shardsure_Lief",
+          "name": "Shardsure_Leif",
           "count": 1
         },
         {
@@ -4517,7 +4517,7 @@
           "count": 60
         },
         {
-          "name": "Lustra_Rod",
+          "name": "Lustre_Rod",
           "count": 1
         }
       ]
@@ -4834,86 +4834,82 @@
       ]
     },
     {
-      "name": "Coming_Soon",
+      "name": "Thin_Veil_of_The_Troll",
       "ingredients": [
         {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Troll_Scales",
+          "count": 50
         },
         {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Starfire_Bar",
+          "count": 20000
         },
         {
-          "name": "Coming_Soon",
-          "count": 0
-        },
-        {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Nullo_Salt",
+          "count": 400
         }
       ]
     },
     {
-      "name": "Coming_Soon",
+      "name": "Trollish_Garb",
       "ingredients": [
         {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Troll_Scales",
+          "count": 25
         },
         {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Pearler_Shell",
+          "count": 25
         },
         {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Starfire_Bar",
+          "count": 10000
         },
         {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Nullo_Salt",
+          "count": 2800
         }
       ]
     },
     {
-      "name": "Coming_Soon",
+      "name": "Twisted_Scales",
       "ingredients": [
         {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Troll_Scales",
+          "count": 15
         },
         {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Condensed_Zap",
+          "count": 333333
         },
         {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Starfire_Bar",
+          "count": 5000
         },
         {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Nullo_Salt",
+          "count": 1600
         }
       ]
     },
     {
-      "name": "Coming_Soon",
+      "name": "Soles_of_The_Troll",
       "ingredients": [
         {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Cooking_Clogs",
+          "count": 8
         },
         {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Troll_Scales",
+          "count": 10
         },
         {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Starfire_Bar",
+          "count": 3000
         },
         {
-          "name": "Coming_Soon",
-          "count": 0
+          "name": "Nullo_Salt",
+          "count": 750
         }
       ]
     },
