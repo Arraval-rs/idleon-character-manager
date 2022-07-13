@@ -26,6 +26,8 @@ def update_monster_widgets(window, event):
 			icm_f.current_monster = ['W2', int(event[3:len(event)])]
 		if 'W3' in event:
 			icm_f.current_monster = ['W3', int(event[3:len(event)])]
+		if 'W4' in event:
+			icm_f.current_monster = ['W4', int(event[3:len(event)])]
 		if 'Event' in event:
 			icm_f.current_monster = ['Event', int(event[6:len(event)])]
 			if 'Blueberry' in icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Name'] or 'Plasti' in icm_f.monsters[icm_f.current_monster[0]][icm_f.current_monster[1]]['Name']:
@@ -308,5 +310,6 @@ for i in range(0, 17):
 	monster_events.append('W1_{}'.format(i))
 	monster_events.append('W2_{}'.format(i))
 	monster_events.append('W3_{}'.format(i))
+	monster_events.append('W4_{}'.format(i))
 	monster_events.append('Boss_{}'.format(i))
 	monster_events.append('Event_{}'.format(i))

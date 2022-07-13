@@ -30,7 +30,7 @@ for i in range(45, 60):
     icm_f.talents['Warrior']['Squire']['Divine Knight'][str(i)] = icm_f.generate_img('images/Talents/Warrior/Squire/Divine Knight/{}.png'.format(i), (56, 56), False)
     icm_f.talents['Archer']['Bowman']['Siege Breaker'][str(i)] = icm_f.generate_img('images/Talents/Archer/Bowman/Siege Breaker/{}.png'.format(i), (56, 56), False)
     icm_f.talents['Archer']['Hunter']['Beast Master'][str(i)] = icm_f.generate_img('images/Talents/Archer/Hunter/Beast Master/{}.png'.format(i), (56, 56), False)
-for i in range(0, 15):
+for i in range(0, 13):
     for j in range(0, 5):
             icm_f.talents['Star']['Tab{}'.format(str(j+1))][str(i)] = icm_f.generate_img('images/Talents/Star/Tab_{}/{}.png'.format(j+1, i), (56, 56), False)
 
@@ -227,7 +227,8 @@ character_tab =    [
                                 [[
                                     sg.Image(data = icm_f.generate_img('images/Empty Slot.png', (72, 72), False), key = 'selected_equipment'),
                                     sg.Text('STR: 0\t\tReach: 0\nAGI: 0\t\tDefence: 0\nWIS: 0\t\tWeapon Power: 0\nLUK: 0\t\tUpgrade Slots Left: 0', key = 'equipped_item_stats')
-                                ]], title = 'None', key = 'equipped_item_frame')
+                                ]], title = 'None', key = 'equipped_item_frame'),
+                                sg.Text('Action Bars')
                             ]])
                         ]
                     ]

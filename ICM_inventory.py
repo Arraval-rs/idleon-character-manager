@@ -13,5 +13,5 @@ inventory_tab =     [[
                             [sg.Button('Prev', key = 'prev_inv'), sg.Text('1', key = 'current_inv', relief = 'sunken', size = (3, 1), justification = 'center'), sg.Button('Next', key = 'next_inv')],
                             [sg.Frame(layout = [[sg.Image(data = icm_f.generate_img('images/Empty Slot.png', (72, 72), False), key = 'selected_inventory_item'), sg.Text('Stack Size: 0', size = (20, 1), key = 'inventory_item_stats')]], title = 'None', key = 'inventory_item_frame')]
                         ], title = 'Inventory', element_justification = 'center'),
-                        sg.Image(data = icm_f.generate_img('images/Misc_WIP/Carpenter Cardinal.gif', (38, 66), False), key = 'carpenter_cardinal'), sg.Text('More to come')
+                        sg.Image(data = icm_f.generate_img('images/Misc_WIP/Carpenter Cardinal.gif', (38, 66), False), key = 'carpenter_cardinal'), sg.Text('More to come ($$shmoney$$ and account items)')
                     ]]

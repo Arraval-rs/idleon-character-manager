@@ -35,7 +35,7 @@ def generate_img(f, s, bg): # Generates image using PIL
     if "None" in f:
         f = 'images/Empty Slot.png'
     if not os.path.exists(f):
-        print('ERROR: Cannot find {}'.format(f))
+        print('WARN: Cannot find {}'.format(f))
         f = 'images/Missing.png'
     img = Image.open(f).resize(s)
     if bg:

@@ -180,7 +180,7 @@
       "Name": "Crystal Carrot",
       "Attack": 0,
       "Health": 0,
-      "Speed": 0,
+      "Speed": 4,
       "Experience": 0,
       "Accuracy 5%": 0,
       "Accuracy 100%": 0,
@@ -325,7 +325,7 @@
       "Name": "Crystal Crabal",
       "Attack": 0,
       "Health": 0,
-      "Speed": 0,
+      "Speed": 4,
       "Experience": 0,
       "Accuracy 5%": 0,
       "Accuracy 100%": 0,
@@ -503,7 +503,163 @@
       "Name": "Crystal Cattle",
       "Attack": 0,
       "Health": 0,
-      "Speed": 0,
+      "Speed": 4,
+      "Experience": 0,
+      "Accuracy 5%": 0,
+      "Accuracy 100%": 0,
+      "Defence for 0": 0,
+      "Respawn": 0
+    }
+  ],
+  "W4": [
+    {
+      "Name": "Purp Mushroom",
+      "Attack": 2100,
+      "Health": 520000,
+      "Speed": 4,
+      "Experience": 2350,
+      "Accuracy 5%": 1400,
+      "Accuracy 100%": 4200,
+      "Defence for 0": 2541.34,
+      "Respawn": 38
+    },
+    {
+      "Name": "TV",
+      "Attack": 2300,
+      "Health": 700000,
+      "Speed": 4,
+      "Experience": 3000,
+      "Accuracy 5%": 1650,
+      "Accuracy 100%": 4950,
+      "Defence for 0": 2772.33,
+      "Respawn": 40
+    },
+    {
+      "Name": "Donut",
+      "Attack": 2550,
+      "Health": 9250000,
+      "Speed": 4,
+      "Experience": 4000,
+      "Accuracy 5%": 1900,
+      "Accuracy 100%": 5700,
+      "Defence for 0": 3057.91,
+      "Respawn": 40
+    },
+    {
+      "Name": "Demon Genie",
+      "Attack": 2750,
+      "Health": 1250000,
+      "Speed": 3,
+      "Experience": 4800,
+      "Accuracy 5%": 2163,
+      "Accuracy 100%": 6488,
+      "Defence for 0": 3284.02,
+      "Respawn": 40
+    },
+    {
+      "Name": "Soda Can",
+      "Attack": 3000,
+      "Health": 2000000,
+      "Speed": 6,
+      "Experience": 7600,
+      "Accuracy 5%": 2575,
+      "Accuracy 100%": 7725,
+      "Defence for 0": 3563.92,
+      "Respawn": 38
+    },
+    {
+      "Name": "Flying Wurm",
+      "Attack": 3400,
+      "Health": 2500000,
+      "Speed": 7,
+      "Experience": 8750,
+      "Accuracy 5%": 2825,
+      "Accuracy 100%": 8475,
+      "Defence for 0": 4005.88,
+      "Respawn": 40
+    },
+    {
+      "Name": "Gelatinous Cuboid",
+      "Attack": 3900,
+      "Health": 3300000,
+      "Speed": 4,
+      "Experience": 10800,
+      "Accuracy 5%": 3100,
+      "Accuracy 100%": 9300,
+      "Defence for 0": 4549.15,
+      "Respawn": 40
+    },
+    {
+      "Name": "Choccie",
+      "Attack": 4500,
+      "Health": 4500000,
+      "Speed": 4,
+      "Experience": 14000,
+      "Accuracy 5%": 3450,
+      "Accuracy 100%": 10350,
+      "Defence for 0": 5189.1,
+      "Respawn": 40
+    },
+    {
+      "Name": "Biggole Wurm",
+      "Attack": 5200,
+      "Health": 6500000,
+      "Speed": 6,
+      "Experience": 17500,
+      "Accuracy 5%": 3850,
+      "Accuracy 100%": 11550,
+      "Defence for 0": 5921.21,
+      "Respawn": 40
+    },
+    {
+      "Name": "Clammie",
+      "Attack": 6000,
+      "Health": 9000000,
+      "Speed": 4,
+      "Experience": 23400,
+      "Accuracy 5%": 4350,
+      "Accuracy 100%": 13050,
+      "Defence for 0": 6741.2,
+      "Respawn": 40
+    },
+    {
+      "Name": "Octodar",
+      "Attack": 7000,
+      "Health": 12000000,
+      "Speed": 4,
+      "Experience": 27600,
+      "Accuracy 5%": 4800,
+      "Accuracy 100%": 14400,
+      "Defence for 0": 7744.43,
+      "Respawn": 40
+    },
+    {
+      "Name": "Flombeige",
+      "Attack": 8200,
+      "Health": 16000000,
+      "Speed": 4,
+      "Experience": 30000,
+      "Accuracy 5%": 5250,
+      "Accuracy 100%": 15750,
+      "Defence for 0": 8920.83,
+      "Respawn": 45
+    },
+    {
+      "Name": "Stilted Seeker",
+      "Attack": 10000,
+      "Health": 20000000,
+      "Speed": 6,
+      "Experience": 33000,
+      "Accuracy 5%": 5500,
+      "Accuracy 100%": 16500,
+      "Defence for 0": 10638.14,
+      "Respawn": 45
+    },
+    {
+      "Name": "Crystal Custard",
+      "Attack": 0,
+      "Health": 0,
+      "Speed": 4,
       "Experience": 0,
       "Accuracy 5%": 0,
       "Accuracy 100%": 0,
@@ -531,7 +687,7 @@
       "Experience": 12000,
       "Accuracy 5%": 300,
       "Accuracy 100%": 900,
-      "Defence for 0": 1223.3,
+      "Defence for 0": 1224,
       "Respawn": 74500
     },
     {
@@ -611,6 +767,44 @@
       "Defence for 0": 2911
     },
     {
+      "Name": "Radiant Amarok",
+      "Attacks": [
+        {
+          "Name": "Fireball",
+          "Attack": 3650
+        },
+        {
+          "Name": "Stomp",
+          "Attack": 5500
+        },
+        {
+          "Name": "Rock Spikes",
+          "Attack": 3800
+        },
+        {
+          "Name": "Spike Traps",
+          "Attack": 3675
+        },
+        {
+          "Name": "Sword Swing",
+          "Attack": 5500
+        },
+        {
+          "Name": "Uppercut",
+          "Attack": 8000
+        },
+        {
+          "Name": "Rocketfist",
+          "Attack": 5000
+        }
+      ],
+      "Health": 100000000,
+      "Accuracy 5%": 4000,
+      "Accuracy 100%": 12000,
+      "Experience": 50000000,
+      "Defence for 0": 6952
+    },
+    {
       "Name": "Biggie Hours",
       "Attack": 500,
       "Health": 800000,
@@ -618,7 +812,7 @@
       "Experience": 12500,
       "Accuracy 5%": 297,
       "Accuracy 100%": 891,
-      "Defence for 0": 0,
+      "Defence for 0": 594,
       "Respawn": 0
     },
     {
@@ -629,7 +823,7 @@
       "Experience": 50000,
       "Accuracy 5%": 500,
       "Accuracy 100%": 1500,
-      "Defence for 0": 0,
+      "Defence for 0": 974,
       "Respawn": 0
     },
     {
@@ -717,28 +911,81 @@
       "Defence for 0": 4600
     },
     {
+      "Name": "Gilded Efaunt",
+      "Attacks": [
+        {
+          "Name": "Hammer",
+          "Attack": 18000
+        },
+        {
+          "Name": "Scimitar",
+          "Attack": 40000
+        },
+        {
+          "Name": "Fire Column",
+          "Attack": 20000
+        },
+        {
+          "Name": "Purple Psionic Hoops",
+          "Attack": 15000
+        },
+        {
+          "Name": "Finger Gun",
+          "Attack": 25000
+        },
+        {
+          "Name": "Headpat",
+          "Attack": 50000
+        },
+        {
+          "Name": "Blue Psionic Hoops",
+          "Attack": 33000
+        },
+        {
+          "Name": "Kick",
+          "Attack": 40000
+        }
+      ],
+      "Health": 400000000,
+      "Accuracy 5%": 7500,
+      "Accuracy 100%": 22500,
+      "Experience": 100000000,
+      "Defence for 0": 33042
+    },
+    {
+      "Name": "Dilapidated Slush",
+      "Attack": 20000,
+      "Health": 12500000,
+      "Speed": 0,
+      "Experience": 250000,
+      "Accuracy 5%": 1000,
+      "Accuracy 100%": 3000,
+      "Defence for 0": 19483,
+      "Respawn": 0
+    },
+    {
       "Name": "Normal Chizoar",
       "Attacks": [
-      	{
-      		"Name": "Front Stomp",
-      		"Attack": 3200
-      	},
-      	{
-      		"Name": "Back Stomp",
-      		"Attack": 3600
-      	},
-      	{
-      		"Name": "Frozen Spikes",
-      		"Attack": 2500
-      	},
-      	{
-      		"Name": "Falling Icicles",
-      		"Attack": 2100
-      	},
-      	{
-      		"Name": "Tusk Swipe",
-      		"Attack": 2900
-      	}
+        {
+          "Name": "Front Stomp",
+          "Attack": 3200
+        },
+        {
+          "Name": "Back Stomp",
+          "Attack": 3600
+        },
+        {
+          "Name": "Frozen Spikes",
+          "Attack": 2500
+        },
+        {
+          "Name": "Falling Icicles",
+          "Attack": 2100
+        },
+        {
+          "Name": "Tusk Swipe",
+          "Attack": 2900
+        }
       ],
       "Health": 40000000,
       "Accuracy 5%": 1125,
@@ -749,32 +996,73 @@
     {
       "Name": "Chaotic Chizoar",
       "Attacks": [
-      	{
-      		"Name": "Front Stomp",
-      		"Attack": 6000
-      	},
-      	{
-      		"Name": "Back Stomp",
-      		"Attack": 9000
-      	},
-      	{
-      		"Name": "Frozen Spikes",
-      		"Attack": 5000
-      	},
-      	{
-      		"Name": "Falling Icicles",
-      		"Attack": 4000
-      	},
-      	{
-      		"Name": "Tusk Swipe",
-      		"Attack": 6000
-      	}
+        {
+          "Name": "Front Stomp",
+          "Attack": 6000
+        },
+        {
+          "Name": "Back Stomp",
+          "Attack": 9000
+        },
+        {
+          "Name": "Frozen Spikes",
+          "Attack": 5000
+        },
+        {
+          "Name": "Falling Icicles",
+          "Attack": 4000
+        },
+        {
+          "Name": "Tusk Swipe",
+          "Attack": 6000
+        }
       ],
       "Health": 2000000000,
       "Accuracy 5%": 3750,
       "Accuracy 100%": 11300,
       "Experience": 4000,
       "Defence for 0": 7702
+    },
+    {
+      "Name": "Blighted Chizoar",
+      "Attacks": [
+        {
+          "Name": "Front Stomp",
+          "Attack": 18000
+        },
+        {
+          "Name": "Back Stomp",
+          "Attack": 40000
+        },
+        {
+          "Name": "Frozen Spikes",
+          "Attack": 20000
+        },
+        {
+          "Name": "Falling Icicles",
+          "Attack": 15000
+        },
+        {
+          "Name": "Tusk Swipe",
+          "Attack": 25000
+        }
+      ],
+      "Health": 2000000000,
+      "Accuracy 5%": 12500,
+      "Accuracy 100%": 37500,
+      "Experience": 500000000,
+      "Defence for 0": 27419
+    },
+    {
+      "Name": "Mutated Mush",
+      "Attack": 3000,
+      "Health": 1200000000,
+      "Speed": 3,
+      "Experience": 10000000,
+      "Accuracy 5%": 2250,
+      "Accuracy 100%": 6750,
+      "Defence for 0": 3564,
+      "Respawn": 0
     }
   ],
   "Event": [
