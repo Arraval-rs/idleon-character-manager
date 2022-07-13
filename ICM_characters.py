@@ -227,7 +227,8 @@ character_tab =    [
                                 [[
                                     sg.Image(data = icm_f.generate_img('images/Empty Slot.png', (72, 72), False), key = 'selected_equipment'),
                                     sg.Text('STR: 0\t\tReach: 0\nAGI: 0\t\tDefence: 0\nWIS: 0\t\tWeapon Power: 0\nLUK: 0\t\tUpgrade Slots Left: 0', key = 'equipped_item_stats')
-                                ]], title = 'None', key = 'equipped_item_frame')
+                                ]], title = 'None', key = 'equipped_item_frame'),
+                                sg.Text('Action Bars')
                             ]])
                         ]
                     ]
