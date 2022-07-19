@@ -32,26 +32,25 @@ tab_2 = [[
             ])
         ]]
 
-totals = []
 for item in icm_f.dictionary['account']['printer']['printing']:
     found = False
-    for counted in totals:
+    for counted in icm_f.printerTotals:
         if counted['item'] == item['item']:
             counted['rate'] += item['rate']
             found = True
     if not found:
-        totals.append(item)
+        icm_f.printerTotals.append(item)
 
 total_frame =     [
                     [
                         sg.Image(icm_f.generate_img('images/Materials/{}.png'.format(item['item']), (36, 36), True)),
                         sg.Text('{} / hour'.format(item['rate']), justification = 'center', relief = 'sunken')
-                    ] for item in totals
+                    ] for item in icm_f.printerTotals
                 ]
 printer_tab =       [[
                         sg.TabGroup([[
                             sg.Tab('I', tab_1),
                             sg.Tab('II', tab_2)
                         ]]),
-                        sg.Frame(layout = [[sg.Column(total_frame, scrollable = True, vertical_scroll_only = True, expand_x = True, expand_y = True, element_justification = 'center')]], title = 'totals', expand_x = True, expand_y = True, element_justification = 'center')
+                        sg.Frame(layout = [[sg.Column(total_frame, scrollable = True, vertical_scroll_only = True, expand_x = True, expand_y = True, element_justification = 'center')]], title = 'icm_f.printerTotals', expand_x = True, expand_y = True, element_justification = 'center')
                     ]]

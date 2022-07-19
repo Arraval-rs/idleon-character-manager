@@ -16,6 +16,7 @@ from ICM_crafting import crafting_tab
 from ICM_monsters import monsters_tab
 from ICM_storage import storage_tab
 from ICM_printer import printer_tab
+from ICM_refinery import refinery_tab
 
 root_tabs = [
                 [
@@ -36,7 +37,8 @@ root_tabs = [
                     sg.Tab('Monsters', monsters_tab),
                     sg.Tab('Crafting', crafting_tab),
                     sg.Tab('Storage', storage_tab),
-                    sg.Tab('Printer', printer_tab)
+                    sg.Tab('Printer', printer_tab),
+                    sg.Tab('Refinery', refinery_tab)
                 ]])
                 ]
             ]

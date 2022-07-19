@@ -1,0 +1,189 @@
+{
+	"salts": {
+		"redox": [
+			{
+				"item": "Spore_Cap",
+				"count": 10
+			},
+			{
+				"item": "Copper_Ore",
+				"count": 5
+			}
+		],
+		"explosive": [
+			{
+				"item": "Bullfrog_Horn",
+				"count": 10
+			},
+			{
+				"item": "Forest_Fibres",
+				"count": 5
+			},
+			{
+				"item": "Redox_Salts",
+				"count": 2
+			}
+		],
+		"spontaneity": [
+			{
+				"item": "Pocket_Sand",
+				"count": 50
+			},
+			{
+				"item": "Goldfish",
+				"count": 30
+			},
+			{
+				"item": "Fly",
+				"count": 40
+			},
+			{
+				"item": "Explosive_Salts",
+				"count": 2
+			}
+		],
+		"dioxide": [
+			{
+				"item": "Floof_Ploof",
+				"count": 10
+			},
+			{
+				"item": "Dune_Soul",
+				"count": 2
+			},
+			{
+				"item": "Scorpie",
+				"count": 1
+			},
+			{
+				"item": "Spontaneity_Salts",
+				"count": 1
+			}
+		],
+		"purple": [
+			{
+				"item": "Cracked_Glass",
+				"count": 25
+			},
+			{
+				"item": "Bloach",
+				"count": 5
+			},
+			{
+				"item": "Sentient_Cereal",
+				"count": 5
+			},
+			{
+				"item": "Mousey",
+				"count": 5
+			},
+			{
+				"item": "Dioxide_Synthesis",
+				"count": 2
+			}
+		],
+		"nullo": [
+			{
+				"item": "Contact_Lense",
+				"count": 50
+			},
+			{
+				"item": "Void_Bar",
+				"count": 5
+			},
+			{
+				"item": "Wispy_Lumber",
+				"count": 5
+			},
+			{
+				"item": "Flycicle",
+				"count": 5
+			},
+			{
+				"item": "Frigid_Soul",
+				"count": 5
+			},
+			{
+				"item": "Purple_Salt",
+				"count": 2
+			}
+		]
+	},
+	"ranks": [
+		{
+			"cost" : 1,
+			"power": 1,
+			"cap": 50
+		},
+		{
+			"cost" : 2,
+			"power": 2,
+			"cap": 200
+		},
+		{
+			"cost" : 5,
+			"power": 4,
+			"cap": 800
+		},
+		{
+			"cost" : 8,
+			"power": 6,
+			"cap": 3000
+		},
+		{
+			"cost" : 11,
+			"power": 8,
+			"cap": 8000
+		},
+		{
+			"cost" : 14,
+			"power": 10,
+			"cap": 14000
+		},
+		{
+			"cost" : 18,
+			"power": 12,
+			"cap": 20000
+		},
+		{
+			"cost" : 22,
+			"power": 14,
+			"cap": 30000
+		},
+		{
+			"cost" : 27,
+			"power": 17,
+			"cap": 40000
+		},
+		{
+			"cost" : 31,
+			"power": 19,
+			"cap": 50000
+		},
+		{
+			"cost" : 36,
+			"power": 22,
+			"cap": 65000
+		},
+		{
+			"cost": 41,
+			"power": 25,
+			"cap": 80000
+		},
+		{
+			"cost" : 46,
+			"power": 28,
+			"cap": 100000
+		},
+		{
+			"cost" : 52,
+			"power": 30,
+			"cap": 300000
+		},
+		{
+			"cost" : 58,
+			"power": 33,
+			"cap": 300000
+		}
+	]	
+}
