@@ -146,7 +146,7 @@ def crafting_popup():
     cost_frame = sg.Frame('Costs', layout = [[ingredient_col[0], ingredient_col[1]], [ingredient_col[2], ingredient_col[3]]])
     tab = []
     for i in range(0, 4):
-        tab.append(sg.Column([[sg.Graph((72, 72), (0, 0), (72, 72), enable_events = True, key = 'tab{}_item{}'.format(i, 4 * k + j)) for j in range(0 , 4)] for k in range(0, 4)]))
+        tab.append(sg.Column([[sg.Image(data = icm_f.generate_img('images/Empty Slot.png', (72, 72), True), enable_events = True, key = 'tab{}_item{}'.format(i, 4 * k + j)) for j in range(0 , 4)] for k in range(0, 4)]))
     anvil_tab_1 = sg.Tab('I', layout = [[tab[0]]])
     anvil_tab_2 = sg.Tab('II', layout = [[tab[1]]])
     anvil_tab_3 = sg.Tab('III', layout = [[tab[2]]])
