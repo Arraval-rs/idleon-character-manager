@@ -167,11 +167,11 @@ def crafting_popup():
     layout = [[left_col, right_col]]
     window = sg.Window('Crafting Menu', layout, modal = True)
     window.Finalize()
-    # Draw canvases
+    # Draw images
     for i in range(0, 4):
         for j in range(0, 4):
             for k in range(0, 4):
-                window['tab{}_item{}'.format(i, 4 * j + k)].draw_image(data = icm_f.get_crafting_item(icm_f.tab_titles[i], 4 * j + k, icm_f.image_paths), location = (0, 72))
+                window['tab{}_item{}'.format(i, 4 * j + k)].update(data = icm_f.get_crafting_item(icm_f.tab_titles[i], 4 * j + k, icm_f.image_paths))
     current_selection = [-1, 0]
     # Event loop
     while True:
@@ -203,7 +203,7 @@ def crafting_popup():
             for i in range(0, 4):
                 for j in range(0, 4):
                     for k in range(0, 4):
-                        window['tab{}_item{}'.format(i, 4 * j + k)].draw_image(data = icm_f.get_crafting_item(icm_f.tab_titles[i], 16 * (int(window['current_page'].get()) - 1) + 4 * j + k, icm_f.image_paths), location = (0, 72))
+                        window['tab{}_item{}'.format(i, 4 * j + k)].update(data = icm_f.get_crafting_item(icm_f.tab_titles[i], 16 * (int(window['current_page'].get()) - 1) + 4 * j + k, icm_f.image_paths))
     window.close()
     return ['None', 0]
 
@@ -249,8 +249,8 @@ def update_character_widgets(window, event, index):
 			for j in range(0, 2):
 				window['equipment{}'.format(2 * i + j)].update(data = icm_f.generate_img('images/Equipment/{}.png'.format(icm_f.dictionary['characters'][index]['equipment'][2*i+j]['name']), (72, 72), True))
 				window['equipment{}'.format(2 * i + j + 8)].update(data = icm_f.generate_img('images/Equipment/{}.png'.format(icm_f.dictionary['characters'][index]['equipment'][2*i+j+8]['name']), (72, 72), True))
-				window['tools{}'.format(2 * i + j)].draw_image(data = icm_f.generate_img('images/Tools/{}.png'.format(icm_f.dictionary['characters'][index]['tools'][2*i+j]['name']), (72, 72), True), location = (0, 72))
-				window['food{}'.format(2 * i + j)].draw_image(data = icm_f.generate_img('images/Food/{}.png'.format(icm_f.dictionary['characters'][index]['food'][2*i+j]['name']), (72, 72), True), location = (0, 72))
+				window['tools{}'.format(2 * i + j)].update(data = icm_f.generate_img('images/Tools/{}.png'.format(icm_f.dictionary['characters'][index]['tools'][2*i+j]['name']), (72, 72), True))
+				window['food{}'.format(2 * i + j)].update(data = icm_f.generate_img('images/Food/{}.png'.format(icm_f.dictionary['characters'][index]['food'][2*i+j]['name']), (72, 72), True))
     
 		# Update skills
 		for i in range(0, 9):
@@ -298,7 +298,7 @@ def update_character_widgets(window, event, index):
 		window['current_inv'].update('1')
 		for i in range(0, 4):
 			for j in range(0, 4):
-				window['inventory{}'.format(j + 4 * i)].draw_image(data = icm_f.get_inventory_item(j + 4 * i + 16 * (int(window['current_inv'].get()) - 1), icm_f.image_paths, index), location = (0, 72))
+				window['inventory{}'.format(j + 4 * i)].update(data = icm_f.get_inventory_item(j + 4 * i + 16 * (int(window['current_inv'].get()) - 1), icm_f.image_paths, index))
 
 # Some event lists
 crafting_events = ['add_item', 'prev_crafting', 'next_crafting', 'prev_ingredients', 'next_ingredients', 'remove_all', 'toggle_base']

@@ -50,12 +50,12 @@ window.Finalize()
 # Draw images for inventory
 for i in range(0, 4):
     for j in range(0, 4):
-        window['inventory{}'.format(4 * i + j)].draw_image(data = icm_f.get_inventory_item(4 * i + j, icm_f.image_paths, 0), location = (0, 72))
+        window['inventory{}'.format(4 * i + j)].update(data = icm_f.get_inventory_item(4 * i + j, icm_f.image_paths, 0))
 
 # Draw images for storage
 for i in range(0, 4):
     for j in range(0, 6):
-        window['storage{}'.format(6 * i + j)].draw_image(data = icm_f.get_storage_item(6 * i + j, icm_f.image_paths), location = (0, 72))
+        window['storage{}'.format(6 * i + j)].update(data = icm_f.get_storage_item(6 * i + j, icm_f.image_paths))
 
 # Get last storage page
 for i in range(0, len(icm_f.dictionary['account']['chest'])):
@@ -95,7 +95,7 @@ while True:
             window['current_inv'].update('{}'.format(int(window['current_inv'].get()) - 1))
         for i in range(0, 4):
             for j in range(0, 4):
-                window['inventory{}'.format(j + 4 * i)].draw_image(data = icm_f.get_inventory_item(4 * i + j + 16 * (int(window['current_inv'].get()) - 1), icm_f.image_paths, index), location = (0, 72))
+                window['inventory{}'.format(j + 4 * i)].update(data = icm_f.get_inventory_item(4 * i + j + 16 * (int(window['current_inv'].get()) - 1), icm_f.image_paths, index))
 
     # Update storage for Prev/Next tab
     if event in ('next_stor', 'prev_stor'):
@@ -105,7 +105,7 @@ while True:
             window['current_stor'].update('{}'.format(int(window['current_stor'].get()) - 1))
         for i in range(0, 4):
             for j in range(0, 6):
-                window['storage{}'.format(6 * i + j)].draw_image(data = icm_f.get_storage_item(6 * i + j + 24 * (int(window['current_stor'].get()) - 1), icm_f.image_paths), location = (0, 72))
+                window['storage{}'.format(6 * i + j)].update(data = icm_f.get_storage_item(6 * i + j + 24 * (int(window['current_stor'].get()) - 1), icm_f.image_paths))
 
     icm_w.update_crafting_widgets(window, event)
     icm_w.update_monster_widgets(window, event)

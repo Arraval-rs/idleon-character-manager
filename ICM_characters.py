@@ -183,7 +183,7 @@ equips_tab =        [
                         [sg.Image(data = icm_f.generate_img('images/Equipment/{}.png'.format(icm_f.dictionary['characters'][0]['equipment'][2 * i + j]['name']), (72, 72), True), key = 'equipment{}'.format(2*i+j), enable_events = True) for j in range(0, 2)] for i in range(0, 4)
                     ]
 
-equips_tab2 =       [
+specials_tab =       [
                         [sg.Image(data = icm_f.generate_img('images/Equipment/{}.png'.format(icm_f.dictionary['characters'][0]['equipment'][2 * i + j + 8]['name']), (72, 72), True), key = 'equipment{}'.format(2*i+j+8), enable_events = True) for j in range(0, 2)] for i in range(0, 4)
                     ]
 
@@ -220,10 +220,10 @@ character_tab =    [
                                 [[
                                     sg.TabGroup(
                                     [[
-                                        sg.Tab('E I', equips_tab, key = 'equips_tab'),
-                                        sg.Tab('E II', equips_tab2, key = 'equips_tab2'),
+                                        sg.Tab('Equips', equips_tab, key = 'equips_tab'),
+                                        sg.Tab('Specials', specials_tab, key = 'equips_tab2'),
                                         sg.Tab('Tools', tools_tab),
-                                        sg.Tab('Food', foods_tab)
+                                        sg.Tab('Foods', foods_tab)
                                     ]])
                                 ]])
                             ],
