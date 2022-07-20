@@ -6,6 +6,7 @@ import os
 import io
 import json
 import PySimpleGUI as sg
+import re
 
 # ICM files
 import ICM_functions as icm_f
@@ -46,13 +47,6 @@ root_tabs = [
 window = sg.Window("Idleon Character Manager", root_tabs)
 window.Finalize()
 
-# Draw images for equipment tabs
-for i in range(0, 4):
-    for j in range(0, 2):
-        window['equipment{}'.format(2 * i + j)].draw_image(data = icm_f.generate_img('images/Equipment/{}.png'.format(icm_f.dictionary['characters'][0]['equipment'][2*i+j]['name']), (72, 72), True), location = (0, 72))
-        window['tools{}'.format(2 * i + j)].draw_image(data = icm_f.generate_img('images/Tools/{}.png'.format(icm_f.dictionary['characters'][0]['tools'][2*i+j]['name']), (72, 72), True), location = (0, 72))
-        window['food{}'.format(2 * i + j)].draw_image(data = icm_f.generate_img('images/Food/{}.png'.format(icm_f.dictionary['characters'][0]['food'][2*i+j]['name']), (72, 72), True), location = (0, 72))
-
 # Draw images for inventory
 for i in range(0, 4):
     for j in range(0, 4):
@@ -83,7 +77,7 @@ while True:
 
     # Update selected equipment
     if 'equipment' in event or 'tools' in event or 'food' in event:
-        icm_f.update_selected_equipment(window, event[:len(event)-1], index, int(event[len(event)-1]))
+        icm_f.update_selected_equipment(window, event[:re.search(r"\d", event).start()], index, int(event[re.search(r"\d", event).start():]))
 
     # Update selected inventory item
     if 'inventory' in event:

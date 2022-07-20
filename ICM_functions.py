@@ -17,7 +17,7 @@ def dictionary_contains(dict, dict_path):
             return False
     except ValueError:
         if dict_path[0] not in dict:
-            print('Missing {} from dictionary'.format(dict_path))
+            print('WARN: Missing {} from dictionary'.format(dict_path))
             return False
     if len(dict_path) == 1:
         return True
@@ -229,14 +229,14 @@ def get_character_stats(character, dict):
 
 def get_item_stats(equip_type, character, index):
     if equip_type in {'equipment', 'tools'}:
-        stat_str = 'STR: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['STR'])
-        stat_str += '\t\tReach: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Reach'] if 'Reach' in dictionary['characters'][character][equip_type][index]['stoneData'] else '0')
-        stat_str += '\nAGI: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['AGI'])
+        stat_str = 'STR: {}'.format(dictionary_read(dictionary, ['characters', character, equip_type, index, 'stoneData', 'STR']))
+        stat_str += '\t\tReach: {}'.format(dictionary_read(dictionary, ['characters', character, equip_type, index, 'stoneData', 'Reach']))
+        stat_str += '\nAGI: {}'.format(dictionary_read(dictionary, ['characters', character, equip_type, index, 'stoneData', 'AGI']))
         stat_str += '\t\tDefence: {}'.format(dictionary_read(dictionary, ['characters', character, equip_type, index, 'stoneData', 'Defence']))
-        stat_str += '\nWIS: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['WIS'])
-        stat_str += '\t\tWeapon Power: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Weapon_Power'] if 'Weapon Power' in dictionary['characters'][character][equip_type][index]['stoneData'] else '0')
-        stat_str += '\nLUK: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['LUK'])
-        stat_str += '\t\tUpgrade Slots Left: {}'.format(dictionary['characters'][character][equip_type][index]['stoneData']['Upgrade_Slots_Left'] if equip_type == 'equipment' else 0)
+        stat_str += '\nWIS: {}'.format(dictionary_read(dictionary, ['characters', character, equip_type, index, 'stoneData', 'WIS']))
+        stat_str += '\t\tWeapon Power: {}'.format(dictionary_read(dictionary, ['characters', character, equip_type, index, 'stoneData', 'Weapon_Power']))
+        stat_str += '\nLUK: {}'.format(dictionary_read(dictionary, ['characters', character, equip_type, index, 'stoneData', 'LUK']))
+        stat_str += '\t\tUpgrade Slots Left: {}'.format(dictionary_read(dictionary, ['characters', character, equip_type, index, 'stoneData', 'Upgrade_Slots_Left']))
     else:
         stat_str = 'Stack Size: {}'.format(dictionary['characters'][character][equip_type][index]['count'])
     return stat_str

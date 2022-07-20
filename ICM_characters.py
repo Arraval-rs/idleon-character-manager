@@ -180,17 +180,21 @@ pouches_tab =       [
                     ]
 
 equips_tab =        [
-                        [sg.Graph((72, 72), (0, 0), (72, 72), change_submits = True, key = 'equipment{}'.format(2*i+j)) for j in range(0, 2)] for i in range(0, 4)
+                        [sg.Image(data = icm_f.generate_img('images/Equipment/{}.png'.format(icm_f.dictionary['characters'][0]['equipment'][2 * i + j]['name']), (72, 72), True), key = 'equipment{}'.format(2*i+j), enable_events = True) for j in range(0, 2)] for i in range(0, 4)
+                    ]
+
+equips_tab2 =       [
+                        [sg.Image(data = icm_f.generate_img('images/Equipment/{}.png'.format(icm_f.dictionary['characters'][0]['equipment'][2 * i + j + 8]['name']), (72, 72), True), key = 'equipment{}'.format(2*i+j+8), enable_events = True) for j in range(0, 2)] for i in range(0, 4)
                     ]
 
 
 tools_tab =         [
-                        [sg.Graph((72, 72), (0, 0), (72, 72), change_submits = True, key = 'tools{}'.format(2*i+j)) for j in range(0, 2)] for i in range(0, 4)
+                        [sg.Image(data = icm_f.generate_img('images/Tools/{}.png'.format(icm_f.dictionary['characters'][0]['tools'][2 * i + j]['name']), (72, 72), True), key = 'tools{}'.format(2*i+j), enable_events = True) for j in range(0, 2)] for i in range(0, 4)
                     ]
 
 
 foods_tab =         [
-                        [sg.Graph((72, 72), (0, 0), (72, 72), change_submits = True, key = 'food{}'.format(2*i+j)) for j in range(0, 2)] for i in range(0, 4)
+                        [sg.Image(data = icm_f.generate_img('images/Food/{}.png'.format(icm_f.dictionary['characters'][0]['food'][2 * i + j]['name']), (72, 72), True), key = 'food{}'.format(2*i+j), enable_events = True) for j in range(0, 2)] for i in range(0, 4)
                     ]
 
 
@@ -216,7 +220,8 @@ character_tab =    [
                                 [[
                                     sg.TabGroup(
                                     [[
-                                        sg.Tab('Equips', equips_tab, key = 'equips_tab'),
+                                        sg.Tab('E I', equips_tab, key = 'equips_tab'),
+                                        sg.Tab('E II', equips_tab2, key = 'equips_tab2'),
                                         sg.Tab('Tools', tools_tab),
                                         sg.Tab('Food', foods_tab)
                                     ]])
